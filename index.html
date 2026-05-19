@@ -525,8 +525,8 @@ body {
   --gold:         #9C8660;
   --gold-lt:      #C4A464;
   --scene-bg:     #100E0B;
-  --book-w:       820px;
-  --book-h:       540px;
+  --book-w:       900px;
+  --book-h:       580px;
 }
 
 html,body {
@@ -727,12 +727,12 @@ html,body {
   border:1px solid rgba(156,134,96,0.2); pointer-events:none;
 }
 .pi-eye {
-  font-family: var(--font-sans, Arial, sans-serif); font-size: 9px; font-weight:700;
+  font-family: var(--font-sans, Arial, sans-serif); font-size: 11px; font-weight:700;
   letter-spacing: 0.34em; text-transform:uppercase; color: var(--gold); margin-bottom: 10px;
 }
 .pi-num {
   font-family: var(--font-serif-display, Georgia, serif);
-  font-size: 68px; font-weight:400; font-style:italic; line-height:0.88;
+  font-size: 72px; font-weight:400; font-style:italic; line-height:0.88;
   color: rgba(156,134,96,0.14); letter-spacing:-0.04em; margin-bottom: 12px;
   pointer-events:none; user-select:none;
 }
@@ -743,13 +743,13 @@ html,body {
 }
 .pi-title {
   font-family: var(--font-serif-display, Georgia, serif);
-  font-size: 23px; font-weight:400; line-height:1.2; letter-spacing:-0.012em; color: var(--ink);
+  font-size: 26px; font-weight:400; line-height:1.2; letter-spacing:-0.012em; color: var(--ink);
 }
 .pi-title em { font-style:italic; color: var(--gold); }
 .pi-rule { width:32px; height:1px; background: var(--gold); opacity:0.55; margin: 13px 0; }
 .pi-desc {
   font-family: var(--font-serif-display, Georgia, serif);
-  font-size: 13px; line-height:1.65; color: var(--ink-2); flex:1;
+  font-size: 14.5px; line-height:1.68; color: var(--ink-2); flex:1;
 }
 .pi-tags { display:flex; flex-wrap:wrap; gap:5px; margin: 11px 0; }
 .pi-tag--cat {
@@ -759,25 +759,25 @@ html,body {
   font-weight: 600;
 }
 .pi-tag {
-  font-family: var(--font-sans, Arial, sans-serif); font-size: 8.5px; font-weight:700;
-  letter-spacing:0.2em; text-transform:uppercase; color: var(--gold);
-  border:1px solid rgba(156,134,96,0.28); padding: 3px 8px; border-radius:1px;
+  font-family: var(--font-sans, Arial, sans-serif); font-size: 10px; font-weight:700;
+  letter-spacing:0.18em; text-transform:uppercase; color: var(--gold);
+  border:1px solid rgba(156,134,96,0.28); padding: 4px 9px; border-radius:1px;
 }
 .pi-foot {
   display:flex; align-items:center; justify-content:space-between;
   padding-top:11px; border-top: 1px solid var(--page-rule); margin-top:9px;
 }
 .pi-src {
-  font-family: var(--font-sans, Arial, sans-serif); font-size: 8.5px;
-  letter-spacing:0.2em; text-transform:uppercase; color: rgba(156,134,96,0.6);
+  font-family: var(--font-sans, Arial, sans-serif); font-size: 10px;
+  letter-spacing:0.18em; text-transform:uppercase; color: rgba(156,134,96,0.6);
 }
 .pi-read {
   position: relative;
   z-index: 10;
   display:inline-flex; align-items:center; gap:5px;
-  font-family: var(--font-sans, Arial, sans-serif); font-size: 8.5px; font-weight:700;
-  letter-spacing:0.2em; text-transform:uppercase; color: var(--ink); text-decoration:none;
-  padding: 7px 13px; border:1px solid rgba(46,44,40,0.55);
+  font-family: var(--font-sans, Arial, sans-serif); font-size: 10px; font-weight:700;
+  letter-spacing:0.18em; text-transform:uppercase; color: var(--ink); text-decoration:none;
+  padding: 8px 15px; border:1px solid rgba(46,44,40,0.55);
   transition: all 0.18s; position:relative; z-index:30;
 }
 .pi-read:hover { background:var(--ink); color:var(--page-bg); }
@@ -792,15 +792,15 @@ html,body {
   border:1px solid rgba(156,134,96,0.2); pointer-events:none;
 }
 .intro-orn { font-family: var(--font-hebrew, serif); font-size: 36px; direction:rtl; color: rgba(156,134,96,0.18); margin-bottom:14px; }
-.intro-eye { font-family: var(--font-sans, Arial, sans-serif); font-size:9px; font-weight:700; letter-spacing:0.34em; text-transform:uppercase; color: var(--gold); margin-bottom:8px; }
-.intro-title { font-family: var(--font-serif-display, Georgia, serif); font-size:22px; font-weight:400; font-style:italic; line-height:1.2; color:var(--ink); margin-bottom:13px; }
+.intro-eye { font-family: var(--font-sans, Arial, sans-serif); font-size:11px; font-weight:700; letter-spacing:0.34em; text-transform:uppercase; color: var(--gold); margin-bottom:8px; }
+.intro-title { font-family: var(--font-serif-display, Georgia, serif); font-size:24px; font-weight:400; font-style:italic; line-height:1.2; color:var(--ink); margin-bottom:13px; }
 .intro-rule { width:32px; height:1px; background:var(--gold); opacity:0.55; margin-bottom:13px; }
-.intro-body { font-family: var(--font-serif-display, Georgia, serif); font-size:12px; line-height:1.7; color:var(--ink-2); flex:1; }
+.intro-body { font-family: var(--font-serif-display, Georgia, serif); font-size:13.5px; line-height:1.72; color:var(--ink-2); flex:1; }
 .intro-toc { margin-top:16px; padding-top:13px; border-top:1px solid var(--page-rule); }
-.intro-toc-hd { font-family: var(--font-sans, Arial, sans-serif); font-size:8px; font-weight:700; letter-spacing:0.34em; text-transform:uppercase; color:var(--gold); margin-bottom:9px; }
+.intro-toc-hd { font-family: var(--font-sans, Arial, sans-serif); font-size:9.5px; font-weight:700; letter-spacing:0.34em; text-transform:uppercase; color:var(--gold); margin-bottom:9px; }
 .toc-row { display:flex; align-items:baseline; gap:6px; margin-bottom:6px; }
-.toc-n { font-family: var(--font-serif-display, Georgia, serif); font-size:11px; font-style:italic; color:var(--gold); width:18px; flex-shrink:0; }
-.toc-t { font-family: var(--font-serif-display, Georgia, serif); font-size:11px; line-height:1.3; color:var(--ink-2); }
+.toc-n { font-family: var(--font-serif-display, Georgia, serif); font-size:12.5px; font-style:italic; color:var(--gold); width:20px; flex-shrink:0; }
+.toc-t { font-family: var(--font-serif-display, Georgia, serif); font-size:12.5px; line-height:1.3; color:var(--ink-2); }
 
 /* ── COLOPHON / closing ── */
 .colo {
@@ -858,18 +858,61 @@ html,body {
    RESPONSIVE
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 @media(max-width:880px){
+  /* ── Book layout ── */
   .book { width:min(520px,calc(100vw - 32px)); height:auto; transform:none; box-shadow:0 20px 60px rgba(0,0,0,0.6); }
   .pg-left-static,.pg-right-static,.spine-shadow { display:none; }
   .pg { position:relative; right:auto; top:auto; width:100%; transform:none !important; display:none; border-radius:3px; }
   .pg.mobile-show { display:block; }
-  .pg__front,.pg__back { position:relative; height:auto; min-height:480px; backface-visibility:visible !important; -webkit-backface-visibility:visible !important; border-radius:3px; }
+  .pg__front,.pg__back { position:relative; height:auto; min-height:420px; backface-visibility:visible !important; -webkit-backface-visibility:visible !important; border-radius:3px; }
   .pg__back { transform:none; display:none; }
   .pg__back.mobile-show { display:block; }
   .pi,.pi::before,.pg__front,.pg__back { border-radius:3px; }
-  .pi-num { font-size:50px; } .pi-title { font-size:20px; }
   .click-zone { display:none; }
-  .book3 { width:180px; height:252px; } .cc-heb { font-size:42px; } .cc-serif { font-size:13px; }
+
+  /* ── Closed book ── */
+  .book3 { width:180px; height:252px; }
+  .cc-heb { font-size:42px; } .cc-serif { font-size:13px; }
   .book3__spine { width:24px; transform:rotateY(-90deg) translateX(-12px); }
+
+  /* ── Header ── */
+  .hdr { margin-bottom:28px; }
+  .hdr__title { font-size:38px; }
+  .hdr__eye   { font-size:11.5px; letter-spacing:0.3em; }
+  .hdr__heb   { font-size:20px; }
+
+  /* ── Sicha card — bigger text for mobile ── */
+  .pi         { padding:30px 26px 26px; }
+  .pi-num     { font-size:52px; }
+  .pi-eye     { font-size:11px; letter-spacing:0.28em; }
+  .pi-title   { font-size:25px; }
+  .pi-desc    { font-size:15.5px; line-height:1.72; }
+  .pi-tag     { font-size:10px; padding:4px 10px; letter-spacing:0.16em; }
+  .pi-src     { font-size:10px; }
+  .pi-read    { font-size:11px; padding:9px 16px; letter-spacing:0.16em; }
+  .pi-foot    { padding-top:14px; margin-top:12px; }
+  .pi-rule    { margin:15px 0; }
+
+  /* ── Nav ── */
+  .nav-btn    { width:48px; height:48px; font-size:20px; }
+  .nav-dots   { display:none; }
+  .nav-hint   { font-size:10.5px; }
+  .mobile-counter {
+    font-family: var(--font-sans, Arial, sans-serif);
+    font-size:13px; letter-spacing:0.1em;
+    color:rgba(196,164,100,0.6); min-width:48px; text-align:center;
+  }
+}
+
+@media(max-width:430px){
+  .scene      { padding:20px 12px; }
+  .pi         { padding:24px 18px 22px; }
+  .pi-title   { font-size:22px; }
+  .pi-desc    { font-size:14.5px; }
+  .pi-num     { font-size:44px; }
+  .pi-tags    { gap:4px; }
+  .hdr__title { font-size:32px; }
+  .hdr        { margin-bottom:20px; }
+  .hint       { font-size:11px; }
 }
 </style>
 </head>
@@ -1079,6 +1122,7 @@ html,body {
         <div class="nav-dot"    data-s="2"></div>
         <div class="nav-dot"    data-s="3"></div>
       </div>
+      <span class="mobile-counter" id="mobile-counter" style="display:none">1 / 6</span>
       <button class="nav-btn" id="btn-next">&#8594;</button>
     </div>
     <p class="nav-hint">&#8592; &#8594; arrow keys &nbsp;&middot;&nbsp; click pages to turn</p>
@@ -1091,9 +1135,10 @@ html,body {
 (function(){
 "use strict";
 
-var spread = 0, SPREADS = 4;
+var spread = 0;
 var isMobile = window.innerWidth <= 880;
 window.addEventListener("resize", function(){ isMobile = window.innerWidth <= 880; });
+function numSpreads(){ return isMobile ? mobileFaces.length : 4; }
 
 /* DOM */
 var sClosed = document.getElementById("stage-closed");
@@ -1110,45 +1155,7 @@ var dots     = document.querySelectorAll(".nav-dot");
 var czRight  = document.getElementById("cz-right");
 var czLeft   = document.getElementById("cz-left");
 
-/* Mobile face references */
-var faces = [
-  pg1.querySelector(".pg__front"),   // spread 0 mobile
-  pg2.querySelector(".pg__front"),   // spread 1 mobile
-  pg2.querySelector(".pg__back"),    // spread 2 mobile
-  pg3.querySelector(".pg__front"),   // spread 3 mobile — wait, let me reconsider
-];
-/* Actually for mobile:
-   spread 0 → pg1 front (Sicha I)
-   spread 1 → pg1 back  (Sicha II)  -- but mobile-show for back needs display:block
-   Hmm, let me use a simpler content array approach on mobile
-*/
-var mobileContents = [
-  {page: pg1, side: "front"},
-  {page: pg1, side: "back"},
-  {page: pg2, side: "front"},
-  {page: pg2, side: "back"},
-  {page: pg3, side: "front"}
-  // spread 3 on mobile: pg3 back
-];
-// Actually spread 3 = pg3 back which is "series-close"
-// Let me re-map: 4 spreads = 5 content pages
-// Mobile spreads: 0→pg1 front, 1→pg1 back, 2→pg2 front, 3→pg2 back, 4→pg3 front
-// But SPREADS=4 (0-3), so:
-// 0→pg1 front, 1→pg1 back, 2→pg2 front, 3→pg3 front (skip pg2 back? no...)
-// Actually the spreads map as:
-// spread 0: right=pg1 front, left=intro (static)
-// spread 1: right=pg2 front, left=pg1 back (Sicha II)
-// spread 2: right=pg3 front, left=pg2 back (Sicha IV)
-// spread 3: right=static right, left=pg3 back
-// For mobile, show one content pane at a time.
-// I'll show: 0→Sicha I, 1→Sicha III, 2→Sicha V, 3→closing
-// But that skips II and IV. Better: mobile shows ALL 5 sichos, just in a different order.
-// Since the user can't do the 3D thing on mobile, let me show them linearly:
-// mobile spread 0→pg1 front (I), 1→pg2 front (III), 2→pg3 front (V)
-// and add separate "back" content accessible via sub-nav? Too complex.
-// For simplicity: mobile shows 4 screens matching the 4 spreads, but
-// for spreads where the left content has sichos (1,2), show the left page's sicha too.
-// Actually simplest: for mobile just show front faces 1,2,3 + a closing = 4 screens.
+/* Mobile: show all 6 sichos in linear order */
 
 /* Open */
 function openBook(){
@@ -1156,7 +1163,10 @@ function openBook(){
   setTimeout(function(){
     sClosed.style.display = "none";
     sOpen.style.display   = "flex";
-    if(isMobile) initMobile();
+    if(isMobile){
+      initMobile();
+      document.getElementById("mobile-counter").style.display = "inline";
+    }
     requestAnimationFrame(function(){ bwrap.classList.add("visible"); });
     syncNav();
   }, 420);
@@ -1173,14 +1183,17 @@ function closeBook(){
     pg1.classList.remove("turned"); pg1.style.zIndex = 4;
     pg2.classList.remove("turned"); pg2.style.zIndex = 3;
     pg3.classList.remove("turned"); pg3.style.zIndex = 2;
-    if(isMobile) resetMobile();
+    if(isMobile){
+      resetMobile();
+      document.getElementById("mobile-counter").style.display = "none";
+    }
     syncNav();
   }, 520);
 }
 
 /* Navigate */
 function goTo(n){
-  if(n < 0 || n >= SPREADS) return;
+  if(n < 0 || n >= numSpreads()) return;
   var prev = spread; spread = n;
 
   if(isMobile){ mobileShow(n); syncNav(); return; }
@@ -1197,23 +1210,28 @@ function goTo(n){
     if(prev >= 1 && n === 0){ pg1.style.zIndex=4; pg1.classList.remove("turned"); }
   }
 
-  czRight.style.display = (spread < SPREADS-1) ? "block" : "none";
-  czLeft.style.display  = (spread > 0)         ? "block" : "none";
+  czRight.style.display = (spread < numSpreads()-1) ? "block" : "none";
+  czLeft.style.display  = (spread > 0)              ? "block" : "none";
   syncNav();
 }
 
 function syncNav(){
+  var NS = numSpreads();
   btnPrev.disabled = (spread === 0);
-  btnNext.disabled = (spread === SPREADS-1);
+  btnNext.disabled = (spread === NS-1);
   dots.forEach(function(d){ d.classList.toggle("on", +d.dataset.s === spread); });
+  var mc = document.getElementById("mobile-counter");
+  if(mc) mc.textContent = (spread+1) + " / " + NS;
 }
 
-/* Mobile */
+/* Mobile — all 6 sichos in reading order */
 var mobileFaces = [
-  {el: pg1, side: "front"},
-  {el: pg2, side: "front"},
-  {el: pg3, side: "front"},
-  {el: pg3, side: "back"}
+  {el: pg1, side: "front"},   // Sicha I
+  {el: pg1, side: "back"},    // Sicha II
+  {el: pg2, side: "front"},   // Sicha III
+  {el: pg2, side: "back"},    // Sicha IV
+  {el: pg3, side: "front"},   // Sicha V
+  {el: pg3, side: "back"},    // Sicha VI
 ];
 function initMobile(){
   [pg1,pg2,pg3].forEach(function(p){ p.classList.remove("mobile-show"); });
@@ -1255,13 +1273,13 @@ document.getElementById("stage-open").addEventListener("click", function(e){
   if(e.clientX < rect.left || e.clientX > rect.right) return;
   if(e.clientY < rect.top  || e.clientY > rect.bottom) return;
   var x = e.clientX - rect.left;
-  if(x > rect.width / 2 && spread < SPREADS-1) goTo(spread+1);
-  else if(x <= rect.width / 2 && spread > 0)  goTo(spread-1);
+  if(x > rect.width / 2 && spread < numSpreads()-1) goTo(spread+1);
+  else if(x <= rect.width / 2 && spread > 0)        goTo(spread-1);
 });
 dots.forEach(function(d){ d.addEventListener("click", function(){ goTo(+d.dataset.s); }); });
 document.addEventListener("keydown", function(e){
   if(sOpen.style.display !== "flex") return;
-  if(e.key==="ArrowRight") goTo(spread+1);
+  if(e.key==="ArrowRight") goTo(spread+1);  // goTo clamps to numSpreads()
   if(e.key==="ArrowLeft")  goTo(spread-1);
   if(e.key==="Escape")     closeBook();
 });
