@@ -4,6 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Shavuos &middot; Visual Likkutei Sichos</title>
+<meta property="og:title"       content="Shavuos · Visual Likkutei Sichos">
+<meta property="og:description" content="Six Shavuos sichos from the Lubavitcher Rebbe, brought to life as visual infographics — Matan Torah, mamleches kohanim, oneg, and more.">
+<meta property="og:image"       content="https://zmabraham.github.io/Sicha-Infograph/og-image.png">
+<meta property="og:image:width"  content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url"         content="https://zmabraham.github.io/Sicha-Infograph/">
+<meta property="og:type"        content="website">
+<meta property="og:site_name"   content="Visual Likkutei Sichos">
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:title"       content="Shavuos · Visual Likkutei Sichos">
+<meta name="twitter:description" content="Six Shavuos sichos from the Lubavitcher Rebbe, brought to life as visual infographics.">
+<meta name="twitter:image"       content="https://zmabraham.github.io/Sicha-Infograph/og-image.png">
 <style id="design-system">
 /* ==========================================================================
    JLI Flagship — Colors & Type
@@ -759,6 +771,8 @@ html,body {
   letter-spacing:0.2em; text-transform:uppercase; color: rgba(156,134,96,0.6);
 }
 .pi-read {
+  position: relative;
+  z-index: 10;
   display:inline-flex; align-items:center; gap:5px;
   font-family: var(--font-sans, Arial, sans-serif); font-size: 8.5px; font-weight:700;
   letter-spacing:0.2em; text-transform:uppercase; color: var(--ink); text-decoration:none;
@@ -832,8 +846,11 @@ html,body {
 .nav-hint { font-family: var(--font-sans, Arial, sans-serif); font-size:9px; letter-spacing:0.24em; text-transform:uppercase; color:rgba(196,164,100,0.28); text-align:center; margin-top:-8px; }
 
 /* click zones */
-.click-zone { position:absolute; top:0; width:50%; height:100%; z-index:50; cursor:pointer; background:transparent; }
+.click-zone { position:absolute; top:0; width:50%; height:100%; z-index:50; cursor:pointer; background:transparent; pointer-events:none; }
 .click-zone--right { right:0; }
+/* Show correct pointer on book left/right halves */
+#sOpen { cursor: default; }
+#bk    { cursor: e-resize; }
 .click-zone--left  { left:0; }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1247,8 +1264,19 @@ btnOpen.addEventListener("keydown", function(e){ if(e.key==="Enter"||e.key===" "
 btnClose.addEventListener("click", closeBook);
 btnNext.addEventListener("click", function(){ goTo(spread+1); });
 btnPrev.addEventListener("click", function(){ goTo(spread-1); });
-czRight.addEventListener("click", function(e){ if(!e.target.closest("a")) goTo(spread+1); });
-czLeft.addEventListener("click",  function(e){ if(!e.target.closest("a")) goTo(spread-1); });
+// Click anywhere in the open book area to turn pages — but let links through
+document.getElementById("sOpen").addEventListener("click", function(e){
+  if(e.target.closest("a")) return;          // real link — let browser handle it
+  if(e.target.closest(".btn-nav")) return;   // nav buttons — handled separately
+  var bkEl = document.getElementById("bk");
+  if(!bkEl) return;
+  var rect = bkEl.getBoundingClientRect();
+  if(e.clientX < rect.left || e.clientX > rect.right) return;
+  if(e.clientY < rect.top  || e.clientY > rect.bottom) return;
+  var x = e.clientX - rect.left;
+  if(x > rect.width / 2 && spread < SPREADS-1) goTo(spread+1);
+  else if(x <= rect.width / 2 && spread > 0)  goTo(spread-1);
+});
 dots.forEach(function(d){ d.addEventListener("click", function(){ goTo(+d.dataset.s); }); });
 document.addEventListener("keydown", function(e){
   if(sOpen.style.display !== "flex") return;
