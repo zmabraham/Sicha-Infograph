@@ -859,60 +859,62 @@ html,body {
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 @media(max-width:880px){
   /* ── Book layout ── */
-  .book { width:min(520px,calc(100vw - 32px)); height:auto; transform:none; box-shadow:0 20px 60px rgba(0,0,0,0.6); }
+  .book { width:calc(100vw - 20px); max-width:560px; height:auto; transform:none; box-shadow:0 20px 60px rgba(0,0,0,0.6); }
   .pg-left-static,.pg-right-static,.spine-shadow { display:none; }
   .pg { position:relative; right:auto; top:auto; width:100%; transform:none !important; display:none; border-radius:3px; }
   .pg.mobile-show { display:block; }
-  .pg__front,.pg__back { position:relative; height:auto; min-height:420px; backface-visibility:visible !important; -webkit-backface-visibility:visible !important; border-radius:3px; }
+  .pg__front,.pg__back { position:relative; height:auto; backface-visibility:visible !important; -webkit-backface-visibility:visible !important; border-radius:3px; }
   .pg__back { transform:none; display:none; }
   .pg__back.mobile-show { display:block; }
   .pi,.pi::before,.pg__front,.pg__back { border-radius:3px; }
   .click-zone { display:none; }
 
   /* ── Closed book ── */
-  .book3 { width:180px; height:252px; }
-  .cc-heb { font-size:42px; } .cc-serif { font-size:13px; }
-  .book3__spine { width:24px; transform:rotateY(-90deg) translateX(-12px); }
+  .book3 { width:200px; height:280px; }
+  .cc-heb { font-size:48px; } .cc-serif { font-size:15px; }
+  .cc-caps { font-size:9px; } .cc-vol { font-size:9px; }
+  .book3__spine { width:26px; transform:rotateY(-90deg) translateX(-13px); }
 
   /* ── Header ── */
-  .hdr { margin-bottom:28px; }
-  .hdr__title { font-size:38px; }
-  .hdr__eye   { font-size:11.5px; letter-spacing:0.3em; }
-  .hdr__heb   { font-size:20px; }
+  .hdr        { margin-bottom:28px; }
+  .hdr__title { font-size:44px; }
+  .hdr__eye   { font-size:13px; letter-spacing:0.26em; }
+  .hdr__heb   { font-size:24px; }
+  .hint       { font-size:14px; }
 
-  /* ── Sicha card — bigger text for mobile ── */
-  .pi         { padding:30px 26px 26px; }
-  .pi-num     { font-size:52px; }
-  .pi-eye     { font-size:11px; letter-spacing:0.28em; }
-  .pi-title   { font-size:25px; }
-  .pi-desc    { font-size:15.5px; line-height:1.72; }
-  .pi-tag     { font-size:10px; padding:4px 10px; letter-spacing:0.16em; }
-  .pi-src     { font-size:10px; }
-  .pi-read    { font-size:11px; padding:9px 16px; letter-spacing:0.16em; }
-  .pi-foot    { padding-top:14px; margin-top:12px; }
-  .pi-rule    { margin:15px 0; }
+  /* ── Sicha card ── */
+  .pi         { padding:28px 22px 24px; }
+  .pi-num     { font-size:40px; margin-bottom:8px; }
+  .pi-eye     { font-size:13px; letter-spacing:0.26em; margin-bottom:8px; }
+  .pi-title   { font-size:30px; }
+  .pi-rule    { margin:14px 0; }
+  .pi-desc    { font-size:17px; line-height:1.75; }
+  .pi-tags    { gap:6px; margin:13px 0; }
+  .pi-tag     { font-size:12px; padding:5px 11px; letter-spacing:0.12em; }
+  .pi-src     { font-size:12px; }
+  .pi-read    { font-size:13px; padding:11px 18px; letter-spacing:0.12em; }
+  .pi-foot    { padding-top:14px; margin-top:10px; }
 
   /* ── Nav ── */
-  .nav-btn    { width:48px; height:48px; font-size:20px; }
+  .nav-btn    { width:52px; height:52px; font-size:22px; }
+  .nav-bar    { gap:18px; }
   .nav-dots   { display:none; }
-  .nav-hint   { font-size:10.5px; }
+  .nav-hint   { font-size:12px; }
   .mobile-counter {
     font-family: var(--font-sans, Arial, sans-serif);
-    font-size:13px; letter-spacing:0.1em;
-    color:rgba(196,164,100,0.6); min-width:48px; text-align:center;
+    font-size:16px; letter-spacing:0.08em;
+    color:rgba(196,164,100,0.7); min-width:52px; text-align:center;
   }
 }
 
 @media(max-width:430px){
-  .scene      { padding:20px 12px; }
-  .pi         { padding:24px 18px 22px; }
-  .pi-title   { font-size:22px; }
-  .pi-desc    { font-size:14.5px; }
-  .pi-num     { font-size:44px; }
-  .pi-tags    { gap:4px; }
-  .hdr__title { font-size:32px; }
-  .hdr        { margin-bottom:20px; }
-  .hint       { font-size:11px; }
+  .scene      { padding:20px 10px; }
+  .pi         { padding:22px 16px 20px; }
+  .pi-title   { font-size:27px; }
+  .pi-desc    { font-size:16px; }
+  .pi-num     { font-size:34px; }
+  .hdr__title { font-size:38px; }
+  .hdr        { margin-bottom:22px; }
 }
 </style>
 </head>
