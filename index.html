@@ -16,6 +16,7 @@
 <meta name="twitter:title"       content="Shavuos · Visual Likkutei Sichos">
 <meta name="twitter:description" content="Six Shavuos sichos from the Lubavitcher Rebbe, brought to life as visual infographics.">
 <meta name="twitter:image"       content="https://zmabraham.github.io/Sicha-Infograph/og-image.png">
+<link rel="stylesheet" media="print" href="print.css">
 <style id="design-system">
 /* ==========================================================================
    JLI Flagship — Colors & Type
@@ -850,7 +851,7 @@ html,body {
 .click-zone--right { right:0; }
 /* Show correct pointer on book left/right halves */
 #sOpen { cursor: default; }
-#bk    { cursor: e-resize; }
+#book  { cursor: e-resize; }
 .click-zone--left  { left:0; }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1265,10 +1266,10 @@ btnClose.addEventListener("click", closeBook);
 btnNext.addEventListener("click", function(){ goTo(spread+1); });
 btnPrev.addEventListener("click", function(){ goTo(spread-1); });
 // Click anywhere in the open book area to turn pages — but let links through
-document.getElementById("sOpen").addEventListener("click", function(e){
+document.getElementById("stage-open").addEventListener("click", function(e){
   if(e.target.closest("a")) return;          // real link — let browser handle it
   if(e.target.closest(".btn-nav")) return;   // nav buttons — handled separately
-  var bkEl = document.getElementById("bk");
+  var bkEl = document.getElementById("book");
   if(!bkEl) return;
   var rect = bkEl.getBoundingClientRect();
   if(e.clientX < rect.left || e.clientX > rect.right) return;
@@ -1287,5 +1288,78 @@ document.addEventListener("keydown", function(e){
 
 })();
 </script>
+<!-- PRINT-ONLY VIEW (hidden on screen, shown by print.css) -->
+<div id="print-view" style="display:none">
+  <div class="pv-masthead">
+    <div class="pv-eyebrow">Likkutei Sichos &middot; Visual Study Guides</div>
+    <h1 class="pv-title">Shavuos <em>Sichos</em></h1>
+    <p class="pv-sub">Six sichos from the Lubavitcher Rebbe on the Festival of Shavuos, brought to life as visual infographics.</p>
+    <div class="pv-url">https://zmabraham.github.io/Sicha-Infograph/</div>
+  </div>
+  <div class="pv-toc-hd">Six Sichos &mdash; Contents</div>
+
+  <div class="pv-sicha">
+    <div class="pv-num">i</div>
+    <div class="pv-body">
+      <h2 class="pv-sicha-title">The Three Events of <em>Shavuos</em></h2>
+      <div class="pv-sicha-src">Shavuos 5727 &middot; Likkutei Sichos Vol.&thinsp;8</div>
+      <p class="pv-sicha-desc">Three events fall on the same day every year: Matan Torah, the histalkus of Dovid HaMelech, and the histalkus of the Baal Shem Tov. Each enacts the same cosmic exchange &mdash; the higher descends, the lower ascends.</p>
+      <div class="pv-sicha-url">zmabraham.github.io/Sicha-Infograph/three-events.html</div>
+    </div>
+  </div>
+
+  <div class="pv-sicha">
+    <div class="pv-num">ii</div>
+    <div class="pv-body">
+      <h2 class="pv-sicha-title">The Angels&rsquo; Claim to the <em>Torah</em></h2>
+      <div class="pv-sicha-src">Shavuos 5718 &middot; Likkutei Sichos Vol.&thinsp;18</div>
+      <p class="pv-sicha-desc">When Moshe ascended Sinai, the angels claimed the Torah under dina d&rsquo;bar metzra. The Rebbe examines five answers from the meforshim &mdash; finds each wanting &mdash; and arrives at the real answer: yishuv adif, dirah b&rsquo;tachtonim.</p>
+      <div class="pv-sicha-url">zmabraham.github.io/Sicha-Infograph/the-angels-claim.html</div>
+    </div>
+  </div>
+
+  <div class="pv-sicha">
+    <div class="pv-num">iii</div>
+    <div class="pv-body">
+      <h2 class="pv-sicha-title">An <em>Oneg</em> Without Exception</h2>
+      <div class="pv-sicha-src">Shavuos 5716, 5723 &amp; 5736 &middot; Likkutei Sichos Vol.&thinsp;28</div>
+      <p class="pv-sicha-desc">Shavuos is the one Yom Tov where even a ta&rsquo;anis chalom is forbidden &mdash; yet it is the most spiritual of all. The answer: Matan Torah was Atzmus, not gilui. And Atzmus has no outside.</p>
+      <div class="pv-sicha-url">zmabraham.github.io/Sicha-Infograph/an-oneg-without-exception.html</div>
+    </div>
+  </div>
+
+  <div class="pv-sicha">
+    <div class="pv-num">iv</div>
+    <div class="pv-body">
+      <h2 class="pv-sicha-title">The Climb from <em>Below</em></h2>
+      <div class="pv-sicha-src">Shavuos 5720 &middot; Likkutei Sichos Vol.&thinsp;4</div>
+      <p class="pv-sicha-desc">Two paired sichos: why Bnei Yisrael&rsquo;s sleep before Sinai wasn&rsquo;t carelessness &mdash; and why the Baal Shem Tov chose Yom Tov Sheni. The body is the venue. The descent is the ascent.</p>
+      <div class="pv-sicha-url">zmabraham.github.io/Sicha-Infograph/the-climb-from-below.html</div>
+    </div>
+  </div>
+
+  <div class="pv-sicha">
+    <div class="pv-num">v</div>
+    <div class="pv-body">
+      <h2 class="pv-sicha-title">The <em>Center</em></h2>
+      <div class="pv-sicha-src">Behar-Bechukosai &amp; Shavuos 5718 &middot; Likkutei Sichos Vol.&thinsp;6</div>
+      <p class="pv-sicha-desc">Torah creates the deepest yichud with Hashem. So why the third month, not the first? Because real oneness must first encounter its opposite &mdash; and the third is the new thing that emerges when the high and the low finally meet.</p>
+      <div class="pv-sicha-url">zmabraham.github.io/Sicha-Infograph/the-center.html</div>
+    </div>
+  </div>
+
+  <div class="pv-sicha">
+    <div class="pv-num">vi</div>
+    <div class="pv-body">
+      <h2 class="pv-sicha-title">A Kingdom of <em>Priests</em></h2>
+      <div class="pv-sicha-src">Shavuos 5737 (2nd Day) &middot; Likkutei Sichos</div>
+      <p class="pv-sicha-desc">Moshe, David, and the Baal Shem Tov &mdash; three first kings, each carrying mamleches kohanim into a deeper darkness than the one before. Inside every Jew&rsquo;s day: one crown, three keepers.</p>
+      <div class="pv-sicha-url">zmabraham.github.io/Sicha-Infograph/a-kingdom-of-priests.html</div>
+    </div>
+  </div>
+
+  <div class="pv-footer">Likkutei Sichos &middot; Visual Study Guides &middot; zmabraham.github.io/Sicha-Infograph/</div>
+</div>
+
 </body>
 </html>
