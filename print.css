@@ -1,27 +1,21 @@
 /* ============================================================
    PRINT STYLESHEET — Visual Likkutei Sichos
-   US Letter 8.5×11 in — all 6 sicha pages + book index.
-   Browser: File → Print → Save as PDF, or click the Print button.
+   US Letter 8.5×11 — full-width paragraphs, compact text.
    ============================================================ */
 
-/* ── PAGE SETUP ── */
 @page {
   size: letter portrait;
-  margin: 0.65in 0.70in;
+  margin: 0.35in 0.40in;
 }
-@page :first { margin-top: 0.75in; }
+@page :first { margin-top: 0.40in; }
 
-/* Force all colours & backgrounds to print */
 *, *::before, *::after {
   -webkit-print-color-adjust: exact !important;
   print-color-adjust: exact !important;
 }
 
-/* ── GLOBAL RESETS ── */
-html {
-  background: white !important;
-  font-size: 14px;
-}
+/* ── GLOBAL ── */
+html { background: white !important; }
 body {
   background: white !important;
   min-height: auto !important;
@@ -29,153 +23,205 @@ body {
   padding: 0 !important;
   margin: 0 !important;
 }
-
-/* Hide print trigger button */
 .print-fab { display: none !important; }
-
-/* Remove design-tool chrome (React-bundled files) */
 #__bundler_loading,
 #__bundler_thumbnail { display: none !important; }
 
-/* ─────────────────────────────────────────
-   INFOGRAPHIC PAGES  (.sheet layout)
-   ───────────────────────────────────────── */
-
-/* Outer container — remove the screen card look */
+/* ── SHEET: full width, no clipping ── */
 .sheet {
-  max-width: 100% !important;
-  width:     100% !important;
-  margin:    0 !important;
-  overflow:  visible !important;   /* CRITICAL — lets content flow across pages */
-  box-shadow:    none !important;
-  border-radius: 0 !important;
-  background: white !important;
+  max-width:     100%    !important;
+  width:         100%    !important;
+  margin:        0       !important;
+  overflow:      visible !important;
+  box-shadow:    none    !important;
+  border-radius: 0       !important;
+  background:    white   !important;
 }
-
-/* React-bundle body centering reset */
+/* React-bundle body centering */
 body > div[style*="max-width"],
 body > div[style*="margin: 0 auto"] {
-  max-width: 100% !important;
-  margin:    0 !important;
-  box-shadow: none !important;
+  max-width: 100%    !important;
+  margin:    0       !important;
   overflow:  visible !important;
+  box-shadow: none   !important;
 }
 
-/* ── Running header & top rule ── */
-.top-rule {
-  height: 4px !important;
-  break-after: avoid;
-}
+/* ── RUNNING HEADER ── */
+.top-rule { height: 3px !important; break-after: avoid; }
 .running {
-  padding:    10px 0 !important;
+  padding:    7px 0 !important;
   break-after: avoid;
 }
+.running__brand,
+.running__meta { font-size: 8px !important; }
 
-/* ── Hero ── */
+/* ── HERO ── */
 .hero {
-  padding:    28px 0 24px !important;
+  padding:    20px 0 16px !important;
   break-after: avoid;
 }
-.hero__title {
-  font-size:   40px !important;
-  line-height: 1.06 !important;
-  max-width:   100% !important;
-}
-.hero__sub {
-  font-size: 14.5px !important;
-  max-width: 100% !important;
-}
+.hero__eyebrow { font-size: 9px  !important; margin-bottom: 10px !important; }
+.hero__title   { font-size: 28px !important; line-height: 1.08   !important;
+                 max-width: 100% !important; margin-bottom: 10px !important; }
+.hero__sub     { font-size: 12px !important; line-height: 1.55   !important;
+                 max-width: 100% !important; margin-bottom: 14px !important; }
+.hero__source  { font-size: 9px  !important; }
 
-/* ── Sections — allow page breaks between them ── */
+/* ── SECTIONS ── */
 .section {
-  padding:     28px 0 24px !important;
+  padding:     16px 0 14px !important;
+  border-bottom: 1px solid #D0CAB8 !important;
   break-before: auto;
   break-after:  auto;
   break-inside: auto;
 }
+.section--sunk { background: #F2EFE8 !important; padding: 16px 12px 14px !important; }
+.section--ink  { background: #333230 !important; color: #EDE8DC !important;
+                 padding: 16px 12px 14px !important; }
 
-/* Keep headings with the content that follows */
-.section__eyebrow,
-.section__roman,
-.section__title { break-after: avoid; }
+.section__roman   { font-size: 11px !important; margin-bottom: 2px  !important; }
+.section__eyebrow { font-size: 9px  !important; padding-bottom: 7px !important;
+                    margin-bottom: 12px !important;
+                    break-after: avoid; page-break-after: avoid; }
+.section__title   { font-size: 18px !important; line-height: 1.15 !important;
+                    break-after: avoid; page-break-after: avoid; }
+.section__lede    { font-size: 12px !important; line-height: 1.6  !important;
+                    max-width: 100% !important; orphans: 3; widows: 3; }
+.section__body    { font-size: 12px !important; line-height: 1.6  !important;
+                    max-width: 100% !important; }
 
-.section__lede,
-.section__body  { orphans: 3; widows: 3; }
-
-/* Remove max-widths designed for wide screens */
-.section__title,
-.section__lede,
-.section__body { max-width: 100% !important; }
-
-/* ── Atomic blocks — never split across a page ── */
-.callout,
-.callout--inverted,
-.keydef,
+/* ── KEEP ATOMIC BLOCKS TOGETHER ── */
+.callout, .callout--inverted,
+.keydef, .dirah-def,
 .aside,
-.halacha,
-.gemara,
-.besht,
-.chitat,
+.halacha, .gemara,
+.besht, .chitat,
+.moshe-words,
 .diagram-wrap,
-.compare,
+.compare, .split,
 .quote,
-.prog__step,
+.tirutzim, .tirutz,
+.prog__step, .progression,
 .king, .era,
 .m-row, .rule-row,
-.trio, .two-col,
-.eras, .matchup,
-.progression,
+.two-col, .trio, .eras, .matchup,
 .part-divider,
 .colophon,
 .closing {
   break-inside:      avoid;
   page-break-inside: avoid;
 }
+.diagram-cap { break-before: avoid; page-break-before: avoid; }
 
-/* Diagrams / figures — keep caption with image */
-.diagram-wrap  { break-inside: avoid; page-break-inside: avoid; }
-.diagram-cap   { break-before: avoid; page-break-before: avoid; }
+/* ── CONTENT BLOCK SIZING ── */
+.gemara {
+  padding: 12px 16px !important;
+  gap: 14px !important;
+}
+.gemara__plate {
+  width: 40px !important; height: 40px !important;
+  font-size: 18px !important;
+}
+.gemara__exchange { font-size: 12px !important; line-height: 1.55 !important; }
+.gemara__label    { font-size: 8px  !important; }
+.gemara__ref      { font-size: 9px  !important; }
 
-/* Colophon starts on a new page */
-.colophon { break-before: always; page-break-before: always; }
-
-/* ── Dark / ink sections — preserve backgrounds ── */
-.section--ink,
-.callout,
-.callout--inverted,
-.closing {
+.callout, .callout--inverted {
+  padding: 14px 18px !important;
   background: #333230 !important;
   color: #EDE8DC !important;
 }
+.callout__label { font-size: 8px  !important; }
+.callout__body  { font-size: 15px !important; line-height: 1.45 !important; }
 
-/* ── Side widths / max-width clamps ── */
-.aside,
-.diagram-wrap,
-.gemara,
-.callout { max-width: 100% !important; }
+.tirutz, .tirutzim { padding: 10px 14px 12px !important; }
+.tirutzim { gap: 12px !important; }
+.tirutz__label  { font-size: 8px  !important; }
+.tirutz__title  { font-size: 18px !important; }
+.tirutz__body   { font-size: 12px !important; line-height: 1.55 !important; }
+.tirutz__verdict{ font-size: 9px  !important; }
 
-/* Reduce hero/section padding slightly more on Letter vs screen */
-.hero,
-.closing { padding-left: 0 !important; padding-right: 0 !important; }
-.section  { padding-left: 0 !important; padding-right: 0 !important; }
+.keydef, .dirah-def {
+  padding: 12px 16px 10px !important;
+}
+.keydef__label, .dirah-def__label { font-size: 8px  !important; }
+.keydef__heb,   .dirah-def__heb   { font-size: 22px !important; }
+.keydef__eng,   .dirah-def__eng   { font-size: 13px !important; }
+.keydef__src,   .dirah-def__src   { font-size: 9px  !important; }
+
+.aside { padding: 4px 0 4px 14px !important; font-size: 11px !important; }
+.aside p { font-size: 11px !important; }
+.aside__label { font-size: 8px !important; }
+
+.moshe-words { padding: 10px 14px 8px !important; }
+.mw-cell { padding: 10px 10px 4px !important; }
+.mw-cell__heb  { font-size: 18px !important; }
+.mw-cell__eng  { font-size: 9px  !important; }
+
+.split__col { padding: 12px 16px !important; }
+.split__col h3 { font-size: 16px !important; }
+.split__col p  { font-size: 12px !important; }
+
+.prog__step { padding: 10px 12px !important; }
+.prog__step-label { font-size: 8px  !important; }
+.prog__step-title { font-size: 14px !important; }
+.prog__step-body  { font-size: 11px !important; }
+
+.compare__head  { font-size: 9px  !important; }
+.compare__title { font-size: 16px !important; }
+.compare__body  { font-size: 12px !important; }
+.compare__verdict { font-size: 10px !important; }
+
+.halacha { padding: 12px 16px !important; }
+.halacha__heb   { font-size: 20px !important; }
+.halacha__english { font-size: 12px !important; }
+.halacha__label { font-size: 8px  !important; }
+
+.quote { padding: 12px 16px !important; font-size: 14px !important; }
+
+.king, .era { padding: 12px 14px !important; }
+.king h3, .era h3  { font-size: 16px !important; }
+.king p,  .era p   { font-size: 11px !important; }
+
+/* ── CLOSING ── */
+.closing {
+  padding: 20px 0 16px !important;
+  background: #333230 !important;
+  color: #EDE8DC !important;
+}
+.closing__eyebrow { font-size: 9px  !important; }
+.closing__hebrew  { font-size: 26px !important; }
+.closing__translit { font-size: 13px !important; }
+.closing__english  { font-size: 11px !important; }
+
+/* ── COLOPHON: new page ── */
+.colophon {
+  break-before: always;
+  page-break-before: always;
+  padding: 16px 0 !important;
+}
+
+/* ── DARK SECTION COLOURS ── */
+.section--ink .section__title,
+.section--ink .section__lede,
+.section--ink .section__body { color: #EDE8DC !important; }
+
+/* ── MAX-WIDTH RESETS (screen layout clamps) ── */
+.hero__title, .hero__sub,
+.section__title, .section__lede, .section__body,
+.aside, .diagram-wrap, .gemara, .callout,
+.tirutzim, .moshe-words, .progression { max-width: 100% !important; }
 
 /* ─────────────────────────────────────────
-   INDEX / BOOK PAGE  (index.html)
+   INDEX PAGE (index.html)
    ───────────────────────────────────────── */
-
-.scene,
-.hdr,
-#stage-closed,
-#stage-open,
-.nav,
-.btn-open,
-.btn-nav,
-.click-zone,
-.footer-note { display: none !important; }
+.scene, .hdr,
+#stage-closed, #stage-open,
+.nav, .btn-open, .btn-nav,
+.click-zone { display: none !important; }
 
 #print-view { display: block !important; }
 
-/* Print-view typography */
 #print-view {
   font-family: Georgia, "Times New Roman", serif;
   color: #2E2C28;
@@ -183,104 +229,68 @@ body > div[style*="margin: 0 auto"] {
 }
 #print-view .pv-masthead {
   text-align: center;
-  padding: 0 0 28px;
+  padding: 0 0 24px;
   border-bottom: 3px double #9C8660;
-  margin-bottom: 36px;
+  margin-bottom: 32px;
 }
 #print-view .pv-eyebrow {
-  font-family: Arial, sans-serif;
-  font-size: 9pt;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: #9C8660;
-  margin-bottom: 12px;
+  font-family: Arial, sans-serif; font-size: 9pt;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: #9C8660; margin-bottom: 10px;
 }
 #print-view .pv-title {
-  font-size: 32pt;
-  font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: -0.015em;
-  color: #2E2C28;
-  margin: 0 0 10px;
+  font-size: 30pt; font-weight: 400;
+  line-height: 1.1; letter-spacing: -0.015em;
+  color: #2E2C28; margin: 0 0 8px;
 }
 #print-view .pv-title em { font-style: italic; color: #9C8660; }
 #print-view .pv-sub {
-  font-size: 11pt;
-  line-height: 1.6;
-  color: #524F4D;
-  margin: 0 0 8px;
+  font-size: 10.5pt; line-height: 1.6;
+  color: #524F4D; margin: 0 0 8px;
 }
 #print-view .pv-url {
-  font-family: Arial, sans-serif;
-  font-size: 8pt;
-  color: #9C8660;
-  letter-spacing: 0.1em;
+  font-family: Arial, sans-serif; font-size: 8pt;
+  color: #9C8660; letter-spacing: 0.1em;
 }
 #print-view .pv-toc-hd {
-  font-family: Arial, sans-serif;
-  font-size: 8.5pt;
-  font-weight: 700;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
-  color: #9C8660;
-  margin-bottom: 14px;
+  font-family: Arial, sans-serif; font-size: 8pt;
+  font-weight: 700; letter-spacing: 0.26em;
+  text-transform: uppercase; color: #9C8660; margin-bottom: 12px;
 }
 #print-view .pv-sicha {
-  display: grid;
-  grid-template-columns: 28pt 1fr;
-  gap: 0 16pt;
-  padding: 18pt 0;
+  display: grid; grid-template-columns: 26pt 1fr;
+  gap: 0 14pt; padding: 16pt 0;
   border-bottom: 1px solid #CFC7B2;
-  break-inside: avoid;
-  page-break-inside: avoid;
+  break-inside: avoid; page-break-inside: avoid;
 }
 #print-view .pv-sicha:last-child { border-bottom: none; }
 #print-view .pv-num {
-  font-family: Georgia, serif;
-  font-style: italic;
-  font-size: 26pt;
-  color: #CFC7B2;
-  line-height: 1;
-  padding-top: 2pt;
-  text-align: right;
+  font-family: Georgia, serif; font-style: italic;
+  font-size: 24pt; color: #CFC7B2;
+  line-height: 1; padding-top: 2pt; text-align: right;
 }
 #print-view .pv-sicha-title {
-  font-size: 17pt;
-  font-weight: 400;
-  line-height: 1.15;
-  letter-spacing: -0.01em;
-  color: #2E2C28;
-  margin: 0 0 5pt;
+  font-size: 16pt; font-weight: 400;
+  line-height: 1.15; color: #2E2C28; margin: 0 0 4pt;
 }
 #print-view .pv-sicha-title em { font-style: italic; color: #9C8660; }
 #print-view .pv-sicha-src {
-  font-family: Arial, sans-serif;
-  font-size: 7.5pt;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #9C8660;
-  margin-bottom: 7pt;
+  font-family: Arial, sans-serif; font-size: 7pt;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: #9C8660; margin-bottom: 6pt;
 }
 #print-view .pv-sicha-desc {
-  font-size: 10pt;
-  line-height: 1.6;
-  color: #524F4D;
-  margin: 0 0 6pt;
+  font-size: 9.5pt; line-height: 1.6;
+  color: #524F4D; margin: 0 0 5pt;
 }
 #print-view .pv-sicha-url {
-  font-family: Arial, sans-serif;
-  font-size: 7.5pt;
-  color: #9C8660;
-  letter-spacing: 0.08em;
+  font-family: Arial, sans-serif; font-size: 7pt;
+  color: #9C8660; letter-spacing: 0.08em;
 }
 #print-view .pv-footer {
-  margin-top: 28pt;
-  padding-top: 14pt;
+  margin-top: 24pt; padding-top: 12pt;
   border-top: 1px solid #CFC7B2;
-  font-family: Arial, sans-serif;
-  font-size: 8pt;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #9C8660;
-  text-align: center;
+  font-family: Arial, sans-serif; font-size: 7.5pt;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: #9C8660; text-align: center;
 }
