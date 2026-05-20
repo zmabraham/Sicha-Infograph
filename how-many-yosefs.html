@@ -3,21 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shavuos &middot; Visual Likkutei Sichos</title>
-<meta property="og:title"       content="Shavuos · Visual Likkutei Sichos">
-<meta property="og:description" content="Six Shavuos sichos from the Lubavitcher Rebbe, brought to life as visual infographics — Matan Torah, mamleches kohanim, oneg, and more.">
-<meta property="og:image"       content="https://zmabraham.github.io/Sicha-Infograph/og-image.png">
-<meta property="og:image:width"  content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:url"         content="https://zmabraham.github.io/Sicha-Infograph/">
-<meta property="og:type"        content="website">
-<meta property="og:site_name"   content="Visual Likkutei Sichos">
-<meta name="twitter:card"        content="summary_large_image">
-<meta name="twitter:title"       content="Shavuos · Visual Likkutei Sichos">
-<meta name="twitter:description" content="Six Shavuos sichos from the Lubavitcher Rebbe, brought to life as visual infographics.">
-<meta name="twitter:image"       content="https://zmabraham.github.io/Sicha-Infograph/og-image.png">
-<link rel="stylesheet" media="print" href="print.css">
-<style id="design-system">
+<title>How Many Yosefs in the Marketplace · A Sicha of the Rebbe</title>
+<style>
 /* ==========================================================================
    JLI Flagship — Colors & Type
    Rohr Jewish Learning Institute · Flagship course materials
@@ -507,916 +494,1583 @@ body {
 
 </style>
 <style>
-/* =====================================================
-   SHAVUOS — VISUAL LIKKUTEI SICHOS
-   Interactive Book Landing Page  ·  v4 (7 sichos)
-   ===================================================== */
-
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-
-:root {
-  --cover-dark:   #1C1710;
-  --cover-gold:   #C4A464;
-  --page-bg:      #EDE8DC;
-  --page-alt:     #E8E3D5;
-  --page-rule:    #C8C0A8;
-  --ink:          #2E2C28;
-  --ink-2:        #524F4D;
-  --gold:         #9C8660;
-  --gold-lt:      #C4A464;
-  --scene-bg:     #100E0B;
-  --book-w:       900px;
-  --book-h:       580px;
-}
-
-html,body {
-  width:100%; height:100%;
-  background: var(--scene-bg);
-  color: var(--ink);
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
-
-.scene {
-  min-height: 100vh;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  padding: 36px 20px;
-  background: radial-gradient(ellipse 140% 100% at 50% 70%, #241C0F 0%, #0A0805 100%);
-}
-
-/* ── HEADER ── */
-.hdr {
-  text-align: center; margin-bottom: 40px;
-  opacity:0; transform:translateY(-18px);
-  animation: hdrIn 0.9s 0.25s forwards;
-}
-@keyframes hdrIn { to { opacity:1; transform:translateY(0); } }
-.hdr__eye {
-  font-family: var(--font-sans, Arial, sans-serif);
-  font-size: 9.5px; font-weight:700;
-  letter-spacing: 0.38em; text-transform: uppercase;
-  color: var(--cover-gold); opacity: 0.75; margin-bottom: 12px;
-}
-.hdr__title {
-  font-family: var(--font-serif-display, Georgia, serif);
-  font-size: 44px; font-weight: 400;
-  letter-spacing: -0.025em; line-height: 1; color: #F2EBD8;
-}
-.hdr__title em { font-style:italic; color: var(--cover-gold); }
-.hdr__heb {
-  font-family: var(--font-hebrew, serif); font-size: 22px;
-  color: rgba(196,164,100,0.5); margin-top: 6px; direction: rtl;
-}
-
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   CLOSED BOOK  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-#stage-closed {
-  display:flex; flex-direction:column; align-items:center; gap:28px;
-  transition: opacity 0.45s ease, transform 0.45s ease;
-}
-#stage-closed.hiding { opacity:0; transform:scale(0.94) translateY(10px); pointer-events:none; }
-
-.book3-wrap { perspective: 1400px; perspective-origin: 52% 38%; }
-
-.book3 {
-  position: relative; width: 240px; height: 336px;
-  transform-style: preserve-3d;
-  transform: rotateX(7deg) rotateY(-26deg);
-  transition: transform 0.5s cubic-bezier(.34,1.56,.64,1);
-  cursor: pointer;
-}
-.book3:hover { transform: rotateX(5deg) rotateY(-20deg) translateY(-8px); }
-
-.book3__front {
-  position:absolute; inset:0;
-  background: var(--cover-dark);
-  border-radius: 1px 3px 3px 1px; overflow: hidden;
-  display:flex; align-items:center; justify-content:center;
-}
-.book3__front::before {
-  content:''; position:absolute; inset:13px;
-  border: 1px solid rgba(196,164,100,0.35); pointer-events:none;
-}
-.book3__front::after {
-  content:''; position:absolute; inset:18px;
-  border: 1px solid rgba(196,164,100,0.12); pointer-events:none;
-}
-.cover-content { position:relative; z-index:2; text-align:center; padding: 0 22px; }
-.cc-heb {
-  font-family: var(--font-hebrew, serif); font-size: 54px;
-  color: var(--cover-gold); line-height: 1; margin-bottom: 8px; direction: rtl;
-}
-.cc-caps {
-  font-family: var(--font-sans, Arial, sans-serif); font-size: 8px; font-weight: 700;
-  letter-spacing: 0.44em; text-transform: uppercase;
-  color: rgba(196,164,100,0.55); margin-bottom: 14px;
-}
-.cc-serif {
-  font-family: var(--font-serif-display, Georgia, serif); font-size: 16px; font-style: italic;
-  color: rgba(240,234,214,0.88); line-height: 1.35; margin-bottom: 18px;
-}
-.cc-rule { width: 36px; height: 1px; background: rgba(196,164,100,0.45); margin: 0 auto 14px; }
-.cc-vol {
-  font-family: var(--font-sans, Arial, sans-serif); font-size: 7.5px;
-  letter-spacing: 0.28em; text-transform: uppercase; color: rgba(196,164,100,0.38);
-}
-.book3__spine {
-  position:absolute; left:0; top:0; width: 32px; height:100%;
-  background: #0F0C08;
-  transform-origin: right center; transform: rotateY(-90deg) translateX(-16px);
-  display:flex; align-items:center; justify-content:center; overflow:hidden;
-}
-.book3__spine::after {
-  content:'SHAVUOS \B7 VISUAL LIKKUTEI SICHOS';
-  font-family: var(--font-sans, Arial, sans-serif); font-size: 6.5px; font-weight:700;
-  letter-spacing:0.24em; color: rgba(196,164,100,0.35); white-space:nowrap;
-  writing-mode:vertical-rl; text-orientation:mixed; transform:rotate(180deg);
-}
-.book3__pages {
-  position:absolute; right:0; top:4px; width:10px; height:calc(100% - 8px);
-  background: repeating-linear-gradient(to bottom, #D4CEBC 0px,#D4CEBC 1px,#EDE8DC 1px,#EDE8DC 3px);
-  transform-origin: left center; transform: rotateY(90deg) translateX(5px);
-}
-.book3__top {
-  position:absolute; top:0; left:4px; width:calc(100% - 8px); height:8px;
-  background: linear-gradient(to bottom, #D4CEBC, #C8C0A8);
-  transform-origin: bottom center; transform: rotateX(90deg) translateY(-4px);
-}
-.hint {
-  font-family: var(--font-sans, Arial, sans-serif); font-size: 10px;
-  letter-spacing: 0.3em; text-transform: uppercase;
-  color: rgba(196,164,100,0.5); animation: blink 2.2s ease-in-out infinite;
-}
-@keyframes blink { 0%,100%{opacity:.5} 50%{opacity:1} }
-
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   OPEN BOOK
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-#stage-open { display:none; flex-direction:column; align-items:center; gap:26px; }
-
-.bwrap {
-  position:relative; perspective: 3200px;
-  opacity:0; transform:scale(0.96);
-  transition: opacity 0.55s ease, transform 0.55s ease;
-}
-.bwrap.visible { opacity:1; transform:scale(1); }
-
-.btn-close {
-  position:absolute; top:-14px; right:-14px; z-index:200;
-  width:34px; height:34px; border-radius:50%;
-  background: rgba(20,16,10,0.9); border: 1px solid rgba(196,164,100,0.28);
-  color: rgba(196,164,100,0.65); font-size:15px; cursor:pointer;
-  display:flex; align-items:center; justify-content:center;
-  transition: color 0.2s, border-color 0.2s;
-}
-.btn-close:hover { color:rgba(196,164,100,1); border-color:rgba(196,164,100,0.6); }
-
-.book {
-  position:relative; width: var(--book-w); height: var(--book-h);
-  transform-style: preserve-3d; transform: rotateX(1.5deg);
-  box-shadow: 0 4px 0 0 rgba(0,0,0,0.5), 0 40px 80px -10px rgba(0,0,0,0.75), 0 80px 140px -20px rgba(0,0,0,0.55);
-}
-.book::after {
-  content:''; position:absolute; bottom:-10px; left:8%; width:84%; height:14px;
-  background:rgba(0,0,0,0.5); filter:blur(10px); border-radius:50%; z-index:-1;
-}
-
-/* Static pages (background) */
-.pg-left-static, .pg-right-static {
-  position:absolute; top:0; width:50%; height:100%; z-index:1;
-}
-.pg-left-static  { left:0;  background: var(--page-bg); border-radius: 3px 0 0 3px; overflow:hidden; }
-.pg-right-static { right:0; background: var(--page-alt); border-radius: 0 3px 3px 0; overflow:hidden; }
-
-/* Spine shadow */
-.spine-shadow {
-  position:absolute; left:calc(50% - 10px); top:0; width:20px; height:100%;
-  background: linear-gradient(to right, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.26) 35%, rgba(0,0,0,0.26) 65%, rgba(0,0,0,0.12) 100%);
-  z-index:20; pointer-events:none;
-}
-.spine-shadow::after {
-  content:''; position:absolute; left:50%; top:0; transform:translateX(-50%);
-  width:1px; height:100%; background:rgba(0,0,0,0.18);
-}
-
-/* Flipping pages */
-.pg {
-  position:absolute; right:0; top:0; width:50%; height:100%;
-  transform-origin: left center; transform-style: preserve-3d;
-  transition: transform 0.88s cubic-bezier(0.645,0.045,0.355,1.000);
-  cursor: pointer; border-radius: 0 3px 3px 0;
-}
-.pg.turned { transform: rotateY(-180deg); cursor: default; }
-.pg__front, .pg__back {
-  position:absolute; inset:0; backface-visibility:hidden; -webkit-backface-visibility:hidden;
-  overflow:hidden; background: var(--page-bg);
-}
-.pg__front { border-radius: 0 3px 3px 0; box-shadow: inset -3px 0 10px rgba(0,0,0,0.07); }
-.pg__back  { transform: rotateY(180deg); border-radius: 3px 0 0 3px; box-shadow: inset 3px 0 10px rgba(0,0,0,0.07); }
-
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   PAGE INNER LAYOUT
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-.pi {
-  padding: 40px 36px 34px; height:100%;
-  display:flex; flex-direction:column; position:relative; overflow:hidden;
-}
-.pi::before {
-  content:''; position:absolute; inset:20px;
-  border:1px solid rgba(156,134,96,0.2); pointer-events:none;
-}
-.pi-eye {
-  font-family: var(--font-sans, Arial, sans-serif); font-size: 11px; font-weight:700;
-  letter-spacing: 0.34em; text-transform:uppercase; color: var(--gold); margin-bottom: 10px;
-}
-.pi-num {
-  font-family: var(--font-serif-display, Georgia, serif);
-  font-size: 72px; font-weight:400; font-style:italic; line-height:0.88;
-  color: rgba(156,134,96,0.14); letter-spacing:-0.04em; margin-bottom: 12px;
-  pointer-events:none; user-select:none;
-}
-.pi-date {
-  font-family: var(--font-sans, Arial, sans-serif); font-size: 9px;
-  letter-spacing:0.24em; text-transform:uppercase;
-  color: rgba(156,134,96,0.7); margin-bottom: 8px;
-}
-.pi-title {
-  font-family: var(--font-serif-display, Georgia, serif);
-  font-size: 26px; font-weight:400; line-height:1.2; letter-spacing:-0.012em; color: var(--ink);
-}
-.pi-title em { font-style:italic; color: var(--gold); }
-.pi-rule { width:32px; height:1px; background: var(--gold); opacity:0.55; margin: 13px 0; }
-.pi-desc {
-  font-family: var(--font-serif-display, Georgia, serif);
-  font-size: 14.5px; line-height:1.68; color: var(--ink-2); flex:1;
-}
-.pi-tags { display:flex; flex-wrap:wrap; gap:5px; margin: 11px 0; }
-.pi-tag--cat {
-  background: rgba(196,164,100,0.18);
-  color: #C4A464;
-  border-color: rgba(196,164,100,0.35);
-  font-weight: 600;
-}
-.pi-tag {
-  font-family: var(--font-sans, Arial, sans-serif); font-size: 10px; font-weight:700;
-  letter-spacing:0.18em; text-transform:uppercase; color: var(--gold);
-  border:1px solid rgba(156,134,96,0.28); padding: 4px 9px; border-radius:1px;
-}
-.pi-foot {
-  display:flex; align-items:center; justify-content:space-between;
-  padding-top:11px; border-top: 1px solid var(--page-rule); margin-top:9px;
-}
-.pi-src {
-  font-family: var(--font-sans, Arial, sans-serif); font-size: 10px;
-  letter-spacing:0.18em; text-transform:uppercase; color: rgba(156,134,96,0.6);
-}
-.pi-read {
-  position: relative;
-  z-index: 10;
-  display:inline-flex; align-items:center; gap:5px;
-  font-family: var(--font-sans, Arial, sans-serif); font-size: 10px; font-weight:700;
-  letter-spacing:0.18em; text-transform:uppercase; color: var(--ink); text-decoration:none;
-  padding: 8px 15px; border:1px solid rgba(46,44,40,0.55);
-  transition: all 0.18s; position:relative; z-index:30;
-}
-.pi-read:hover { background:var(--ink); color:var(--page-bg); }
-
-/* ── INTRO PAGE ── */
-.intro {
-  padding: 40px 36px 34px; height:100%;
-  display:flex; flex-direction:column; position:relative; overflow:hidden;
-}
-.intro::before {
-  content:''; position:absolute; inset:20px;
-  border:1px solid rgba(156,134,96,0.2); pointer-events:none;
-}
-.intro-orn { font-family: var(--font-hebrew, serif); font-size: 36px; direction:rtl; color: rgba(156,134,96,0.18); margin-bottom:14px; }
-.intro-eye { font-family: var(--font-sans, Arial, sans-serif); font-size:11px; font-weight:700; letter-spacing:0.34em; text-transform:uppercase; color: var(--gold); margin-bottom:8px; }
-.intro-title { font-family: var(--font-serif-display, Georgia, serif); font-size:24px; font-weight:400; font-style:italic; line-height:1.2; color:var(--ink); margin-bottom:13px; }
-.intro-rule { width:32px; height:1px; background:var(--gold); opacity:0.55; margin-bottom:13px; }
-.intro-body { font-family: var(--font-serif-display, Georgia, serif); font-size:13.5px; line-height:1.72; color:var(--ink-2); flex:1; }
-.intro-toc { margin-top:16px; padding-top:13px; border-top:1px solid var(--page-rule); }
-.intro-toc-hd { font-family: var(--font-sans, Arial, sans-serif); font-size:9.5px; font-weight:700; letter-spacing:0.34em; text-transform:uppercase; color:var(--gold); margin-bottom:9px; }
-.toc-row { display:flex; align-items:baseline; gap:6px; margin-bottom:6px; }
-.toc-n { font-family: var(--font-serif-display, Georgia, serif); font-size:12.5px; font-style:italic; color:var(--gold); width:20px; flex-shrink:0; }
-.toc-t { font-family: var(--font-serif-display, Georgia, serif); font-size:12.5px; line-height:1.3; color:var(--ink-2); }
-
-/* ── COLOPHON / closing ── */
-.colo {
-  padding: 40px 36px 34px; height:100%;
-  display:flex; flex-direction:column; align-items:center; justify-content:center;
-  text-align:center; position:relative; overflow:hidden;
-}
-.colo::before { content:''; position:absolute; inset:20px; border:1px solid rgba(156,134,96,0.2); pointer-events:none; }
-.colo-orn { font-family: var(--font-hebrew, serif); font-size:50px; direction:rtl; color:rgba(156,134,96,0.14); margin-bottom:20px; }
-.colo-title { font-family: var(--font-serif-display, Georgia, serif); font-size:19px; font-weight:400; font-style:italic; color:var(--ink); margin-bottom:10px; }
-.colo-rule { width:32px; height:1px; background:var(--gold); opacity:0.5; margin:0 auto 13px; }
-.colo-body { font-family: var(--font-serif-display, Georgia, serif); font-size:12px; line-height:1.72; color:var(--ink-2); max-width:250px; margin-bottom:auto; }
-.colo-foot { font-family: var(--font-sans, Arial, sans-serif); font-size:7.5px; letter-spacing:0.3em; text-transform:uppercase; color:rgba(156,134,96,0.38); margin-top:22px; }
-
-/* ── SERIES CLOSING (pg4 back) ── */
-.series-close {
-  padding: 40px 36px 34px; height:100%;
-  display:flex; flex-direction:column; align-items:center; justify-content:center;
-  text-align:center; position:relative; overflow:hidden;
-  background: var(--cover-dark);
-}
-.series-close::before { content:''; position:absolute; inset:20px; border:1px solid rgba(196,164,100,0.2); pointer-events:none; }
-.sc-orn { font-family: var(--font-hebrew, serif); font-size:50px; direction:rtl; color:rgba(196,164,100,0.18); margin-bottom:20px; }
-.sc-title { font-family: var(--font-serif-display, Georgia, serif); font-size:20px; font-weight:400; font-style:italic; color: #F0EAD6; margin-bottom:10px; }
-.sc-rule { width:32px; height:1px; background:rgba(196,164,100,0.4); margin:0 auto 13px; }
-.sc-body { font-family: var(--font-serif-display, Georgia, serif); font-size:12.5px; line-height:1.7; color:rgba(240,234,214,0.7); max-width:250px; }
-.sc-foot { font-family: var(--font-sans, Arial, sans-serif); font-size:7.5px; letter-spacing:0.3em; text-transform:uppercase; color:rgba(196,164,100,0.35); margin-top:22px; }
-.sc-eyebrow { font-family: var(--font-sans-text, Arial, sans-serif); font-weight:700; font-size:8px; letter-spacing:0.28em; text-transform:uppercase; color:rgba(196,164,100,0.5); margin-bottom:14px; }
-.sc-url { font-family: var(--font-sans, Arial, sans-serif); font-size:7.5px; letter-spacing:0.22em; text-transform:lowercase; color:rgba(196,164,100,0.3); margin-top:18px; }
-
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   NAV BAR
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-.nav-bar { display:flex; align-items:center; gap:22px; }
-.nav-btn {
-  width:42px; height:42px; border-radius:50%; background:none;
-  border:1px solid rgba(196,164,100,0.28); color:rgba(196,164,100,0.6);
-  font-size:17px; cursor:pointer; display:flex; align-items:center; justify-content:center;
-  transition: all 0.18s;
-}
-.nav-btn:hover:not(:disabled) { border-color:rgba(196,164,100,0.7); color:rgba(196,164,100,1); background:rgba(196,164,100,0.07); }
-.nav-btn:disabled { opacity:0.22; cursor:not-allowed; }
-.nav-dots { display:flex; gap:8px; align-items:center; }
-.nav-dot { width:6px; height:6px; border-radius:50%; background:rgba(196,164,100,0.2); cursor:pointer; transition: all 0.2s; }
-.nav-dot.on { background:rgba(196,164,100,0.85); transform:scale(1.25); }
-.nav-hint { font-family: var(--font-sans, Arial, sans-serif); font-size:9px; letter-spacing:0.24em; text-transform:uppercase; color:rgba(196,164,100,0.28); text-align:center; margin-top:-8px; }
-
-/* click zones */
-.click-zone { position:absolute; top:0; width:50%; height:100%; z-index:50; cursor:pointer; background:transparent; pointer-events:none; }
-.click-zone--right { right:0; }
-/* Show correct pointer on book left/right halves */
-#sOpen { cursor: default; }
-#book  { cursor: e-resize; }
-.click-zone--left  { left:0; }
-
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   RESPONSIVE — mobile = scrollable card list
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-@media(max-width:880px){
-  /* ── Hide book-cover stage; show card list immediately ── */
-  #stage-closed           { display:none !important; }
-  #stage-open             { display:flex !important; }
-  .bwrap                  { opacity:1 !important; transform:none !important; perspective:none; }
-  .btn-close, .nav-bar, .nav-hint, .mobile-counter { display:none !important; }
-
-  /* ── Book becomes a vertical stack of cards ── */
-  .book {
-    position:static; width:calc(100vw - 20px); max-width:520px;
-    height:auto; display:flex !important; flex-direction:column; gap:16px;
-    transform:none; transform-style:flat; box-shadow:none;
+  /* ============================ FOUNDATION ============================ */
+  html { background: #DDD7C7; }
+  body {
+    margin: 0;
+    background: #DDD7C7;
+    font-family: var(--font-serif-text);
+    color: var(--fg1);
+    -webkit-font-smoothing: antialiased;
   }
-  .book::after { display:none; }
-  .pg-left-static,.pg-right-static,.spine-shadow,.click-zone { display:none; }
-
-  /* ── Each .pg holds 2 cards (front + back) ── */
-  .pg {
-    position:static !important; width:100%; height:auto;
-    display:flex !important; flex-direction:column; gap:16px;
-    transform:none !important; transform-style:flat !important;
-    z-index:auto !important; cursor:default; border-radius:0;
-  }
-  .pg.turned { transform:none !important; }
-
-  /* ── Individual card faces ── */
-  .pg__front, .pg__back {
-    position:static; display:block !important; height:auto;
-    transform:none !important;
-    backface-visibility:visible !important; -webkit-backface-visibility:visible !important;
-    border-radius:4px;
-    box-shadow:0 2px 20px rgba(0,0,0,0.25);
+  .sheet {
+    max-width: 1080px;
+    margin: 28px auto 64px;
+    background: var(--jli-paper);
+    box-shadow: var(--shadow-book);
+    border-radius: 2px;
+    overflow: hidden;
   }
 
-  /* ── Card typography ── */
-  .pi         { padding:28px 22px 24px; }
-  .pi-num     { font-size:40px; margin-bottom:8px; }
-  .pi-eye     { font-size:13px; letter-spacing:0.26em; margin-bottom:8px; }
-  .pi-title   { font-size:30px; }
-  .pi-rule    { margin:14px 0; }
-  .pi-desc    { font-size:17px; line-height:1.75; }
-  .pi-tags    { gap:6px; margin:13px 0; }
-  .pi-tag     { font-size:12px; padding:5px 11px; letter-spacing:0.12em; }
-  .pi-src     { font-size:12px; }
-  .pi-read    { font-size:13px; padding:11px 18px; letter-spacing:0.12em; }
-  .pi-foot    { padding-top:14px; margin-top:10px; }
+  /* ============================ HEADER ============================ */
+  .top-rule { height: 6px; background: var(--jli-ink); }
+  .running {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 72px;
+    border-bottom: 1px solid var(--border);
+  }
+  .running__brand {
+    font-family: var(--font-sans-text);
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--fg2);
+  }
+  .running__meta {
+    font-family: var(--font-sans-text);
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--fg3);
+  }
 
-  /* ── Header ── */
-  .hdr        { margin-bottom:32px; }
-  .hdr__title { font-size:44px; }
-  .hdr__eye   { font-size:13px; letter-spacing:0.26em; }
-  .hdr__heb   { font-size:24px; }
+  /* ============================ HERO ============================ */
+  .hero {
+    padding: 68px 72px 56px;
+    border-bottom: 3px double var(--jli-ink-soft);
+    position: relative;
+  }
+  .hero__eyebrow {
+    font-family: var(--font-sans-text);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--jli-taupe);
+    margin-bottom: 22px;
+  }
+  .hero__title {
+    font-family: var(--font-serif-display);
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 1.04;
+    letter-spacing: -0.018em;
+    color: var(--fg1);
+    margin: 0 0 22px;
+    max-width: 920px;
+  }
+  .hero__title em { font-style: italic; color: var(--jli-bronze); }
+  .hero__sub {
+    font-family: var(--font-serif-text);
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--fg2);
+    max-width: 760px;
+    margin: 0 0 32px;
+  }
+  .hero__sub em { font-style: italic; color: var(--fg1); }
+  .hero__source {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: var(--font-sans-text);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--jli-taupe);
+  }
+  .hero__source::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--jli-taupe);
+  }
 
-  /* ── Scene padding for scroll ── */
-  .scene      { padding:36px 10px 60px; justify-content:flex-start; }
+  /* ============================ COMMON SECTION ============================ */
+  .section {
+    padding: 64px 72px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section--sunk { background: #EFECE3; }
+  .section--ink { background: var(--jli-ink); color: var(--jli-paper); }
+  .section__roman {
+    font-family: var(--font-serif-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 15px;
+    color: var(--jli-taupe);
+    margin-bottom: 4px;
+  }
+  .section--ink .section__roman { color: var(--jli-champagne); }
+  .section__eyebrow {
+    font-family: var(--font-sans-text);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--jli-taupe);
+    border-bottom: 2px solid var(--jli-ink);
+    padding-bottom: 10px;
+    margin-bottom: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+  }
+  .section--ink .section__eyebrow { color: var(--jli-champagne); border-bottom-color: var(--jli-champagne); }
+  .section__eyebrow .src {
+    color: var(--fg3);
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    flex-shrink: 0;
+  }
+  .section--ink .section__eyebrow .src { color: rgba(232, 228, 217, 0.5); }
+  .section__title {
+    font-family: var(--font-serif-display);
+    font-weight: 500;
+    font-size: 38px;
+    line-height: 1.1;
+    letter-spacing: -0.012em;
+    color: var(--fg1);
+    margin: 0 0 18px;
+    max-width: 820px;
+  }
+  .section--ink .section__title { color: var(--jli-paper); }
+  .section__title em { font-style: italic; color: var(--jli-bronze); }
+  .section--ink .section__title em { color: var(--jli-champagne); }
+  .section__lede {
+    font-family: var(--font-serif-text);
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--fg1);
+    max-width: 760px;
+    margin: 0 0 28px;
+  }
+  .section__lede em { font-style: italic; color: var(--fg2); }
+  .section--ink .section__lede { color: rgba(232, 228, 217, 0.85); }
+  .section--ink .section__lede em { color: var(--jli-champagne); }
+
+  /* ============================ SOURCE QUOTE (HERO) ============================ */
+  .source-quote {
+    margin: 8px 0 0;
+    background: var(--jli-paper);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--jli-champagne);
+    padding: 28px 34px;
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 28px;
+  }
+  .source-quote__plate {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: var(--jli-ink);
+    color: var(--jli-paper);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-serif-display);
+    font-weight: 500;
+    font-size: 22px;
+  }
+  .source-quote__label {
+    font-family: var(--font-sans-text);
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--jli-taupe);
+    margin-bottom: 4px;
+  }
+  .source-quote__ref {
+    font-family: var(--font-serif-display);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--fg2);
+    margin-bottom: 14px;
+  }
+  .source-quote__heb {
+    font-family: var(--font-hebrew);
+    direction: rtl;
+    font-size: 23px;
+    line-height: 1.6;
+    color: var(--fg1);
+    margin: 0 0 12px;
+  }
+  .source-quote__heb em { font-style: normal; color: var(--jli-bronze); }
+  .source-quote__en {
+    font-family: var(--font-serif-text);
+    font-style: italic;
+    font-size: 15.5px;
+    line-height: 1.55;
+    color: var(--fg1);
+    margin: 0;
+  }
+  .source-quote__rashi {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+    font-family: var(--font-serif-text);
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--fg2);
+  }
+  .source-quote__rashi strong {
+    font-family: var(--font-sans-text);
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--jli-taupe);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* ============================ FIVE DYUKIM GRID ============================ */
+  .dyukim {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin: 28px 0 0;
+    border-top: 2px solid var(--jli-ink);
+    border-bottom: 1px solid var(--border);
+  }
+  .dyuk {
+    padding: 26px 24px 28px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: var(--jli-paper);
+    position: relative;
+  }
+  .dyuk:nth-child(3n) { border-right: none; }
+  .dyuk:nth-last-child(-n+3) { border-bottom: none; }
+  .dyuk__num {
+    font-family: var(--font-serif-display);
+    font-style: italic;
+    font-size: 28px;
+    color: var(--jli-champagne);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .dyuk__heb {
+    font-family: var(--font-hebrew);
+    direction: rtl;
+    font-size: 22px;
+    color: var(--jli-bronze);
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+  .dyuk__q {
+    font-family: var(--font-serif-display);
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.3;
+    color: var(--fg1);
+    margin: 0 0 8px;
+  }
+  .dyuk__body {
+    font-family: var(--font-serif-text);
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--fg2);
+    margin: 0;
+  }
+  .dyuk__body em { font-style: italic; color: var(--jli-bronze); }
+
+  /* ============================ FAILED ANSWER ROW ============================ */
+  .verdict {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 28px 0 0;
+    border-top: 2px solid var(--jli-ink);
+    border-bottom: 1px solid var(--border);
+  }
+  .verdict__cell {
+    padding: 24px 28px;
+  }
+  .verdict__cell--prop { background: rgba(194, 164, 116, 0.06); border-right: 1px solid var(--border); }
+  .verdict__cell--fail { background: var(--jli-paper); }
+  .verdict__label {
+    font-family: var(--font-sans-text);
+    font-weight: 700;
+    font-size: 10.5px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--jli-taupe);
+    margin-bottom: 10px;
+  }
+  .verdict__cell--fail .verdict__label { color: var(--jli-burgundy); }
+  .verdict__heading {
+    font-family: var(--font-serif-display);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.3;
+    color: var(--fg1);
+    margin: 0 0 10px;
+  }
+  .verdict__body {
+    font-family: var(--font-serif-text);
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--fg1);
+    margin: 0;
+  }
+  .verdict__body em { font-style: italic; color: var(--fg2); }
+
+  /* ============================ BEFORE / AFTER MT ============================ */
+  .ba {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin: 28px 0 0;
+    border-top: 2px solid var(--jli-ink);
+    border-bottom: 1px solid var(--border);
+  }
+  .ba__col {
+    padding: 30px 28px 32px;
+  }
+  .ba__col--before {
+    background: rgba(194, 164, 116, 0.05);
+    border-right: 1px solid var(--border);
+  }
+  .ba__col--after {
+    background: var(--jli-paper);
+  }
+  .ba__era {
+    font-family: var(--font-sans-text);
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--jli-taupe);
+    margin-bottom: 6px;
+  }
+  .ba__heb {
+    font-family: var(--font-hebrew);
+    direction: rtl;
+    font-size: 22px;
+    color: var(--jli-bronze);
+    margin-bottom: 16px;
+  }
+  .ba__claim {
+    font-family: var(--font-serif-display);
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.2;
+    color: var(--fg1);
+    margin: 0 0 18px;
+  }
+  .ba__claim em { font-style: italic; color: var(--jli-bronze); }
+  .ba__row {
+    display: grid;
+    grid-template-columns: 86px 1fr;
+    gap: 14px;
+    padding: 12px 0;
+    border-top: 1px solid var(--border);
+  }
+  .ba__row:first-of-type { border-top: 1px solid var(--jli-ink); }
+  .ba__row-label {
+    font-family: var(--font-sans-text);
+    font-weight: 700;
+    font-size: 9.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--jli-taupe);
+    padding-top: 2px;
+  }
+  .ba__row-body {
+    font-family: var(--font-serif-text);
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--fg1);
+  }
+  .ba__row-body em { font-style: italic; color: var(--fg2); }
+  .ba__row-body strong { color: var(--jli-bronze); font-weight: 500; }
+
+  /* ============================ AVRAHAM OATH ============================ */
+  .avraham {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 40px;
+    align-items: start;
+  }
+  .avraham__body p {
+    font-family: var(--font-serif-text);
+    font-size: 16.5px;
+    line-height: 1.65;
+    color: var(--fg1);
+    margin: 0 0 14px;
+  }
+  .avraham__body p em { font-style: italic; color: var(--fg2); }
+  .avraham__body p strong { color: var(--jli-bronze); font-weight: 500; }
+  .avraham__card {
+    background: var(--jli-paper);
+    border: 1px solid var(--border);
+    padding: 24px 24px 26px;
+  }
+  .avraham__card-label {
+    font-family: var(--font-sans-text);
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--jli-taupe);
+    margin-bottom: 6px;
+  }
+  .avraham__card-title {
+    font-family: var(--font-serif-display);
+    font-weight: 500;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--fg1);
+    margin-bottom: 14px;
+  }
+  .avraham__card-heb {
+    font-family: var(--font-hebrew);
+    direction: rtl;
+    font-size: 19px;
+    line-height: 1.5;
+    color: var(--fg1);
+    margin: 0 0 10px;
+  }
+  .avraham__card-en {
+    font-family: var(--font-serif-text);
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--fg2);
+    margin: 0;
+  }
+  .avraham__card-src {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+    font-family: var(--font-sans-text);
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--fg3);
+    font-style: italic;
+  }
+
+  /* ============================ YOSEF DECODE ============================ */
+  .decode {
+    margin: 28px 0 0;
+    border-top: 2px solid var(--jli-ink);
+    border-bottom: 1px solid var(--border);
+  }
+  .decode__row {
+    display: grid;
+    grid-template-columns: 160px 1fr 1fr;
+    border-bottom: 1px solid var(--border);
+  }
+  .decode__row:last-child { border-bottom: none; }
+  .decode__row--head { background: #E0DBC9; }
+  .decode__row--head .decode__cell {
+    font-family: var(--font-sans-text);
+    font-weight: 700;
+    font-size: 10.5px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--jli-taupe);
+    padding: 14px 22px;
+  }
+  .decode__cell {
+    padding: 22px 22px;
+    border-right: 1px solid var(--border);
+    font-family: var(--font-serif-text);
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--fg1);
+  }
+  .decode__cell:last-child { border-right: none; }
+  .decode__cell em { font-style: italic; color: var(--fg2); }
+  .decode__cell strong { color: var(--jli-bronze); font-weight: 500; }
+  .decode__cell--word {
+    background: rgba(194, 164, 116, 0.08);
+    font-family: var(--font-hebrew);
+    direction: rtl;
+    font-size: 24px;
+    color: var(--jli-bronze);
+    display: flex;
+    align-items: center;
+  }
+  .decode__cell--word .lat {
+    font-family: var(--font-serif-display);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--fg3);
+    direction: ltr;
+    margin-right: 0;
+    margin-left: 12px;
+  }
+
+  /* ============================ THREE-STAGE TIMELINE ============================ */
+  .timeline {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin: 28px 0 0;
+    border-top: 2px solid var(--jli-ink);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .stage {
+    padding: 28px 26px 32px;
+    border-right: 1px solid var(--border);
+    position: relative;
+  }
+  .stage:last-child { border-right: none; }
+  .stage--rosh { background: rgba(194, 164, 116, 0.04); }
+  .stage--bemoed { background: rgba(194, 164, 116, 0.10); }
+  .stage--moment { background: var(--jli-ink); color: var(--jli-paper); }
+  .stage__when {
+    font-family: var(--font-sans-text);
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--jli-taupe);
+    margin-bottom: 6px;
+  }
+  .stage--moment .stage__when { color: var(--jli-champagne); }
+  .stage__when--final { color: var(--jli-bronze); }
+  .stage__heb {
+    font-family: var(--font-hebrew);
+    direction: rtl;
+    font-size: 26px;
+    line-height: 1.25;
+    color: var(--fg1);
+    margin: 0 0 10px;
+  }
+  .stage--moment .stage__heb { color: var(--jli-paper); }
+  .stage__name {
+    font-family: var(--font-serif-display);
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 1.25;
+    color: var(--fg1);
+    margin: 0 0 14px;
+  }
+  .stage--moment .stage__name { color: var(--jli-paper); }
+  .stage__name em { font-style: italic; color: var(--jli-bronze); }
+  .stage--moment .stage__name em { color: var(--jli-champagne); }
+  .stage__body {
+    font-family: var(--font-serif-text);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--fg1);
+    margin: 0;
+  }
+  .stage--moment .stage__body { color: rgba(232, 228, 217, 0.85); }
+  .stage__body em { font-style: italic; color: var(--fg2); }
+  .stage--moment .stage__body em { color: var(--jli-champagne); }
+  .stage__verdict {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+    font-family: var(--font-sans-text);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--jli-taupe);
+  }
+  .stage--moment .stage__verdict { border-top-color: rgba(232, 228, 217, 0.18); color: var(--jli-champagne); }
+  .stage__verdict strong {
+    color: var(--jli-burgundy);
+    font-weight: 700;
+  }
+  .stage--moment .stage__verdict strong { color: var(--jli-paper); }
+
+  /* ============================ TWO-COL with aside ============================ */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 40px;
+    align-items: start;
+  }
+  .two-col p {
+    font-family: var(--font-serif-text);
+    font-size: 16.5px;
+    line-height: 1.65;
+    color: var(--fg1);
+    margin: 0 0 14px;
+  }
+  .two-col p em { font-style: italic; color: var(--fg2); }
+  .two-col p strong { color: var(--jli-bronze); font-weight: 500; }
+  .section--ink .two-col p { color: rgba(232, 228, 217, 0.88); }
+  .section--ink .two-col p em { color: var(--jli-champagne); }
+  .section--ink .two-col p strong { color: var(--jli-champagne); }
+
+  .aside {
+    border-left: 1px solid var(--border);
+    padding: 4px 0 4px 22px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--fg2);
+    font-family: var(--font-sans);
+  }
+  .section--ink .aside { border-left-color: rgba(232, 228, 217, 0.2); color: rgba(232, 228, 217, 0.7); }
+  .aside__label {
+    font-family: var(--font-sans-text);
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--jli-taupe);
+    margin-bottom: 8px;
+  }
+  .section--ink .aside__label { color: var(--jli-champagne); }
+  .aside__hebrew {
+    font-family: var(--font-hebrew);
+    direction: rtl;
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--fg1);
+    margin: 4px 0 10px;
+  }
+  .section--ink .aside__hebrew { color: var(--jli-paper); }
+  .aside p { margin: 0 0 10px; font-family: var(--font-sans); font-size: 13.5px; line-height: 1.55; }
+  .aside__src {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+    font-family: var(--font-sans-text);
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--fg3);
+    font-style: italic;
+  }
+  .section--ink .aside__src { border-top-color: rgba(232, 228, 217, 0.18); color: rgba(232, 228, 217, 0.5); }
+
+  /* ============================ CALLOUT ============================ */
+  .callout {
+    background: var(--jli-ink);
+    color: var(--jli-paper);
+    padding: 36px 44px;
+    margin: 28px 0 0;
+  }
+  .callout--inverted {
+    background: var(--jli-paper);
+    color: var(--fg1);
+    border-top: 2px solid var(--jli-ink);
+    border-bottom: 2px solid var(--jli-ink);
+  }
+  .callout__label {
+    font-family: var(--font-sans-text);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--jli-champagne);
+    margin-bottom: 14px;
+  }
+  .callout--inverted .callout__label { color: var(--jli-taupe); }
+  .callout__body {
+    font-family: var(--font-serif-display);
+    font-style: italic;
+    font-size: 23px;
+    line-height: 1.35;
+    color: var(--jli-paper);
+    margin: 0;
+    max-width: 820px;
+  }
+  .callout--inverted .callout__body { color: var(--fg1); }
+  .callout__body strong { font-weight: 500; font-style: normal; color: var(--jli-champagne); }
+  .callout--inverted .callout__body strong { color: var(--jli-bronze); }
+
+  /* ============================ WHY-RAV-YOSEF ============================ */
+  .yosef-why {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 28px 0 0;
+    border-top: 2px solid var(--jli-ink);
+    border-bottom: 1px solid var(--border);
+  }
+  .yw {
+    padding: 28px 28px 30px;
+    border-right: 1px solid var(--border);
+  }
+  .yw:last-child { border-right: none; }
+  .yw--problem { background: rgba(107, 30, 42, 0.04); }
+  .yw--answer { background: rgba(194, 164, 116, 0.06); }
+  .yw__num {
+    font-family: var(--font-serif-display);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--jli-taupe);
+    margin-bottom: 8px;
+  }
+  .yw__label {
+    font-family: var(--font-sans-text);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--jli-taupe);
+    margin-bottom: 14px;
+  }
+  .yw__title {
+    font-family: var(--font-serif-display);
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.2;
+    color: var(--fg1);
+    margin: 0 0 14px;
+  }
+  .yw__title em { font-style: italic; color: var(--jli-bronze); }
+  .yw__body {
+    font-family: var(--font-serif-text);
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--fg1);
+    margin: 0 0 12px;
+  }
+  .yw__body em { font-style: italic; color: var(--fg2); }
+  .yw__body strong { color: var(--jli-bronze); font-weight: 500; }
+  .yw__quote {
+    font-family: var(--font-hebrew);
+    direction: rtl;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--jli-bronze);
+    margin: 14px 0 6px;
+    padding: 12px 14px;
+    background: var(--jli-paper);
+    border: 1px solid var(--border);
+  }
+  .yw__qcap {
+    font-family: var(--font-sans-text);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--fg3);
+    font-style: italic;
+  }
+
+  /* ============================ FINAL PROGRESSION ============================ */
+  .progression {
+    margin: 8px 0 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    align-items: stretch;
+    border-top: 2px solid var(--jli-champagne);
+  }
+  .prog__step {
+    padding: 26px 26px;
+    border-right: 1px solid rgba(232, 228, 217, 0.18);
+  }
+  .prog__step:last-child { border-right: none; }
+  .prog__num {
+    font-family: var(--font-serif-display);
+    font-style: italic;
+    font-size: 30px;
+    color: var(--jli-champagne);
+    line-height: 1;
+    margin-bottom: 14px;
+  }
+  .prog__heading {
+    font-family: var(--font-sans-text);
+    font-weight: 700;
+    font-size: 10.5px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--jli-champagne);
+    margin-bottom: 8px;
+  }
+  .prog__what {
+    font-family: var(--font-serif-display);
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 1.25;
+    color: var(--jli-paper);
+    margin: 0 0 10px;
+  }
+  .prog__note {
+    font-family: var(--font-serif-text);
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: rgba(232, 228, 217, 0.74);
+    margin: 0;
+  }
+  .prog__note em { color: var(--jli-paper); font-style: italic; }
+
+  /* ============================ FOOTER ============================ */
+  .closing {
+    background: var(--jli-ink);
+    color: var(--jli-paper);
+    padding: 72px 72px 56px;
+    text-align: center;
+  }
+  .closing__eyebrow {
+    font-family: var(--font-sans-text);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--jli-champagne);
+    margin-bottom: 24px;
+  }
+  .closing__hebrew {
+    font-family: var(--font-hebrew);
+    direction: rtl;
+    font-size: 38px;
+    line-height: 1.35;
+    color: var(--jli-paper);
+    margin-bottom: 18px;
+  }
+  .closing__translit {
+    font-family: var(--font-serif-display);
+    font-style: italic;
+    font-size: 20px;
+    color: var(--jli-champagne);
+    margin-bottom: 14px;
+  }
+  .closing__english {
+    font-family: var(--font-serif-text);
+    font-size: 16px;
+    line-height: 1.65;
+    color: rgba(232, 228, 217, 0.82);
+    max-width: 680px;
+    margin: 0 auto 40px;
+  }
+  .closing__english em { color: var(--jli-paper); font-style: italic; }
+  .colophon {
+    border-top: 1px solid rgba(232, 228, 217, 0.18);
+    padding-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 780px;
+    margin: 0 auto;
+    font-family: var(--font-sans-text);
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: rgba(232, 228, 217, 0.55);
+  }
+
+  .heb { font-family: var(--font-hebrew); direction: rtl; display: inline-block; }
+  .accent { color: var(--jli-bronze); }
+</style>
+<style>
+/* hide year/date references */
+.running__meta, .hero__source, .colophon, .part-divider__src { display: none !important; }
+</style>
+<style media="print">
+/* ============================================================
+   PRINT STYLESHEET — Visual Likkutei Sichos
+   US Letter 8.5×11 — full-width paragraphs, compact text.
+   ============================================================ */
+
+@page {
+  size: letter portrait;
+  margin: 0.35in 0.40in;
+}
+@page :first { margin-top: 0.40in; }
+
+*, *::before, *::after {
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
 }
 
-@media(max-width:430px){
-  .pi         { padding:22px 16px 20px; }
-  .pi-title   { font-size:27px; }
-  .pi-desc    { font-size:16px; }
-  .pi-num     { font-size:34px; }
-  .hdr__title { font-size:38px; }
-  .hdr        { margin-bottom:24px; }
+/* ── GLOBAL ── */
+html { background: white !important; }
+body {
+  background: white !important;
+  min-height: auto !important;
+  display: block !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
+.print-fab { display: none !important; }
+#__bundler_loading,
+#__bundler_thumbnail { display: none !important; }
+
+/* ── SHEET: full width, no clipping ── */
+.sheet {
+  max-width:     100%    !important;
+  width:         100%    !important;
+  margin:        0       !important;
+  overflow:      visible !important;
+  box-shadow:    none    !important;
+  border-radius: 0       !important;
+  background:    white   !important;
+}
+/* React-bundle body centering */
+body > div[style*="max-width"],
+body > div[style*="margin: 0 auto"] {
+  max-width: 100%    !important;
+  margin:    0       !important;
+  overflow:  visible !important;
+  box-shadow: none   !important;
+}
+
+/* ── RUNNING HEADER ── */
+.top-rule { height: 3px !important; break-after: avoid; }
+.running {
+  padding:    7px 0 !important;
+  break-after: avoid;
+}
+.running__brand,
+.running__meta { font-size: 8px !important; }
+
+/* ── HERO ── */
+.hero {
+  padding:    20px 0 16px !important;
+  break-after: avoid;
+}
+.hero__eyebrow { font-size: 9px  !important; margin-bottom: 10px !important; }
+.hero__title   { font-size: 28px !important; line-height: 1.08   !important;
+                 max-width: 100% !important; margin-bottom: 10px !important; }
+.hero__sub     { font-size: 12px !important; line-height: 1.55   !important;
+                 max-width: 100% !important; margin-bottom: 14px !important; }
+.hero__source  { font-size: 9px  !important; }
+
+/* ── SECTIONS ── */
+.section {
+  padding:     16px 0 14px !important;
+  border-bottom: 1px solid #D0CAB8 !important;
+  break-before: auto;
+  break-after:  auto;
+  break-inside: auto;
+}
+.section--sunk { background: #F2EFE8 !important; padding: 16px 12px 14px !important; }
+.section--ink  { background: #333230 !important; color: #EDE8DC !important;
+                 padding: 16px 12px 14px !important; }
+
+.section__roman   { font-size: 11px !important; margin-bottom: 2px  !important; }
+.section__eyebrow { font-size: 9px  !important; padding-bottom: 7px !important;
+                    margin-bottom: 12px !important;
+                    break-after: avoid; page-break-after: avoid; }
+.section__title   { font-size: 18px !important; line-height: 1.15 !important;
+                    break-after: avoid; page-break-after: avoid; }
+.section__lede    { font-size: 12px !important; line-height: 1.6  !important;
+                    max-width: 100% !important; orphans: 3; widows: 3; }
+.section__body    { font-size: 12px !important; line-height: 1.6  !important;
+                    max-width: 100% !important; }
+
+/* ── KEEP ATOMIC BLOCKS TOGETHER ── */
+.callout, .callout--inverted,
+.keydef, .dirah-def,
+.aside,
+.halacha, .gemara,
+.besht, .chitat,
+.moshe-words,
+.diagram-wrap,
+.compare, .split,
+.quote,
+.tirutzim, .tirutz,
+.prog__step, .progression,
+.king, .era,
+.m-row, .rule-row,
+.two-col, .trio, .eras, .matchup,
+.part-divider,
+.colophon,
+.closing {
+  break-inside:      avoid;
+  page-break-inside: avoid;
+}
+.diagram-cap { break-before: avoid; page-break-before: avoid; }
+
+/* ── CONTENT BLOCK SIZING ── */
+.gemara {
+  padding: 12px 16px !important;
+  gap: 14px !important;
+}
+.gemara__plate {
+  width: 40px !important; height: 40px !important;
+  font-size: 18px !important;
+}
+.gemara__exchange { font-size: 12px !important; line-height: 1.55 !important; }
+.gemara__label    { font-size: 8px  !important; }
+.gemara__ref      { font-size: 9px  !important; }
+
+.callout, .callout--inverted {
+  padding: 14px 18px !important;
+  background: #333230 !important;
+  color: #EDE8DC !important;
+}
+.callout__label { font-size: 8px  !important; }
+.callout__body  { font-size: 15px !important; line-height: 1.45 !important; }
+
+.tirutz, .tirutzim { padding: 10px 14px 12px !important; }
+.tirutzim { gap: 12px !important; }
+.tirutz__label  { font-size: 8px  !important; }
+.tirutz__title  { font-size: 18px !important; }
+.tirutz__body   { font-size: 12px !important; line-height: 1.55 !important; }
+.tirutz__verdict{ font-size: 9px  !important; }
+
+.keydef, .dirah-def {
+  padding: 12px 16px 10px !important;
+}
+.keydef__label, .dirah-def__label { font-size: 8px  !important; }
+.keydef__heb,   .dirah-def__heb   { font-size: 22px !important; }
+.keydef__eng,   .dirah-def__eng   { font-size: 13px !important; }
+.keydef__src,   .dirah-def__src   { font-size: 9px  !important; }
+
+.aside { padding: 4px 0 4px 14px !important; font-size: 11px !important; }
+.aside p { font-size: 11px !important; }
+.aside__label { font-size: 8px !important; }
+
+.moshe-words { padding: 10px 14px 8px !important; }
+.mw-cell { padding: 10px 10px 4px !important; }
+.mw-cell__heb  { font-size: 18px !important; }
+.mw-cell__eng  { font-size: 9px  !important; }
+
+.split__col { padding: 12px 16px !important; }
+.split__col h3 { font-size: 16px !important; }
+.split__col p  { font-size: 12px !important; }
+
+.prog__step { padding: 10px 12px !important; }
+.prog__step-label { font-size: 8px  !important; }
+.prog__step-title { font-size: 14px !important; }
+.prog__step-body  { font-size: 11px !important; }
+
+.compare__head  { font-size: 9px  !important; }
+.compare__title { font-size: 16px !important; }
+.compare__body  { font-size: 12px !important; }
+.compare__verdict { font-size: 10px !important; }
+
+.halacha { padding: 12px 16px !important; }
+.halacha__heb   { font-size: 20px !important; }
+.halacha__english { font-size: 12px !important; }
+.halacha__label { font-size: 8px  !important; }
+
+.quote { padding: 12px 16px !important; font-size: 14px !important; }
+
+.king, .era { padding: 12px 14px !important; }
+.king h3, .era h3  { font-size: 16px !important; }
+.king p,  .era p   { font-size: 11px !important; }
+
+/* ── CLOSING ── */
+.closing {
+  padding: 20px 0 16px !important;
+  background: #333230 !important;
+  color: #EDE8DC !important;
+}
+.closing__eyebrow { font-size: 9px  !important; }
+.closing__hebrew  { font-size: 26px !important; }
+.closing__translit { font-size: 13px !important; }
+.closing__english  { font-size: 11px !important; }
+
+/* ── COLOPHON: new page ── */
+.colophon {
+  break-before: always;
+  page-break-before: always;
+  padding: 16px 0 !important;
+}
+
+/* ── DARK SECTION COLOURS ── */
+.section--ink .section__title,
+.section--ink .section__lede,
+.section--ink .section__body { color: #EDE8DC !important; }
+
+/* ── MAX-WIDTH RESETS (screen layout clamps) ── */
+.hero__title, .hero__sub,
+.section__title, .section__lede, .section__body,
+.aside, .diagram-wrap, .gemara, .callout,
+.tirutzim, .moshe-words, .progression { max-width: 100% !important; }
+
+/* ─────────────────────────────────────────
+   INDEX PAGE (index.html)
+   ───────────────────────────────────────── */
+.scene, .hdr,
+#stage-closed, #stage-open,
+.nav, .btn-open, .btn-nav,
+.click-zone { display: none !important; }
+
+#print-view { display: block !important; }
+
+#print-view {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #2E2C28;
+  background: white;
+}
+#print-view .pv-masthead {
+  text-align: center;
+  padding: 0 0 24px;
+  border-bottom: 3px double #9C8660;
+  margin-bottom: 32px;
+}
+#print-view .pv-eyebrow {
+  font-family: Arial, sans-serif; font-size: 9pt;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: #9C8660; margin-bottom: 10px;
+}
+#print-view .pv-title {
+  font-size: 30pt; font-weight: 400;
+  line-height: 1.1; letter-spacing: -0.015em;
+  color: #2E2C28; margin: 0 0 8px;
+}
+#print-view .pv-title em { font-style: italic; color: #9C8660; }
+#print-view .pv-sub {
+  font-size: 10.5pt; line-height: 1.6;
+  color: #524F4D; margin: 0 0 8px;
+}
+#print-view .pv-url {
+  font-family: Arial, sans-serif; font-size: 8pt;
+  color: #9C8660; letter-spacing: 0.1em;
+}
+#print-view .pv-toc-hd {
+  font-family: Arial, sans-serif; font-size: 8pt;
+  font-weight: 700; letter-spacing: 0.26em;
+  text-transform: uppercase; color: #9C8660; margin-bottom: 12px;
+}
+#print-view .pv-sicha {
+  display: grid; grid-template-columns: 26pt 1fr;
+  gap: 0 14pt; padding: 16pt 0;
+  border-bottom: 1px solid #CFC7B2;
+  break-inside: avoid; page-break-inside: avoid;
+}
+#print-view .pv-sicha:last-child { border-bottom: none; }
+#print-view .pv-num {
+  font-family: Georgia, serif; font-style: italic;
+  font-size: 24pt; color: #CFC7B2;
+  line-height: 1; padding-top: 2pt; text-align: right;
+}
+#print-view .pv-sicha-title {
+  font-size: 16pt; font-weight: 400;
+  line-height: 1.15; color: #2E2C28; margin: 0 0 4pt;
+}
+#print-view .pv-sicha-title em { font-style: italic; color: #9C8660; }
+#print-view .pv-sicha-src {
+  font-family: Arial, sans-serif; font-size: 7pt;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: #9C8660; margin-bottom: 6pt;
+}
+#print-view .pv-sicha-desc {
+  font-size: 9.5pt; line-height: 1.6;
+  color: #524F4D; margin: 0 0 5pt;
+}
+#print-view .pv-sicha-url {
+  font-family: Arial, sans-serif; font-size: 7pt;
+  color: #9C8660; letter-spacing: 0.08em;
+}
+#print-view .pv-footer {
+  margin-top: 24pt; padding-top: 12pt;
+  border-top: 1px solid #CFC7B2;
+  font-family: Arial, sans-serif; font-size: 7.5pt;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: #9C8660; text-align: center;
+}
+
 </style>
 </head>
 <body>
-<div class="scene">
+  <div class="sheet">
 
-  <!-- ── HEADER ── -->
-  <header class="hdr">
-    <div class="hdr__eye">Likkutei Sichos &middot; Visual Study Series</div>
-    <h1 class="hdr__title">Shavuos <em>Sichos</em></h1>
-    <div class="hdr__heb">שבועות</div>
-  </header>
+    <!-- ============================ MASTHEAD ============================ -->
+    <div class="top-rule"></div>
+    <div class="running">
+      <div class="running__brand">Likkutei Sichos · Infographic</div>
+      <div class="running__meta">Vol. 16 · p. 211 · Acharon Shel Pesach &amp; Yom Beis Shavuos 5736</div>
+    </div>
 
-  <!-- ═══════════════════════════════════════════
-       CLOSED BOOK STAGE
-  ══════════════════════════════════════════════ -->
-  <div id="stage-closed">
-    <div class="book3-wrap">
-      <div class="book3" id="btn-open" role="button" tabindex="0" aria-label="Open the book">
-        <div class="book3__spine"></div>
-        <div class="book3__pages"></div>
-        <div class="book3__top"></div>
-        <div class="book3__front">
-          <div class="cover-content">
-            <div class="cc-heb">שבועות</div>
-            <div class="cc-caps">Shavuos</div>
-            <div class="cc-serif">A Visual<br>Likkutei Sichos</div>
-            <div class="cc-rule"></div>
-            <div class="cc-vol">Six Sichos</div>
+    <!-- ============================ HERO ============================ -->
+    <section class="hero">
+      <div class="hero__eyebrow">A Sicha of the Lubavitcher Rebbe</div>
+      <h1 class="hero__title">How Many <em>Yosefs</em> in the Marketplace — what one line of Rav Yosef hides about Matan Torah.</h1>
+      <p class="hero__sub">Rav Yosef makes a feast every Shavuos and, lifting his cup, says a single sentence about himself. The Rebbe reads that sentence six times, in six different ways, until a chiddush about Matan Torah falls out: the day did not only <em>command</em> — it changed what an <em>object</em> can become.</p>
+      <div class="hero__source">From a sicha · printed in Likkutei Sichos vol. 16</div>
+
+      <div class="source-quote">
+        <div class="source-quote__plate">3</div>
+        <div>
+          <div class="source-quote__label">The Gemara · Talmud Bavli</div>
+          <div class="source-quote__ref">Pesachim 68b</div>
+          <p class="source-quote__heb">רַב יוֹסֵף בְּיוֹמָא דַעֲצַרְתָּא אָמַר עַבְדִי לִי <em>עִגְלָא תִּלְתָּא</em>. אָמַר: <em>אִי לָאו הַאי יוֹמָא דְּקָא גָּרִים — כַּמָּה יוֹסֵף אִיכָּא בְּשׁוּקָא!</em></p>
+          <p class="source-quote__en">Rav Yosef, on the day of Shavuos, would say: "Prepare for me a choice calf." He would say: "Were it not for this day that caused — how many Yosefs are there in the marketplace!"</p>
+          <div class="source-quote__rashi">
+            <strong>Rashi, ad loc.</strong>
+            <em>"Were it not for this day that caused"</em> — that I learned Torah and was elevated (<span class="heb">וְנִתְרוֹמַמְתִּי</span>). Otherwise there are many men in the marketplace named Yosef.
           </div>
         </div>
       </div>
-    </div>
-    <p class="hint">Click to open</p>
+    </section>
+
+    <!-- ============================ § I · FIVE DYUKIM ============================ -->
+    <section class="section">
+      <div class="section__roman">i.</div>
+      <div class="section__eyebrow">
+        <span>Six questions on one line</span>
+        <span class="src">§ 1, § 3, § 7 · The puzzles</span>
+      </div>
+      <h2 class="section__title">Every word in Rav Yosef's sentence is the wrong word.</h2>
+      <p class="section__lede">The Rebbe is reading a sentence Rashi has already explained in the plainest possible way. And yet, on a slow second reading, the line falls apart into five separate problems — five places where Rav Yosef said something he didn't have to say, or said the thing he meant in a way that doesn't fit it.</p>
+
+      <div class="dyukim">
+        <div class="dyuk">
+          <div class="dyuk__num">i.</div>
+          <div class="dyuk__heb">הַאי יוֹמָא</div>
+          <h3 class="dyuk__q">"This day" — why?</h3>
+          <p class="dyuk__body">If, per Rashi, Rav Yosef means his own Torah-learning, why say it covertly as <em>"this day"</em>? Why not just say <em>"were it not for Torah"</em>?</p>
+        </div>
+        <div class="dyuk">
+          <div class="dyuk__num">ii.</div>
+          <div class="dyuk__heb">לִפְנֵי מַתַּן תּוֹרָה</div>
+          <h3 class="dyuk__q">Torah was learned before this day.</h3>
+          <p class="dyuk__body">The Avos sat in yeshivah, learned Torah, kept the mitzvos. Why pin Rav Yosef's elevation to a day that, for Torah-learning, isn't the beginning?</p>
+        </div>
+        <div class="dyuk">
+          <div class="dyuk__num">iii.</div>
+          <div class="dyuk__heb">דְּקָא גָּרִים</div>
+          <h3 class="dyuk__q">"That caused" — superfluous.</h3>
+          <p class="dyuk__body">"Were it not for this day" would have said it. Why add <em>"that caused"</em>? And why this particular word — <em>gorem</em> (an indirect cause), not <em>oseh</em> (does)?</p>
+        </div>
+        <div class="dyuk">
+          <div class="dyuk__num">iv.</div>
+          <div class="dyuk__heb">כַּמָּה יוֹסֵף</div>
+          <h3 class="dyuk__q">Why his own name?</h3>
+          <p class="dyuk__body">"How many <em>people</em> in the marketplace" would have made the same point. Rashi underlines it — <em>"there are many men in the marketplace named Yosef."</em> The name itself is doing work.</p>
+        </div>
+        <div class="dyuk">
+          <div class="dyuk__num">v.</div>
+          <div class="dyuk__heb">בְּשׁוּקָא</div>
+          <h3 class="dyuk__q">Why "in the marketplace"?</h3>
+          <p class="dyuk__body">"How many Yosefs there are" suffices. And the cheap reading — that the shuk is the opposite of the beis midrash he's sitting in — doesn't work: <em>without</em> Matan Torah, there is no beis midrash to contrast with anyway.</p>
+        </div>
+        <div class="dyuk">
+          <div class="dyuk__num">vi.</div>
+          <div class="dyuk__heb">וְנִתְרוֹמַמְתִּי</div>
+          <h3 class="dyuk__q">"And I was elevated."</h3>
+          <p class="dyuk__body">Rashi adds a word Rav Yosef didn't say. Where does <em>"and I was elevated"</em> come from — and why doesn't the plain reading ("I'm one of many learned Jews") suffice?</p>
+        </div>
+      </div>
+
+      <div class="verdict">
+        <div class="verdict__cell verdict__cell--prop">
+          <div class="verdict__label">A tempting first answer</div>
+          <h3 class="verdict__heading">"This day" = the day Israel became Hashem's chosen people.</h3>
+          <p class="verdict__body">Maybe "האי יומא" doesn't mean "the day of Torah" at all. It's the day of <em>"וִהְיִיתֶם לִי סְגֻלָּה מִכָּל הָעַמִּים"</em> — when Hashem chose Israel from all nations. So Rav Yosef is set apart from all the gentile "Yosefs" in the marketplace.</p>
+        </div>
+        <div class="verdict__cell verdict__cell--fail">
+          <div class="verdict__label">Why it fails</div>
+          <h3 class="verdict__heading">Two problems Rashi won't allow.</h3>
+          <p class="verdict__body">(1) Rashi explicitly writes <em>"that I learned Torah"</em> — not "that I am a Jew." (2) The whole Gemara is talking about <em>maalas haTorah</em>, before and after. And — most decisively — Rav Yosef is claiming a <em>maalah in himself</em> over other Jews. "Chosenness" is shared by every Jew.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ § II · GAVRA / CHEFTZA ============================ -->
+    <section class="section section--sunk">
+      <div class="section__roman">ii.</div>
+      <div class="section__eyebrow">
+        <span>The chiddush is hiding in a single halachic distinction</span>
+        <span class="src">§ 4 · The yesod</span>
+      </div>
+      <h2 class="section__title">Before Sinai a mitzvah reached only the <em>person</em>. After Sinai it reaches the <em>object</em>.</h2>
+      <p class="section__lede">Take seriously that the Avos kept the whole Torah. Then ask the precise question: what, then, was Matan Torah <em>adding</em>? The answer the Rebbe puts forward is not about the <em>gavra</em> — the doer's reward — but about the <em>cheftza</em>, the object the mitzvah is done with. Before Sinai, the act was a private spiritual achievement. After Sinai, the act <em>changes the thing in your hand.</em></p>
+
+      <div class="ba">
+        <div class="ba__col ba__col--before">
+          <div class="ba__era">Before Matan Torah</div>
+          <div class="ba__heb">אֵינוֹ מְצֻוֶּה וְעוֹשֶׂה</div>
+          <h3 class="ba__claim">An act done out of one's own initiative.</h3>
+          <div class="ba__row">
+            <div class="ba__row-label">Source</div>
+            <div class="ba__row-body"><em>"קִיֵּם אַבְרָהָם אָבִינוּ כָּל הַתּוֹרָה כֻּלָּהּ עַד שֶׁלֹּא נִתְּנָה."</em> The Avos kept everything — but as <strong>not-commanded</strong>, doing.</div>
+          </div>
+          <div class="ba__row">
+            <div class="ba__row-label">The effect</div>
+            <div class="ba__row-body">Reaches only the <strong>gavra</strong>. The person becomes a person who has done this act. There is reward, kedushah, spiritual achievement — <em>in him.</em></div>
+          </div>
+          <div class="ba__row">
+            <div class="ba__row-label">The object</div>
+            <div class="ba__row-body">Unchanged. Avraham's "esrog" stays an esrog. No <em>chalos</em> takes hold of it. There is no such thing yet as a <em>cheftza shel mitzvah</em>.</div>
+          </div>
+          <div class="ba__row">
+            <div class="ba__row-label">Why</div>
+            <div class="ba__row-body">A change inside a thing requires a tzivui from <em>the Borei</em> of that thing. Without His command, the most a created person can do is move himself.</div>
+          </div>
+        </div>
+        <div class="ba__col ba__col--after">
+          <div class="ba__era">After Matan Torah</div>
+          <div class="ba__heb">מְצֻוֶּה וְעוֹשֶׂה</div>
+          <h3 class="ba__claim">An act ordered by the One who made the object.</h3>
+          <div class="ba__row">
+            <div class="ba__row-label">Source</div>
+            <div class="ba__row-body">All 613 commanded through Moshe to all of Israel. Now a Jew acts <strong>under tzivui</strong> — and the Borei's command can rewrite His own creation.</div>
+          </div>
+          <div class="ba__row">
+            <div class="ba__row-label">The effect</div>
+            <div class="ba__row-body">Reaches the <strong>cheftza</strong>. The mitzvah-act now changes the very thing it's done with. A <em>shinui b'mehus</em> — a change in essence, not just in posture toward it.</div>
+          </div>
+          <div class="ba__row">
+            <div class="ba__row-label">The object</div>
+            <div class="ba__row-body">Becomes a <em>cheftza shel mitzvah.</em> Tefillin are now <em>tefillin</em>, not leather boxes. The esrog is now an esrog of mitzvah. Conversely — an issur object becomes <em>"dovor mesuav."</em></div>
+          </div>
+          <div class="ba__row">
+            <div class="ba__row-label">Why</div>
+            <div class="ba__row-body">Because the same Borei who created the thing has now told a person what to do with it. His tzivui flows through the doer into the cheftza, and the thing is no longer the thing it was.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout--inverted" style="margin-top: 0;">
+        <div class="callout__label">The single line that contains the whole reading</div>
+        <p class="callout__body">Before Sinai a mitzvah was a story about a <strong>person</strong>. After Sinai a mitzvah is a story about a <strong>world</strong>. Matan Torah did not give Jews their first mitzvos — it gave their mitzvos the power to <em>reach into the cheftza</em> of the world they were doing them with.</p>
+      </div>
+    </section>
+
+    <!-- ============================ § III · AVRAHAM'S OATH ============================ -->
+    <section class="section">
+      <div class="section__roman">iii.</div>
+      <div class="section__eyebrow">
+        <span>The proof from Avraham's oath</span>
+        <span class="src">§ 5 · Why he used his bris and nothing else</span>
+      </div>
+      <h2 class="section__title">Of all the mitzvos Avraham kept, only <em>one</em> could be sworn on.</h2>
+
+      <div class="avraham">
+        <div class="avraham__body">
+          <p>When Avraham wants Eliezer to swear that he will not take a Canaanite wife for Yitzchak, he says: <em>"Place your hand under my thigh"</em> — under the place of milah. An oath in Torah is sworn on a <strong>cheftza shel mitzvah</strong>; you have to grip a holy object in your hand. So far so good.</p>
+          <p>But the question almost answers itself: <em>this is not modest.</em> Avraham could have asked Eliezer to grip a different mitzvah-object. He kept the entire Torah — surely a tallis was within reach.</p>
+          <p>The pshat: <strong>he had no other cheftza shel mitzvah.</strong> Every other mitzvah Avraham kept, he kept voluntarily, <em>before</em> being commanded. None of those acts had reached into their objects. Only milah — on which he had actually been commanded — had produced something holy enough in itself to swear on.</p>
+          <p>And even <em>that</em> waited for its full shleimus until Sinai. Rambam writes: <em>"We do not circumcise because Avraham circumcised himself; we circumcise because Hashem commanded us through Moshe."</em> The single individual tzivui to a single person gave the act enough cheftza-reality to swear on — but not enough to fully transform an object until all 613 were given to all of Israel, through Moshe.</p>
+        </div>
+        <div class="avraham__card">
+          <div class="avraham__card-label">The verse</div>
+          <div class="avraham__card-title">Chayei Sarah · Bereishis 24:2</div>
+          <p class="avraham__card-heb">שִׂים נָא יָדְךָ תַּחַת יְרֵכִי וְאַשְׁבִּיעֲךָ בַּה' אֱלֹקֵי הַשָּׁמַיִם וֵאלֹקֵי הָאָרֶץ.</p>
+          <p class="avraham__card-en">"Place your hand under my thigh, and I will make you swear by Hashem, the G-d of the heavens and the G-d of the earth."</p>
+          <div class="avraham__card-src">Tosfos Shevuos 38b · Rambam Hil. Milah 3:8 · Sicha § 5, n. 23</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ § IV · YOSEF DECODED ============================ -->
+    <section class="section section--sunk">
+      <div class="section__roman">iv.</div>
+      <div class="section__eyebrow">
+        <span>The line, decoded</span>
+        <span class="src">§ 6 · "Yosef in the shuk"</span>
+      </div>
+      <h2 class="section__title">Now every strange word in the sentence fits.</h2>
+      <p class="section__lede">Take the chiddush of § ii — that Sinai gave mitzvos their power to reach the cheftza — and read Rav Yosef's sentence again. Each odd word turns out to be the word that the chiddush requires.</p>
+
+      <div class="decode">
+        <div class="decode__row decode__row--head">
+          <div class="decode__cell">The word</div>
+          <div class="decode__cell">The pshat reading</div>
+          <div class="decode__cell">What it actually carries</div>
+        </div>
+        <div class="decode__row">
+          <div class="decode__cell decode__cell--word">יוֹסֵף<span class="lat">yosef</span></div>
+          <div class="decode__cell">A first name. "Many people named Yosef." A casual stand-in for "ordinary men."</div>
+          <div class="decode__cell">From the root <em>להוסיף</em> — <strong>to add.</strong> Torah and mitzvos are a <em>"yosef"</em> — an addition of kedushah on top of the world. Rav Yosef chose his own name because it <em>names the chiddush.</em></div>
+        </div>
+        <div class="decode__row">
+          <div class="decode__cell decode__cell--word">בְּשׁוּקָא<span class="lat">b'shuka</span></div>
+          <div class="decode__cell">"In the marketplace" — outside the beis midrash where Rav Yosef sits.</div>
+          <div class="decode__cell">The shuk is <strong>the world un-transformed</strong> — a <em>reshus ha-rabim</em>, mundane matter that has not become a cheftza of mitzvah. The line says: an addition of kedushah was always possible. The question is whether the shuk <em>stays</em> a shuk.</div>
+        </div>
+        <div class="decode__row">
+          <div class="decode__cell decode__cell--word">אִי לָאו הַאי יוֹמָא<span class="lat">i lav hai yoma</span></div>
+          <div class="decode__cell">"Without this day" — without Shavuos / Matan Torah.</div>
+          <div class="decode__cell">Without Sinai, there would still be Torah-learning and mitzvos. There would still be a <em>"yosef"</em> — an addition. <strong>But the additions would stay personal.</strong> The shuk would still be a shuk. Many "Yosefs" — but the marketplace they walk through is unchanged.</div>
+        </div>
+        <div class="decode__row">
+          <div class="decode__cell decode__cell--word">דְּקָא גָּרִים<span class="lat">d'ka gorim</span></div>
+          <div class="decode__cell">"That caused" — Rashi: the day caused that I learn Torah.</div>
+          <div class="decode__cell"><em>Gorem</em>, not <em>oseh</em>: an <strong>indirect</strong> cause. The day didn't itself reach into the cheftza. The day made it <em>possible</em> for the doer's act to do so. The shinui still has to happen through the mitzvah — but it can happen now, and that is because of this day.</div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <div class="callout__label">The line, rebuilt</div>
+        <p class="callout__body">"Were it not for <strong>this day that caused</strong> — how many <strong>Yosefs</strong> in the <strong>marketplace</strong>!" — Were it not for Sinai, additions of kedushah would still happen, but they would never touch the world they happened in. The world would stay a marketplace. The day caused something deeper: that the addition can reach into the cheftza itself.</p>
+      </div>
+    </section>
+
+    <!-- ============================ § V · VENISROMAMTI ============================ -->
+    <section class="section">
+      <div class="section__roman">v.</div>
+      <div class="section__eyebrow">
+        <span>And the same chiddush in Torah-learning</span>
+        <span class="src">§ 7 · Why Rashi adds "and I was elevated"</span>
+      </div>
+      <h2 class="section__title">In Torah, the cheftza that gets changed is <em>the learner himself</em>.</h2>
+
+      <div class="two-col">
+        <div>
+          <p>Rashi adds two words Rav Yosef didn't say: <em>"שֶׁלָּמַדְתִּי תּוֹרָה וְנִתְרוֹמַמְתִּי"</em> — "that I learned Torah and was elevated." Without § ii, "and I was elevated" is a throwaway. With § ii, it is the whole reading.</p>
+          <p>Mitzvos and Torah-learning are not two different operations on this point — they are the same operation in two domains. In mitzvos, the cheftza is an external object. The act of a commanded Jew enters that object and changes it. <em>"V'ase'iso esrog shel mitzvah."</em></p>
+          <p>In Torah-learning, the cheftza <strong>is the learner himself</strong>. The act of a commanded Jew, learning Torah, enters him and changes him. The shinui chefetz on a Torah-learner is called <em>"נִתְרוֹמַמְתִּי"</em> — the lomed is elevated to a higher mode of being.</p>
+          <p>Before Matan Torah a person could learn Torah and acquire wisdom; nothing in <em>him</em> would shift. After Matan Torah the same act of learning <strong>changes his cheftza.</strong> He becomes a higher Yosef.</p>
+        </div>
+        <aside class="aside">
+          <div class="aside__label">Where Rashi reads it from</div>
+          <p>Not from <em>"האי יומא"</em> alone, but from the strange addition of <em>"דקא גרים."</em></p>
+          <p>If the day were simply the day of <em>learning Torah</em>, "this day" would be enough. The word <em>"caused"</em> — gores — is what tells Rashi that the day did something <em>indirect</em>, something done through Rav Yosef's own act of learning.</p>
+          <p style="color: var(--jli-bronze); font-style: italic;">And the only effect "done through" a person's own learning that wasn't possible before Sinai is the elevation of the learner. Hence <em>"ונתרוממתי."</em></p>
+          <div class="aside__src">§ 7, n. 26 · The Rebbe's note on Rashi</div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============================ § VI · DKA GARIM TIMELINE ============================ -->
+    <section class="section section--sunk">
+      <div class="section__roman">vi.</div>
+      <div class="section__eyebrow">
+        <span>"That caused" — what kind of cause?</span>
+        <span class="src">§ 8–10 · Three stages of cheftza, read out of one Mechilta</span>
+      </div>
+      <h2 class="section__title">The day causes the <em>possibility</em>. The act realizes it.</h2>
+      <p class="section__lede">Why <em>gorem</em> — an indirect cause? Because between the day Hashem commands and the moment a Jew actually does the mitzvah, the cheftza-effect builds in stages. The Rebbe finds the three stages already laid out in a Mechilta on the mitzvah of telling the story of Yetzias Mitzrayim.</p>
+
+      <div class="timeline">
+        <div class="stage stage--rosh">
+          <div class="stage__when">First hava amina · Stage 1</div>
+          <div class="stage__heb">מֵרֹאשׁ חוֹדֶשׁ</div>
+          <h3 class="stage__name">From Rosh Chodesh Nissan.</h3>
+          <p class="stage__body">The Mechilta's first guess: the obligation to <em>tell of yetzias Mitzrayim</em> starts when Moshe is first commanded about Pesach. <em>"בַּחֹדֶשׁ הַזֶּה"</em> — Rosh Chodesh, two weeks early. Already a <em>gder of cheftza</em> of Pesach, matzah, and maror exists in the Torah, even though the objects do not yet exist as ritual objects.</p>
+          <div class="stage__verdict"><strong>Rejected:</strong> the cheftza is too thin</div>
+        </div>
+        <div class="stage stage--bemoed">
+          <div class="stage__when">Second hava amina · Stage 2</div>
+          <div class="stage__heb">בְּיוֹם הַהוּא · מִבְּעוֹד יוֹם</div>
+          <h3 class="stage__name">From erev Pesach, while it is still day.</h3>
+          <p class="stage__body">A stronger guess: <em>"on that day"</em> — afternoon of the 14th, when the korban Pesach is actually being brought. Now the cheftza is real in the world; there is even a <em>chiyuv ha-gavra</em> in this hour to bring the korban. Surely <em>now</em> we tell the story.</p>
+          <div class="stage__verdict"><strong>Also rejected:</strong> still not enough</div>
+        </div>
+        <div class="stage stage--moment">
+          <div class="stage__when stage__when--final">The maskanah · Stage 3</div>
+          <div class="stage__heb">בְּשָׁעָה שֶׁמַּצָּה וּמָרוֹר מֻנָּחִים לְפָנֶיךָ</div>
+          <h3 class="stage__name">In the hour matzah and maror lie before you.</h3>
+          <p class="stage__body">The Mechilta lands here. <em>"בַּעֲבוּר זֶה"</em> — "for the sake of <em>this</em>" — only when the cheftza is fully real, here, on the table, in the act of the mitzvah itself. The full <em>chalos</em> in the object happens at the moment of <em>kiyum ha-mitzvah</em>, not before.</p>
+          <div class="stage__verdict">The chalos lands · <strong>only here</strong></div>
+        </div>
+      </div>
+
+      <div class="callout callout--inverted" style="margin-top: 0;">
+        <div class="callout__label">And that is why Rav Yosef says "גרים" — caused</div>
+        <p class="callout__body">"This day" does not itself produce the shinui chefetz. The day at Sinai <strong>caused</strong> — gorem — that a Jew's own act of doing the mitzvah, or learning the Torah, can <em>now</em> reach into the cheftza. Sinai laid the gder. The mitzvah, done by the Jew, makes the gder real.</p>
+      </div>
+    </section>
+
+    <!-- ============================ § VII · WHY RAV YOSEF ============================ -->
+    <section class="section">
+      <div class="section__roman">vii.</div>
+      <div class="section__eyebrow">
+        <span>And why this insight was saved for Rav Yosef</span>
+        <span class="src">§ 12–14 · Two questions, two answers</span>
+      </div>
+      <h2 class="section__title">Why <em>he</em> — and why no tanna before him.</h2>
+      <p class="section__lede">If the chiddush of Matan Torah is what § ii says it is, every Jew has been on its receiving end since Sinai. So why is the line in the Talmud spoken by Rav Yosef? Why not Rebbi Akiva, who said "כמה עקיבא בשוקא"? Why not Rav Nachman? Two facts about Rav Yosef do the work.</p>
+
+      <div class="yosef-why">
+        <div class="yw yw--problem">
+          <div class="yw__num">i.</div>
+          <div class="yw__label">First, the question that was personal to him</div>
+          <h3 class="yw__title">Rav Yosef was <em>blind</em>.</h3>
+          <p class="yw__body">The Gemara records his anguish: per R' Yehuda, a blind man is exempt from <strong>all</strong> mitzvos. "When I first thought the halacha was like R' Yehuda — that I'm <em>not commanded</em> and still doing — I would have made a feast for the rabbis."</p>
+          <p class="yw__body">For Rav Yosef, the question of § ii was a personal one. <em>Does the cheftza-effect of Matan Torah require</em> מצווה ועושה<em> — actual commandedness — to take hold? Or does the day's chiddush reach even an</em> אינו מצווה <em>like himself?</em></p>
+          <div class="yw__quote">אִי לָאו הַאי יוֹמָא דְּקָא גָּרִים — כַּמָּה יוֹסֵף אִיכָּא בְּשׁוּקָא</div>
+          <div class="yw__qcap">His answer: even an eino metzuveh produces the chalos — because of this day.</div>
+        </div>
+        <div class="yw yw--answer">
+          <div class="yw__num">ii.</div>
+          <div class="yw__label">Second, why he and not other blind sages</div>
+          <h3 class="yw__title">Rav Yosef was <em>Sinai</em>.</h3>
+          <p class="yw__body">Bava ben Buta was also blind. The Rebbe's resolution: Rav Yosef was called <strong>"Sinai"</strong> — every mishnah and beraisa arranged in him as if it had just been given at Sinai. The Gemara: <em>"הַכֹּל צְרִיכִין לְמָרֵי חִטִּיָּא"</em> — everyone needed to come to the master of the wheat.</p>
+          <p class="yw__body">An <em>eino metzuveh</em>, doing the mitzvah on his own, would not by himself produce the full shinui chefetz. <strong>But his Torah</strong> — through which every metzuveh-ve'oseh of his generation paskened and acted — <em>did</em> produce the full shinui chefetz, in them. And then their elevation flowed back into him.</p>
+          <p class="yw__body">So the line is not casual. It is the report of a blind Sinai-master, on the day of Matan Torah, looking at his cup of wine and saying: <em>even I have been elevated — because the day caused it.</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ § VIII · NIGLEH MEETS CHASSIDUS ============================ -->
+    <section class="section section--sunk">
+      <div class="section__roman">viii.</div>
+      <div class="section__eyebrow">
+        <span>And the same chiddush in Chassidus</span>
+        <span class="src">§ 15 · "Torah achas"</span>
+      </div>
+      <h2 class="section__title">Nigleh and Chassidus are saying one thing.</h2>
+
+      <div class="two-col">
+        <div>
+          <p>What § ii reaches by way of <em>gavra</em> and <em>cheftza</em>, Chassidus has been saying in its own vocabulary. Before Matan Torah, the Avos' avodah drew down <em>yichudim</em> only above — in the upper worlds. The decree that <em>"ha-elyonim lo yerdu la-tachtonim"</em> — that the higher worlds may not descend to the lower — was still in place.</p>
+          <p>At Sinai, the decree was annulled. From that day, the same act of Torah and mitzvos that had reached only the upper worlds was given the koach to <strong>draw Elokus down into gashmiyus</strong> — into the very cheftza of physical things.</p>
+          <p>That is precisely § ii in nigleh terms. The "cheftza of mitzvah" is the gashmi object as the dwelling-place of the divine light Sinai released into it. The "ונתרוממתי" of the learner is the gashmi self as the dwelling-place of the divine light Sinai released into him.</p>
+        </div>
+        <aside class="aside">
+          <div class="aside__label">The same chiddush in two languages</div>
+          <div class="aside__hebrew">תּוֹרָה אַחַת</div>
+          <p>Nigleh: before Sinai a mitzvah reached only the gavra. After Sinai it reaches the cheftza.</p>
+          <p>Chassidus: before Sinai the avodah reached only the upper worlds. After Sinai it draws Elokus into the gashmi object.</p>
+          <p style="color: var(--jli-bronze); font-style: italic;">Same line. Two grammars.</p>
+          <div class="aside__src">Tanya · Torah Ohr · Likkutei Sichos § 15</div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============================ § IX · SYNTHESIS ============================ -->
+    <section class="section section--ink">
+      <div class="section__roman">ix.</div>
+      <div class="section__eyebrow">
+        <span>The sicha, in summary</span>
+        <span class="src">Synthesis</span>
+      </div>
+      <h2 class="section__title">One day, three reaches, one line.</h2>
+
+      <div class="progression">
+        <div class="prog__step">
+          <div class="prog__num">i.</div>
+          <div class="prog__heading">The day · in the world</div>
+          <h3 class="prog__what">Matan Torah <em>caused</em> a gder of cheftza in the world.</h3>
+          <p class="prog__note">From Sinai onward, the world contains the category "object of a mitzvah" and the category "object of an aveirah." A tallis is no longer wool; an esrog is no longer fruit. The world's <em>menu</em> has been rewritten.</p>
+        </div>
+        <div class="prog__step">
+          <div class="prog__num">ii.</div>
+          <div class="prog__heading">The day · in the Jew</div>
+          <h3 class="prog__what">Matan Torah <em>caused</em> Israel itself to become a different cheftza.</h3>
+          <p class="prog__note">A Jew at Sinai became a <em>"גוי קדוש"</em> — a holier kind of being. The shinui chefetz of the doer is what gives him the koach to extend it, in turn, into objects and into his own learning. <em>"Gar shenisgayer k'katan she-nolad dami."</em></p>
+        </div>
+        <div class="prog__step">
+          <div class="prog__num">iii.</div>
+          <div class="prog__heading">The day · in the act</div>
+          <h3 class="prog__what">The chalos lands only in the moment of the mitzvah.</h3>
+          <p class="prog__note">The day causes; the mitzvah realizes. When a Jew picks up the esrog, the cheftza shel mitzvah materializes <em>then</em>. When he sits to learn, the <em>ונתרוממתי</em> happens <em>then</em>. Every act is the day's chiddush, recurring.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CLOSING ============================ -->
+    <section class="closing">
+      <div class="closing__eyebrow">What Rav Yosef saw, lifting his cup on Shavuos</div>
+      <div class="closing__hebrew">אִי לָאו הַאי יוֹמָא דְּקָא גָּרִים</div>
+      <div class="closing__translit">i lav hai yoma d'ka gorim</div>
+      <p class="closing__english">"Were it not for this day that caused…" The day did not learn Rav Yosef's Torah for him. The day did not put on his tefillin. The day <em>caused</em> — gorem — that when an ordinary Jew, even one not commanded, lifts an ordinary object and does an ordinary act, the object stops being ordinary and the Jew stops being ordinary. Otherwise there would be many Yosefs, and the marketplace would still be a marketplace.</p>
+
+      <div class="colophon">
+        <span>Likkutei Sichos · vol. 16, p. 211</span>
+        <span>משיחת אחש"פ ויום ב' דחה"ש תשל"ו</span>
+      </div>
+    </section>
+
   </div>
 
-  <!-- ═══════════════════════════════════════════
-       OPEN BOOK STAGE
-  ══════════════════════════════════════════════ -->
-  <div id="stage-open">
-    <div class="bwrap" id="bwrap">
-      <button class="btn-close" id="btn-close" aria-label="Close">&times;</button>
-
-      <div class="book" id="book">
-
-        <!-- Static left: Intro / TOC -->
-        <div class="pg-left-static">
-          <div class="intro">
-            <div class="intro-orn">שבועות</div>
-            <div class="intro-eye">In These Pages</div>
-            <h2 class="intro-title">A Visual Likkutei Sichos<br>on Shavuos</h2>
-            <div class="intro-rule"></div>
-            <p class="intro-body">The Lubavitcher Rebbe&rsquo;s Likkutei Sichos contains some of the most penetrating analyses of Torah ever written. These infographics bring seven of his Shavuos sichos to life &mdash; mapping arguments, visualizing structures, surfacing ideas.</p>
-            <div class="intro-toc">
-              <div class="intro-toc-hd">Contents</div>
-              <div class="toc-row"><span class="toc-n">i.</span><span class="toc-t">The Three Events of Shavuos</span></div>
-              <div class="toc-row"><span class="toc-n">ii.</span><span class="toc-t">The Angels&rsquo; Claim to the Torah</span></div>
-              <div class="toc-row"><span class="toc-n">iii.</span><span class="toc-t">An Oneg Without Exception</span></div>
-              <div class="toc-row"><span class="toc-n">iv.</span><span class="toc-t">The Climb from Below</span></div>
-              <div class="toc-row"><span class="toc-n">v.</span><span class="toc-t">The Center</span></div>
-              <div class="toc-row"><span class="toc-n">vi.</span><span class="toc-t">A Kingdom of Priests</span></div>
-              <div class="toc-row"><span class="toc-n">vii.</span><span class="toc-t">How Many Yosefs in the Marketplace</span></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Static right: empty (no colophon) -->
-        <div class="pg-right-static"></div>
-
-        <!-- Spine shadow -->
-        <div class="spine-shadow"></div>
-
-        <!-- PAGE 4 (z=1): Sicha VII front | Series close back -->
-        <div class="pg" id="pg4" style="z-index:1">
-          <!-- Front: Sicha VII -->
-          <div class="pg__front">
-            <div class="pi">
-              <div class="pi-eye">Sicha VII.</div>
-              <div class="pi-num">vii</div>
-              <h2 class="pi-title">How Many <em>Yosefs</em> in the Marketplace</h2>
-              <div class="pi-rule"></div>
-              <p class="pi-desc">Rav Yosef lifts his cup every Shavuos and says one sentence. The Rebbe reads it six ways and finds a chiddush about Matan Torah: the day didn&rsquo;t only command &mdash; it changed what an <em>object</em> can become.</p>
-              <div class="pi-tags">
-                <span class="pi-tag pi-tag--cat">Shavuos</span>
-                <span class="pi-tag">Gavra &amp; Cheftza</span>
-                <span class="pi-tag">Matan Torah</span>
-                <span class="pi-tag">Cheftza shel Mitzvah</span>
-              </div>
-              <div class="pi-foot">
-                <a class="pi-read" href="how-many-yosefs.html">Read &rarr;</a>
-              </div>
-            </div>
-          </div>
-          <!-- Back: Series Close -->
-          <div class="pg__back">
-            <div class="series-close">
-              <div class="sc-eyebrow">Likkutei Sichos &middot; Shavuos</div>
-              <h2 class="sc-title">Seven Sichos on <em>Shavuos</em></h2>
-              <p class="sc-body">Seven infographics from the Lubavitcher Rebbe on the Festival of Giving &mdash; Matan Torah, the descent and the ascent, the marketplace and the miracle.</p>
-              <div class="sc-url">zmabraham.github.io/Sicha-Infograph/</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- PAGE 3 (z=2): Sicha V front | Sicha VI back -->
-        <div class="pg" id="pg3" style="z-index:2">
-          <!-- Front: Sicha V -->
-          <div class="pg__front">
-            <div class="pi">
-              <div class="pi-eye">Sicha V.</div>
-              <div class="pi-num">v</div>
-              <h2 class="pi-title">The <em>Center</em></h2>
-              <div class="pi-rule"></div>
-              <p class="pi-desc">Torah creates the deepest yichud with Hashem. So why the <em>third</em> month, not the first? Because real oneness must first encounter its opposite &mdash; and the third is the new thing that emerges when the high and the low finally meet.</p>
-              <div class="pi-tags">
-                <span class="pi-tag pi-tag--cat">Shavuos</span>
-                <span class="pi-tag">Oryan Tlisai</span>
-                <span class="pi-tag">Kav Ha-Emtzai</span>
-                <span class="pi-tag">Torah Lishmah</span>
-              </div>
-              <div class="pi-foot">
-                <a class="pi-read" href="the-center.html">Read &rarr;</a>
-              </div>
-            </div>
-          </div>
-          <!-- Back: Sicha VI -->
-          <div class="pg__back">
-            <div class="pi">
-              <div class="pi-eye">Sicha VI.</div>
-              <div class="pi-num">vi</div>
-              <h2 class="pi-title">A Kingdom of <em>Priests</em></h2>
-              <div class="pi-rule"></div>
-              <p class="pi-desc">Moshe, David, and the Baal Shem Tov — three first kings, each carrying <em>mamleches kohanim</em> into a deeper darkness than the one before. Inside every Jew&rsquo;s day: one crown, three keepers.</p>
-              <div class="pi-tags">
-                <span class="pi-tag pi-tag--cat">Shavuos</span>
-                <span class="pi-tag">Mamleches Kohanim</span>
-                <span class="pi-tag">Hisnasus</span>
-                <span class="pi-tag">Three Kings</span>
-              </div>
-              <div class="pi-foot">
-                <a class="pi-read" href="a-kingdom-of-priests.html">Read &rarr;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- PAGE 2 (z=3): Sicha III front | Sicha IV back -->
-        <div class="pg" id="pg2" style="z-index:3">
-          <div class="pg__front">
-            <div class="pi">
-              <div class="pi-eye">Sicha III.</div>
-              <div class="pi-num">iii</div>
-              <h2 class="pi-title">An <em>Oneg</em> Without Exception</h2>
-              <div class="pi-rule"></div>
-              <p class="pi-desc">Shavuos is the one Yom Tov where even a ta&rsquo;anis chalom is forbidden &mdash; yet it is the most spiritual of all. The answer: Matan Torah was Atzmus, not gilui. And Atzmus has no outside.</p>
-              <div class="pi-tags">
-                <span class="pi-tag pi-tag--cat">Shavuos</span>
-                <span class="pi-tag">Oneg Yom Tov</span>
-                <span class="pi-tag">Ta&rsquo;anis Chalom</span>
-                <span class="pi-tag">Atzmus</span>
-              </div>
-              <div class="pi-foot">
-                <a class="pi-read" href="an-oneg-without-exception.html">Read &rarr;</a>
-              </div>
-            </div>
-          </div>
-          <div class="pg__back">
-            <div class="pi">
-              <div class="pi-eye">Sicha IV.</div>
-              <div class="pi-num">iv</div>
-              <h2 class="pi-title">The Climb from <em>Below</em></h2>
-              <div class="pi-rule"></div>
-              <p class="pi-desc">Two paired sichos: why Bnei Yisrael&rsquo;s sleep before Sinai wasn&rsquo;t carelessness &mdash; and why the Baal Shem Tov chose Yom Tov Sheni. The body is the venue. The descent is the ascent.</p>
-              <div class="pi-tags">
-                <span class="pi-tag pi-tag--cat">Shavuos</span>
-                <span class="pi-tag">Yishuv Da&rsquo;at</span>
-                <span class="pi-tag">Guf v&rsquo;Neshamah</span>
-                <span class="pi-tag">Yom Tov Sheni</span>
-              </div>
-              <div class="pi-foot">
-                <a class="pi-read" href="the-climb-from-below.html">Read &rarr;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- PAGE 1 (z=4, top of stack): Sicha I front | Sicha II back -->
-        <div class="pg" id="pg1" style="z-index:4">
-          <div class="pg__front">
-            <div class="pi">
-              <div class="pi-eye">Sicha I.</div>
-              <div class="pi-num">i</div>
-              <h2 class="pi-title">The Three Events of <em>Shavuos</em></h2>
-              <div class="pi-rule"></div>
-              <p class="pi-desc">Three events fall on the same day every year: Matan Torah, the histalkus of Dovid HaMelech, and the histalkus of the Baal Shem Tov. Each enacts the same cosmic exchange &mdash; the higher descends, the lower ascends.</p>
-              <div class="pi-tags">
-                <span class="pi-tag pi-tag--cat">Shavuos</span>
-                <span class="pi-tag">Matan Torah</span>
-                <span class="pi-tag">Histalkus</span>
-                <span class="pi-tag">Dirah B&rsquo;Tachtonim</span>
-              </div>
-              <div class="pi-foot">
-                <a class="pi-read" href="three-events.html">Read &rarr;</a>
-              </div>
-            </div>
-          </div>
-          <div class="pg__back">
-            <div class="pi">
-              <div class="pi-eye">Sicha II.</div>
-              <div class="pi-num">ii</div>
-              <h2 class="pi-title">The Angels&rsquo; Claim to the <em>Torah</em></h2>
-              <div class="pi-rule"></div>
-              <p class="pi-desc">When Moshe ascended Sinai, the angels claimed the Torah under dina d&rsquo;bar metzra. The Rebbe examines five answers from the meforshim &mdash; finds each wanting &mdash; and arrives: yishuv adif, dirah b&rsquo;tachtonim.</p>
-              <div class="pi-tags">
-                <span class="pi-tag pi-tag--cat">Shavuos</span>
-                <span class="pi-tag">Bar Metzra</span>
-                <span class="pi-tag">Yishuv Adif</span>
-                <span class="pi-tag">Dirah B&rsquo;Tachtonim</span>
-              </div>
-              <div class="pi-foot">
-                <a class="pi-read" href="the-angels-claim.html">Read &rarr;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Click zones (desktop) -->
-        <div class="click-zone click-zone--right" id="cz-right"></div>
-        <div class="click-zone click-zone--left"  id="cz-left" style="display:none"></div>
-
-      </div><!-- /.book -->
-    </div><!-- /.bwrap -->
-
-    <!-- NAV BAR -->
-    <div class="nav-bar">
-      <button class="nav-btn" id="btn-prev" disabled>&#8592;</button>
-      <div class="nav-dots">
-        <div class="nav-dot on" data-s="0"></div>
-        <div class="nav-dot"    data-s="1"></div>
-        <div class="nav-dot"    data-s="2"></div>
-        <div class="nav-dot"    data-s="3"></div>
-        <div class="nav-dot"    data-s="4"></div>
-      </div>
-      <span class="mobile-counter" id="mobile-counter" style="display:none">1 / 7</span>
-      <button class="nav-btn" id="btn-next">&#8594;</button>
-    </div>
-    <p class="nav-hint">&#8592; &#8594; arrow keys &nbsp;&middot;&nbsp; click pages to turn</p>
-
-  </div><!-- /#stage-open -->
-
-</div><!-- /.scene -->
-
-<script>
-(function(){
-"use strict";
-
-var spread = 0;
-var isMobile = window.innerWidth <= 880;
-window.addEventListener("resize", function(){ isMobile = window.innerWidth <= 880; });
-function numSpreads(){ return isMobile ? mobileFaces.length : 5; }
-
-/* DOM */
-var sClosed = document.getElementById("stage-closed");
-var sOpen   = document.getElementById("stage-open");
-var bwrap   = document.getElementById("bwrap");
-var pg1     = document.getElementById("pg1");
-var pg2     = document.getElementById("pg2");
-var pg3     = document.getElementById("pg3");
-var pg4     = document.getElementById("pg4");
-var btnOpen  = document.getElementById("btn-open");
-var btnClose = document.getElementById("btn-close");
-var btnPrev  = document.getElementById("btn-prev");
-var btnNext  = document.getElementById("btn-next");
-var dots     = document.querySelectorAll(".nav-dot");
-var czRight  = document.getElementById("cz-right");
-var czLeft   = document.getElementById("cz-left");
-
-/* Mobile: show all 7 sichos in linear order */
-
-/* Open */
-function openBook(){
-  sClosed.classList.add("hiding");
-  setTimeout(function(){
-    sClosed.style.display = "none";
-    sOpen.style.display   = "flex";
-    if(isMobile){
-      initMobile();
-      document.getElementById("mobile-counter").style.display = "inline";
-    }
-    requestAnimationFrame(function(){ bwrap.classList.add("visible"); });
-    syncNav();
-  }, 420);
-}
-
-/* Close */
-function closeBook(){
-  bwrap.classList.remove("visible");
-  setTimeout(function(){
-    sOpen.style.display   = "none";
-    sClosed.style.display = "flex";
-    sClosed.classList.remove("hiding");
-    spread = 0;
-    pg1.classList.remove("turned"); pg1.style.zIndex = 4;
-    pg2.classList.remove("turned"); pg2.style.zIndex = 3;
-    pg3.classList.remove("turned"); pg3.style.zIndex = 2;
-    pg4.classList.remove("turned"); pg4.style.zIndex = 1;
-    if(isMobile){
-      resetMobile();
-      document.getElementById("mobile-counter").style.display = "none";
-    }
-    syncNav();
-  }, 520);
-}
-
-/* Navigate */
-function goTo(n){
-  if(n < 0 || n >= numSpreads()) return;
-  var prev = spread; spread = n;
-
-  if(isMobile){ mobileShow(n); syncNav(); return; }
-
-  // Forward
-  if(n > prev){
-    if(prev === 0 && n >= 1){ pg1.style.zIndex=4; pg1.classList.add("turned"); }
-    if(prev <= 1 && n >= 2){ pg2.style.zIndex=5; pg2.classList.add("turned"); }
-    if(prev <= 2 && n >= 3){ pg3.style.zIndex=6; pg3.classList.add("turned"); }
-    if(prev <= 3 && n === 4){ pg4.style.zIndex=7; pg4.classList.add("turned"); }
-  } else {
-    // Back
-    if(prev === 4 && n <= 3){ pg4.style.zIndex=1; pg4.classList.remove("turned"); }
-    if(prev >= 3 && n <= 2){ pg3.style.zIndex=2; pg3.classList.remove("turned"); }
-    if(prev >= 2 && n <= 1){ pg2.style.zIndex=3; pg2.classList.remove("turned"); }
-    if(prev >= 1 && n === 0){ pg1.style.zIndex=4; pg1.classList.remove("turned"); }
+<!-- ── PRINT BUTTON ── -->
+<style>
+  .print-fab {
+    position: fixed; bottom: 24px; right: 24px;
+    background: #C2A474; color: #333230;
+    border: none; border-radius: 50%;
+    width: 52px; height: 52px;
+    font-size: 22px; cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+    z-index: 1000;
+    display: flex; align-items: center; justify-content: center;
   }
-
-  czRight.style.display = (spread < numSpreads()-1) ? "block" : "none";
-  czLeft.style.display  = (spread > 0)              ? "block" : "none";
-  syncNav();
-}
-
-function syncNav(){
-  var NS = numSpreads();
-  btnPrev.disabled = (spread === 0);
-  btnNext.disabled = (spread === NS-1);
-  dots.forEach(function(d){ d.classList.toggle("on", +d.dataset.s === spread); });
-  var mc = document.getElementById("mobile-counter");
-  if(mc) mc.textContent = (spread+1) + " / " + NS;
-}
-
-/* Mobile — all 7 sichos in reading order */
-var mobileFaces = [
-  {el: pg1, side: "front"},   // Sicha I
-  {el: pg1, side: "back"},    // Sicha II
-  {el: pg2, side: "front"},   // Sicha III
-  {el: pg2, side: "back"},    // Sicha IV
-  {el: pg3, side: "front"},   // Sicha V
-  {el: pg3, side: "back"},    // Sicha VI
-  {el: pg4, side: "front"},   // Sicha VII
-];
-function initMobile(){
-  [pg1,pg2,pg3,pg4].forEach(function(p){ p.classList.remove("mobile-show"); });
-  [].forEach.call(document.querySelectorAll(".pg__front,.pg__back"), function(f){
-    f.style.display="none"; f.classList.remove("mobile-show");
-  });
-  mobileShow(0);
-}
-function resetMobile(){
-  [pg1,pg2,pg3,pg4].forEach(function(p){ p.classList.remove("mobile-show"); });
-  [].forEach.call(document.querySelectorAll(".pg__front,.pg__back"), function(f){
-    f.style.display=""; f.classList.remove("mobile-show");
-  });
-}
-function mobileShow(n){
-  [pg1,pg2,pg3,pg4].forEach(function(p){ p.classList.remove("mobile-show"); });
-  [].forEach.call(document.querySelectorAll(".pg__front,.pg__back"), function(f){
-    f.style.display="none"; f.classList.remove("mobile-show");
-  });
-  var m = mobileFaces[n] || mobileFaces[0];
-  m.el.classList.add("mobile-show");
-  var face = m.el.querySelector(".pg__" + m.side);
-  if(face){ face.classList.add("mobile-show"); face.style.display="block"; }
-}
-
-/* Listeners */
-btnOpen.addEventListener("click", openBook);
-btnOpen.addEventListener("keydown", function(e){ if(e.key==="Enter"||e.key===" ") openBook(); });
-btnClose.addEventListener("click", closeBook);
-btnNext.addEventListener("click", function(){ goTo(spread+1); });
-btnPrev.addEventListener("click", function(){ goTo(spread-1); });
-// Click anywhere in the open book area to turn pages — but let links through
-document.getElementById("stage-open").addEventListener("click", function(e){
-  if(e.target.closest("a")) return;          // real link — let browser handle it
-  if(e.target.closest(".btn-nav")) return;   // nav buttons — handled separately
-  var bkEl = document.getElementById("book");
-  if(!bkEl) return;
-  var rect = bkEl.getBoundingClientRect();
-  if(e.clientX < rect.left || e.clientX > rect.right) return;
-  if(e.clientY < rect.top  || e.clientY > rect.bottom) return;
-  var x = e.clientX - rect.left;
-  if(x > rect.width / 2 && spread < numSpreads()-1) goTo(spread+1);
-  else if(x <= rect.width / 2 && spread > 0)        goTo(spread-1);
-});
-dots.forEach(function(d){ d.addEventListener("click", function(){ goTo(+d.dataset.s); }); });
-document.addEventListener("keydown", function(e){
-  if(sOpen.style.display !== "flex") return;
-  if(e.key==="ArrowRight") goTo(spread+1);  // goTo clamps to numSpreads()
-  if(e.key==="ArrowLeft")  goTo(spread-1);
-  if(e.key==="Escape")     closeBook();
-});
-
-})();
-</script>
-<!-- PRINT-ONLY VIEW (hidden on screen, shown by print.css) -->
-<div id="print-view" style="display:none">
-  <div class="pv-masthead">
-    <div class="pv-eyebrow">Likkutei Sichos &middot; Visual Study Guides</div>
-    <h1 class="pv-title">Shavuos <em>Sichos</em></h1>
-    <p class="pv-sub">Seven sichos from the Lubavitcher Rebbe on the Festival of Shavuos, brought to life as visual infographics.</p>
-    <div class="pv-url">https://zmabraham.github.io/Sicha-Infograph/</div>
-  </div>
-  <div class="pv-toc-hd">Seven Sichos &mdash; Contents</div>
-
-  <div class="pv-sicha">
-    <div class="pv-num">i</div>
-    <div class="pv-body">
-      <h2 class="pv-sicha-title">The Three Events of <em>Shavuos</em></h2>
-      <div class="pv-sicha-src">Shavuos 5727 &middot; Likkutei Sichos Vol.&thinsp;8</div>
-      <p class="pv-sicha-desc">Three events fall on the same day every year: Matan Torah, the histalkus of Dovid HaMelech, and the histalkus of the Baal Shem Tov. Each enacts the same cosmic exchange &mdash; the higher descends, the lower ascends.</p>
-      <div class="pv-sicha-url">zmabraham.github.io/Sicha-Infograph/three-events.html</div>
-    </div>
-  </div>
-
-  <div class="pv-sicha">
-    <div class="pv-num">ii</div>
-    <div class="pv-body">
-      <h2 class="pv-sicha-title">The Angels&rsquo; Claim to the <em>Torah</em></h2>
-      <div class="pv-sicha-src">Shavuos 5718 &middot; Likkutei Sichos Vol.&thinsp;18</div>
-      <p class="pv-sicha-desc">When Moshe ascended Sinai, the angels claimed the Torah under dina d&rsquo;bar metzra. The Rebbe examines five answers from the meforshim &mdash; finds each wanting &mdash; and arrives at the real answer: yishuv adif, dirah b&rsquo;tachtonim.</p>
-      <div class="pv-sicha-url">zmabraham.github.io/Sicha-Infograph/the-angels-claim.html</div>
-    </div>
-  </div>
-
-  <div class="pv-sicha">
-    <div class="pv-num">iii</div>
-    <div class="pv-body">
-      <h2 class="pv-sicha-title">An <em>Oneg</em> Without Exception</h2>
-      <div class="pv-sicha-src">Shavuos 5716, 5723 &amp; 5736 &middot; Likkutei Sichos Vol.&thinsp;28</div>
-      <p class="pv-sicha-desc">Shavuos is the one Yom Tov where even a ta&rsquo;anis chalom is forbidden &mdash; yet it is the most spiritual of all. The answer: Matan Torah was Atzmus, not gilui. And Atzmus has no outside.</p>
-      <div class="pv-sicha-url">zmabraham.github.io/Sicha-Infograph/an-oneg-without-exception.html</div>
-    </div>
-  </div>
-
-  <div class="pv-sicha">
-    <div class="pv-num">iv</div>
-    <div class="pv-body">
-      <h2 class="pv-sicha-title">The Climb from <em>Below</em></h2>
-      <div class="pv-sicha-src">Shavuos 5720 &middot; Likkutei Sichos Vol.&thinsp;4</div>
-      <p class="pv-sicha-desc">Two paired sichos: why Bnei Yisrael&rsquo;s sleep before Sinai wasn&rsquo;t carelessness &mdash; and why the Baal Shem Tov chose Yom Tov Sheni. The body is the venue. The descent is the ascent.</p>
-      <div class="pv-sicha-url">zmabraham.github.io/Sicha-Infograph/the-climb-from-below.html</div>
-    </div>
-  </div>
-
-  <div class="pv-sicha">
-    <div class="pv-num">v</div>
-    <div class="pv-body">
-      <h2 class="pv-sicha-title">The <em>Center</em></h2>
-      <div class="pv-sicha-src">Behar-Bechukosai &amp; Shavuos 5718 &middot; Likkutei Sichos Vol.&thinsp;6</div>
-      <p class="pv-sicha-desc">Torah creates the deepest yichud with Hashem. So why the third month, not the first? Because real oneness must first encounter its opposite &mdash; and the third is the new thing that emerges when the high and the low finally meet.</p>
-      <div class="pv-sicha-url">zmabraham.github.io/Sicha-Infograph/the-center.html</div>
-    </div>
-  </div>
-
-  <div class="pv-sicha">
-    <div class="pv-num">vi</div>
-    <div class="pv-body">
-      <h2 class="pv-sicha-title">A Kingdom of <em>Priests</em></h2>
-      <div class="pv-sicha-src">Shavuos 5737 (2nd Day) &middot; Likkutei Sichos</div>
-      <p class="pv-sicha-desc">Moshe, David, and the Baal Shem Tov &mdash; three first kings, each carrying mamleches kohanim into a deeper darkness than the one before. Inside every Jew&rsquo;s day: one crown, three keepers.</p>
-      <div class="pv-sicha-url">zmabraham.github.io/Sicha-Infograph/a-kingdom-of-priests.html</div>
-    </div>
-  </div>
-
-  <div class="pv-sicha">
-    <div class="pv-num">vii</div>
-    <div class="pv-body">
-      <h2 class="pv-sicha-title">How Many <em>Yosefs</em> in the Marketplace</h2>
-      <div class="pv-sicha-src">Acharon shel Pesach &amp; Yom Beis Shavuos 5736 &middot; Likkutei Sichos Vol.&thinsp;16</div>
-      <p class="pv-sicha-desc">Rav Yosef lifts his cup every Shavuos and says one sentence. The Rebbe reads it six ways and finds a chiddush about Matan Torah: the day didn&rsquo;t only command &mdash; it changed what an object can become.</p>
-      <div class="pv-sicha-url">zmabraham.github.io/Sicha-Infograph/how-many-yosefs.html</div>
-    </div>
-  </div>
-
-  <div class="pv-footer">Likkutei Sichos &middot; Visual Study Guides &middot; zmabraham.github.io/Sicha-Infograph/</div>
-</div>
-
+  .print-fab:hover { background: #9C8660; }
+</style>
+<button class="print-fab" onclick="window.print()" title="Print to PDF">🖨</button>
 </body>
 </html>
