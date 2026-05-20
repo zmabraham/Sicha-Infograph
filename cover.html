@@ -3,21 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shavuos &middot; Visual Likkutei Sichos</title>
-<meta property="og:title"       content="Shavuos · Visual Likkutei Sichos">
-<meta property="og:description" content="Six Shavuos sichos from the Lubavitcher Rebbe, brought to life as visual infographics — Matan Torah, mamleches kohanim, oneg, and more.">
-<meta property="og:image"       content="https://zmabraham.github.io/Sicha-Infograph/og-image.png">
-<meta property="og:image:width"  content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:url"         content="https://zmabraham.github.io/Sicha-Infograph/">
-<meta property="og:type"        content="website">
-<meta property="og:site_name"   content="Visual Likkutei Sichos">
-<meta name="twitter:card"        content="summary_large_image">
-<meta name="twitter:title"       content="Shavuos · Visual Likkutei Sichos">
-<meta name="twitter:description" content="Six Shavuos sichos from the Lubavitcher Rebbe, brought to life as visual infographics.">
-<meta name="twitter:image"       content="https://zmabraham.github.io/Sicha-Infograph/og-image.png">
-<link rel="stylesheet" media="print" href="print.css">
-<style id="design-system">
+<title>Seven Sichos on Shavuos · Cover &amp; Contents</title>
+<style>
 /* ==========================================================================
    JLI Flagship — Colors & Type
    Rohr Jewish Learning Institute · Flagship course materials
@@ -507,917 +494,420 @@ body {
 
 </style>
 <style>
-/* =====================================================
-   SHAVUOS — VISUAL LIKKUTEI SICHOS
-   Interactive Book Landing Page  ·  v4 (7 sichos)
-   ===================================================== */
-
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-
-:root {
-  --cover-dark:   #1C1710;
-  --cover-gold:   #C4A464;
-  --page-bg:      #EDE8DC;
-  --page-alt:     #E8E3D5;
-  --page-rule:    #C8C0A8;
-  --ink:          #2E2C28;
-  --ink-2:        #524F4D;
-  --gold:         #9C8660;
-  --gold-lt:      #C4A464;
-  --scene-bg:     #100E0B;
-  --book-w:       900px;
-  --book-h:       580px;
-}
-
-html,body {
-  width:100%; height:100%;
-  background: var(--scene-bg);
-  color: var(--ink);
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
-
-.scene {
-  min-height: 100vh;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  padding: 36px 20px;
-  background: radial-gradient(ellipse 140% 100% at 50% 70%, #241C0F 0%, #0A0805 100%);
-}
-
-/* ── HEADER ── */
-.hdr {
-  text-align: center; margin-bottom: 40px;
-  opacity:0; transform:translateY(-18px);
-  animation: hdrIn 0.9s 0.25s forwards;
-}
-@keyframes hdrIn { to { opacity:1; transform:translateY(0); } }
-.hdr__eye {
-  font-family: var(--font-sans, Arial, sans-serif);
-  font-size: 9.5px; font-weight:700;
-  letter-spacing: 0.38em; text-transform: uppercase;
-  color: var(--cover-gold); opacity: 0.75; margin-bottom: 12px;
-}
-.hdr__title {
-  font-family: var(--font-serif-display, Georgia, serif);
-  font-size: 44px; font-weight: 400;
-  letter-spacing: -0.025em; line-height: 1; color: #F2EBD8;
-}
-.hdr__title em { font-style:italic; color: var(--cover-gold); }
-.hdr__heb {
-  font-family: var(--font-hebrew, serif); font-size: 22px;
-  color: rgba(196,164,100,0.5); margin-top: 6px; direction: rtl;
-}
-
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   CLOSED BOOK  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-#stage-closed {
-  display:flex; flex-direction:column; align-items:center; gap:28px;
-  transition: opacity 0.45s ease, transform 0.45s ease;
-}
-#stage-closed.hiding { opacity:0; transform:scale(0.94) translateY(10px); pointer-events:none; }
-
-.book3-wrap { perspective: 1400px; perspective-origin: 52% 38%; }
-
-.book3 {
-  position: relative; width: 240px; height: 336px;
-  transform-style: preserve-3d;
-  transform: rotateX(7deg) rotateY(-26deg);
-  transition: transform 0.5s cubic-bezier(.34,1.56,.64,1);
-  cursor: pointer;
-}
-.book3:hover { transform: rotateX(5deg) rotateY(-20deg) translateY(-8px); }
-
-.book3__front {
-  position:absolute; inset:0;
-  background: var(--cover-dark);
-  border-radius: 1px 3px 3px 1px; overflow: hidden;
-  display:flex; align-items:center; justify-content:center;
-}
-.book3__front::before {
-  content:''; position:absolute; inset:13px;
-  border: 1px solid rgba(196,164,100,0.35); pointer-events:none;
-}
-.book3__front::after {
-  content:''; position:absolute; inset:18px;
-  border: 1px solid rgba(196,164,100,0.12); pointer-events:none;
-}
-.cover-content { position:relative; z-index:2; text-align:center; padding: 0 22px; }
-.cc-heb {
-  font-family: var(--font-hebrew, serif); font-size: 54px;
-  color: var(--cover-gold); line-height: 1; margin-bottom: 8px; direction: rtl;
-}
-.cc-caps {
-  font-family: var(--font-sans, Arial, sans-serif); font-size: 8px; font-weight: 700;
-  letter-spacing: 0.44em; text-transform: uppercase;
-  color: rgba(196,164,100,0.55); margin-bottom: 14px;
-}
-.cc-serif {
-  font-family: var(--font-serif-display, Georgia, serif); font-size: 16px; font-style: italic;
-  color: rgba(240,234,214,0.88); line-height: 1.35; margin-bottom: 18px;
-}
-.cc-rule { width: 36px; height: 1px; background: rgba(196,164,100,0.45); margin: 0 auto 14px; }
-.cc-vol {
-  font-family: var(--font-sans, Arial, sans-serif); font-size: 7.5px;
-  letter-spacing: 0.28em; text-transform: uppercase; color: rgba(196,164,100,0.38);
-}
-.book3__spine {
-  position:absolute; left:0; top:0; width: 32px; height:100%;
-  background: #0F0C08;
-  transform-origin: right center; transform: rotateY(-90deg) translateX(-16px);
-  display:flex; align-items:center; justify-content:center; overflow:hidden;
-}
-.book3__spine::after {
-  content:'SHAVUOS \B7 VISUAL LIKKUTEI SICHOS';
-  font-family: var(--font-sans, Arial, sans-serif); font-size: 6.5px; font-weight:700;
-  letter-spacing:0.24em; color: rgba(196,164,100,0.35); white-space:nowrap;
-  writing-mode:vertical-rl; text-orientation:mixed; transform:rotate(180deg);
-}
-.book3__pages {
-  position:absolute; right:0; top:4px; width:10px; height:calc(100% - 8px);
-  background: repeating-linear-gradient(to bottom, #D4CEBC 0px,#D4CEBC 1px,#EDE8DC 1px,#EDE8DC 3px);
-  transform-origin: left center; transform: rotateY(90deg) translateX(5px);
-}
-.book3__top {
-  position:absolute; top:0; left:4px; width:calc(100% - 8px); height:8px;
-  background: linear-gradient(to bottom, #D4CEBC, #C8C0A8);
-  transform-origin: bottom center; transform: rotateX(90deg) translateY(-4px);
-}
-.hint {
-  font-family: var(--font-sans, Arial, sans-serif); font-size: 10px;
-  letter-spacing: 0.3em; text-transform: uppercase;
-  color: rgba(196,164,100,0.5); animation: blink 2.2s ease-in-out infinite;
-}
-@keyframes blink { 0%,100%{opacity:.5} 50%{opacity:1} }
-
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   OPEN BOOK
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-#stage-open { display:none; flex-direction:column; align-items:center; gap:26px; }
-
-.bwrap {
-  position:relative; perspective: 3200px;
-  opacity:0; transform:scale(0.96);
-  transition: opacity 0.55s ease, transform 0.55s ease;
-}
-.bwrap.visible { opacity:1; transform:scale(1); }
-
-.btn-close {
-  position:absolute; top:-14px; right:-14px; z-index:200;
-  width:34px; height:34px; border-radius:50%;
-  background: rgba(20,16,10,0.9); border: 1px solid rgba(196,164,100,0.28);
-  color: rgba(196,164,100,0.65); font-size:15px; cursor:pointer;
-  display:flex; align-items:center; justify-content:center;
-  transition: color 0.2s, border-color 0.2s;
-}
-.btn-close:hover { color:rgba(196,164,100,1); border-color:rgba(196,164,100,0.6); }
-
-.book {
-  position:relative; width: var(--book-w); height: var(--book-h);
-  transform-style: preserve-3d; transform: rotateX(1.5deg);
-  box-shadow: 0 4px 0 0 rgba(0,0,0,0.5), 0 40px 80px -10px rgba(0,0,0,0.75), 0 80px 140px -20px rgba(0,0,0,0.55);
-}
-.book::after {
-  content:''; position:absolute; bottom:-10px; left:8%; width:84%; height:14px;
-  background:rgba(0,0,0,0.5); filter:blur(10px); border-radius:50%; z-index:-1;
-}
-
-/* Static pages (background) */
-.pg-left-static, .pg-right-static {
-  position:absolute; top:0; width:50%; height:100%; z-index:1;
-}
-.pg-left-static  { left:0;  background: var(--page-bg); border-radius: 3px 0 0 3px; overflow:hidden; }
-.pg-right-static { right:0; background: var(--page-alt); border-radius: 0 3px 3px 0; overflow:hidden; }
-
-/* Spine shadow */
-.spine-shadow {
-  position:absolute; left:calc(50% - 10px); top:0; width:20px; height:100%;
-  background: linear-gradient(to right, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.26) 35%, rgba(0,0,0,0.26) 65%, rgba(0,0,0,0.12) 100%);
-  z-index:20; pointer-events:none;
-}
-.spine-shadow::after {
-  content:''; position:absolute; left:50%; top:0; transform:translateX(-50%);
-  width:1px; height:100%; background:rgba(0,0,0,0.18);
-}
-
-/* Flipping pages */
-.pg {
-  position:absolute; right:0; top:0; width:50%; height:100%;
-  transform-origin: left center; transform-style: preserve-3d;
-  transition: transform 0.88s cubic-bezier(0.645,0.045,0.355,1.000);
-  cursor: pointer; border-radius: 0 3px 3px 0;
-}
-.pg.turned { transform: rotateY(-180deg); cursor: default; }
-.pg__front, .pg__back {
-  position:absolute; inset:0; backface-visibility:hidden; -webkit-backface-visibility:hidden;
-  overflow:hidden; background: var(--page-bg);
-}
-.pg__front { border-radius: 0 3px 3px 0; box-shadow: inset -3px 0 10px rgba(0,0,0,0.07); }
-.pg__back  { transform: rotateY(180deg); border-radius: 3px 0 0 3px; box-shadow: inset 3px 0 10px rgba(0,0,0,0.07); }
-
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   PAGE INNER LAYOUT
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-.pi {
-  padding: 40px 36px 34px; height:100%;
-  display:flex; flex-direction:column; position:relative; overflow:hidden;
-}
-.pi::before {
-  content:''; position:absolute; inset:20px;
-  border:1px solid rgba(156,134,96,0.2); pointer-events:none;
-}
-.pi-eye {
-  font-family: var(--font-sans, Arial, sans-serif); font-size: 11px; font-weight:700;
-  letter-spacing: 0.34em; text-transform:uppercase; color: var(--gold); margin-bottom: 10px;
-}
-.pi-num {
-  font-family: var(--font-serif-display, Georgia, serif);
-  font-size: 72px; font-weight:400; font-style:italic; line-height:0.88;
-  color: rgba(156,134,96,0.14); letter-spacing:-0.04em; margin-bottom: 12px;
-  pointer-events:none; user-select:none;
-}
-.pi-date {
-  font-family: var(--font-sans, Arial, sans-serif); font-size: 9px;
-  letter-spacing:0.24em; text-transform:uppercase;
-  color: rgba(156,134,96,0.7); margin-bottom: 8px;
-}
-.pi-title {
-  font-family: var(--font-serif-display, Georgia, serif);
-  font-size: 26px; font-weight:400; line-height:1.2; letter-spacing:-0.012em; color: var(--ink);
-}
-.pi-title em { font-style:italic; color: var(--gold); }
-.pi-rule { width:32px; height:1px; background: var(--gold); opacity:0.55; margin: 13px 0; }
-.pi-desc {
-  font-family: var(--font-serif-display, Georgia, serif);
-  font-size: 14.5px; line-height:1.68; color: var(--ink-2); flex:1;
-}
-.pi-tags { display:flex; flex-wrap:wrap; gap:5px; margin: 11px 0; }
-.pi-tag--cat {
-  background: rgba(196,164,100,0.18);
-  color: #C4A464;
-  border-color: rgba(196,164,100,0.35);
-  font-weight: 600;
-}
-.pi-tag {
-  font-family: var(--font-sans, Arial, sans-serif); font-size: 10px; font-weight:700;
-  letter-spacing:0.18em; text-transform:uppercase; color: var(--gold);
-  border:1px solid rgba(156,134,96,0.28); padding: 4px 9px; border-radius:1px;
-}
-.pi-foot {
-  display:flex; align-items:center; justify-content:space-between;
-  padding-top:11px; border-top: 1px solid var(--page-rule); margin-top:9px;
-}
-.pi-src {
-  font-family: var(--font-sans, Arial, sans-serif); font-size: 10px;
-  letter-spacing:0.18em; text-transform:uppercase; color: rgba(156,134,96,0.6);
-}
-.pi-read {
-  position: relative;
-  z-index: 10;
-  display:inline-flex; align-items:center; gap:5px;
-  font-family: var(--font-sans, Arial, sans-serif); font-size: 10px; font-weight:700;
-  letter-spacing:0.18em; text-transform:uppercase; color: var(--ink); text-decoration:none;
-  padding: 8px 15px; border:1px solid rgba(46,44,40,0.55);
-  transition: all 0.18s; position:relative; z-index:30;
-}
-.pi-read:hover { background:var(--ink); color:var(--page-bg); }
-
-/* ── INTRO PAGE ── */
-.intro {
-  padding: 40px 36px 34px; height:100%;
-  display:flex; flex-direction:column; position:relative; overflow:hidden;
-}
-.intro::before {
-  content:''; position:absolute; inset:20px;
-  border:1px solid rgba(156,134,96,0.2); pointer-events:none;
-}
-.intro-orn { font-family: var(--font-hebrew, serif); font-size: 36px; direction:rtl; color: rgba(156,134,96,0.18); margin-bottom:14px; }
-.intro-eye { font-family: var(--font-sans, Arial, sans-serif); font-size:11px; font-weight:700; letter-spacing:0.34em; text-transform:uppercase; color: var(--gold); margin-bottom:8px; }
-.intro-title { font-family: var(--font-serif-display, Georgia, serif); font-size:24px; font-weight:400; font-style:italic; line-height:1.2; color:var(--ink); margin-bottom:13px; }
-.intro-rule { width:32px; height:1px; background:var(--gold); opacity:0.55; margin-bottom:13px; }
-.intro-body { font-family: var(--font-serif-display, Georgia, serif); font-size:13.5px; line-height:1.72; color:var(--ink-2); flex:1; }
-.intro-toc { margin-top:16px; padding-top:13px; border-top:1px solid var(--page-rule); }
-.intro-toc-hd { font-family: var(--font-sans, Arial, sans-serif); font-size:9.5px; font-weight:700; letter-spacing:0.34em; text-transform:uppercase; color:var(--gold); margin-bottom:9px; }
-.toc-row { display:flex; align-items:baseline; gap:6px; margin-bottom:6px; }
-.toc-n { font-family: var(--font-serif-display, Georgia, serif); font-size:12.5px; font-style:italic; color:var(--gold); width:20px; flex-shrink:0; }
-.toc-t { font-family: var(--font-serif-display, Georgia, serif); font-size:12.5px; line-height:1.3; color:var(--ink-2); }
-
-/* ── COLOPHON / closing ── */
-.colo {
-  padding: 40px 36px 34px; height:100%;
-  display:flex; flex-direction:column; align-items:center; justify-content:center;
-  text-align:center; position:relative; overflow:hidden;
-}
-.colo::before { content:''; position:absolute; inset:20px; border:1px solid rgba(156,134,96,0.2); pointer-events:none; }
-.colo-orn { font-family: var(--font-hebrew, serif); font-size:50px; direction:rtl; color:rgba(156,134,96,0.14); margin-bottom:20px; }
-.colo-title { font-family: var(--font-serif-display, Georgia, serif); font-size:19px; font-weight:400; font-style:italic; color:var(--ink); margin-bottom:10px; }
-.colo-rule { width:32px; height:1px; background:var(--gold); opacity:0.5; margin:0 auto 13px; }
-.colo-body { font-family: var(--font-serif-display, Georgia, serif); font-size:12px; line-height:1.72; color:var(--ink-2); max-width:250px; margin-bottom:auto; }
-.colo-foot { font-family: var(--font-sans, Arial, sans-serif); font-size:7.5px; letter-spacing:0.3em; text-transform:uppercase; color:rgba(156,134,96,0.38); margin-top:22px; }
-
-/* ── SERIES CLOSING (pg4 back) ── */
-.series-close {
-  padding: 40px 36px 34px; height:100%;
-  display:flex; flex-direction:column; align-items:center; justify-content:center;
-  text-align:center; position:relative; overflow:hidden;
-  background: var(--cover-dark);
-}
-.series-close::before { content:''; position:absolute; inset:20px; border:1px solid rgba(196,164,100,0.2); pointer-events:none; }
-.sc-orn { font-family: var(--font-hebrew, serif); font-size:50px; direction:rtl; color:rgba(196,164,100,0.18); margin-bottom:20px; }
-.sc-title { font-family: var(--font-serif-display, Georgia, serif); font-size:20px; font-weight:400; font-style:italic; color: #F0EAD6; margin-bottom:10px; }
-.sc-rule { width:32px; height:1px; background:rgba(196,164,100,0.4); margin:0 auto 13px; }
-.sc-body { font-family: var(--font-serif-display, Georgia, serif); font-size:12.5px; line-height:1.7; color:rgba(240,234,214,0.7); max-width:250px; }
-.sc-foot { font-family: var(--font-sans, Arial, sans-serif); font-size:7.5px; letter-spacing:0.3em; text-transform:uppercase; color:rgba(196,164,100,0.35); margin-top:22px; }
-.sc-eyebrow { font-family: var(--font-sans-text, Arial, sans-serif); font-weight:700; font-size:8px; letter-spacing:0.28em; text-transform:uppercase; color:rgba(196,164,100,0.5); margin-bottom:14px; }
-.sc-url { font-family: var(--font-sans, Arial, sans-serif); font-size:7.5px; letter-spacing:0.22em; text-transform:lowercase; color:rgba(196,164,100,0.3); margin-top:18px; }
-
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   NAV BAR
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-.nav-bar { display:flex; align-items:center; gap:22px; }
-.nav-btn {
-  width:42px; height:42px; border-radius:50%; background:none;
-  border:1px solid rgba(196,164,100,0.28); color:rgba(196,164,100,0.6);
-  font-size:17px; cursor:pointer; display:flex; align-items:center; justify-content:center;
-  transition: all 0.18s;
-}
-.nav-btn:hover:not(:disabled) { border-color:rgba(196,164,100,0.7); color:rgba(196,164,100,1); background:rgba(196,164,100,0.07); }
-.nav-btn:disabled { opacity:0.22; cursor:not-allowed; }
-.nav-dots { display:flex; gap:8px; align-items:center; }
-.nav-dot { width:6px; height:6px; border-radius:50%; background:rgba(196,164,100,0.2); cursor:pointer; transition: all 0.2s; }
-.nav-dot.on { background:rgba(196,164,100,0.85); transform:scale(1.25); }
-.nav-hint { font-family: var(--font-sans, Arial, sans-serif); font-size:9px; letter-spacing:0.24em; text-transform:uppercase; color:rgba(196,164,100,0.28); text-align:center; margin-top:-8px; }
-
-/* click zones */
-.click-zone { position:absolute; top:0; width:50%; height:100%; z-index:50; cursor:pointer; background:transparent; pointer-events:none; }
-.click-zone--right { right:0; }
-/* Show correct pointer on book left/right halves */
-#sOpen { cursor: default; }
-#book  { cursor: e-resize; }
-.click-zone--left  { left:0; }
-
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   RESPONSIVE — mobile = scrollable card list
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-@media(max-width:880px){
-  /* ── Hide book-cover stage; show card list immediately ── */
-  #stage-closed           { display:none !important; }
-  #stage-open             { display:flex !important; }
-  .bwrap                  { opacity:1 !important; transform:none !important; perspective:none; }
-  .btn-close, .nav-bar, .nav-hint, .mobile-counter { display:none !important; }
-
-  /* ── Book becomes a vertical stack of cards ── */
-  .book {
-    position:static; width:calc(100vw - 20px); max-width:520px;
-    height:auto; display:flex !important; flex-direction:column; gap:16px;
-    transform:none; transform-style:flat; box-shadow:none;
+  :root {
+    --paper: #F4F0E5;
+    --ink: #333230;
+    --ink-soft: #524F4D;
+    --ink-faint: #8A7758;
+    --champagne: #C2A474;
+    --bronze: #9C8660;
+    --rule: #D9D1BD;
   }
-  .book::after { display:none; }
-  .pg-left-static,.pg-right-static,.spine-shadow,.click-zone { display:none; }
-
-  /* ── Each .pg holds 2 cards (front + back) ── */
-  .pg {
-    position:static !important; width:100%; height:auto;
-    display:flex !important; flex-direction:column; gap:16px;
-    transform:none !important; transform-style:flat !important;
-    z-index:auto !important; cursor:default; border-radius:0;
-  }
-  .pg.turned { transform:none !important; }
-
-  /* ── Individual card faces ── */
-  .pg__front, .pg__back {
-    position:static; display:block !important; height:auto;
-    transform:none !important;
-    backface-visibility:visible !important; -webkit-backface-visibility:visible !important;
-    border-radius:4px;
-    box-shadow:0 2px 20px rgba(0,0,0,0.25);
+  html { background: #DDD7C7; }
+  body {
+    margin: 0;
+    background: #DDD7C7;
+    font-family: var(--font-serif-text);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
   }
 
-  /* ── Card typography ── */
-  .pi         { padding:28px 22px 24px; }
-  .pi-num     { font-size:40px; margin-bottom:8px; }
-  .pi-eye     { font-size:13px; letter-spacing:0.26em; margin-bottom:8px; }
-  .pi-title   { font-size:30px; }
-  .pi-rule    { margin:14px 0; }
-  .pi-desc    { font-size:17px; line-height:1.75; }
-  .pi-tags    { gap:6px; margin:13px 0; }
-  .pi-tag     { font-size:12px; padding:5px 11px; letter-spacing:0.12em; }
-  .pi-src     { font-size:12px; }
-  .pi-read    { font-size:13px; padding:11px 18px; letter-spacing:0.12em; }
-  .pi-foot    { padding-top:14px; margin-top:10px; }
+  /* ============================ PAGE FRAME ============================ */
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    margin: 28px auto;
+    background: var(--paper);
+    box-shadow: 0 1px 0 rgba(28,22,19,0.08), 0 12px 28px -8px rgba(28,22,19,0.18);
+    box-sizing: border-box;
+    padding: 0.85in 0.85in 0.95in;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .page__num {
+    position: absolute;
+    bottom: 0.5in;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: var(--font-sans-text);
+    font-weight: 500;
+    font-size: 9pt;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
 
-  /* ── Header ── */
-  .hdr        { margin-bottom:32px; }
-  .hdr__title { font-size:44px; }
-  .hdr__eye   { font-size:13px; letter-spacing:0.26em; }
-  .hdr__heb   { font-size:24px; }
+  /* ============================ COVER ============================ */
+  .cover {
+    text-align: center;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+  .cover__top {
+    padding-top: 0.4in;
+  }
+  .cover__publisher {
+    font-family: var(--font-sans-text);
+    font-weight: 700;
+    font-size: 10pt;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .cover__rule {
+    width: 56px;
+    height: 1px;
+    background: var(--champagne);
+    margin: 22px auto;
+  }
+  .cover__series {
+    font-family: var(--font-serif-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 15pt;
+    color: var(--ink-soft);
+    letter-spacing: 0.01em;
+  }
+  .cover__middle {
+    padding: 1.0in 0 0.6in;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+  }
+  .cover__eyebrow {
+    font-family: var(--font-sans-text);
+    font-weight: 700;
+    font-size: 11pt;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: var(--bronze);
+    margin-bottom: 38px;
+  }
+  .cover__numeral {
+    font-family: var(--font-serif-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 120pt;
+    line-height: 0.85;
+    color: var(--champagne);
+    margin: 0 0 14px;
+  }
+  .cover__title {
+    font-family: var(--font-serif-display);
+    font-weight: 500;
+    font-size: 44pt;
+    line-height: 1.0;
+    letter-spacing: -0.012em;
+    color: var(--ink);
+    margin: 0 0 22px;
+  }
+  .cover__title em {
+    font-style: italic;
+    color: var(--bronze);
+  }
+  .cover__heb {
+    font-family: var(--font-hebrew);
+    direction: rtl;
+    font-size: 28pt;
+    line-height: 1.3;
+    color: var(--ink-soft);
+    margin: 30px 0 26px;
+  }
+  .cover__sub {
+    font-family: var(--font-serif-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18pt;
+    color: var(--ink-soft);
+    max-width: 460px;
+    margin: 0 auto;
+    line-height: 1.35;
+  }
+  .cover__double {
+    border-top: 3px double var(--ink-soft);
+    margin: 40px auto 0;
+    width: 60%;
+  }
+  .cover__bottom {
+    padding-bottom: 0.2in;
+  }
+  .cover__byline {
+    font-family: var(--font-serif-text);
+    font-size: 12pt;
+    color: var(--ink);
+    margin: 0 0 8px;
+  }
+  .cover__byline em {
+    font-style: italic;
+    font-family: var(--font-serif-display);
+    font-size: 14pt;
+    color: var(--bronze);
+  }
+  .cover__years {
+    font-family: var(--font-sans-text);
+    font-weight: 500;
+    font-size: 10pt;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-top: 10px;
+  }
 
-  /* ── Scene padding for scroll ── */
-  .scene      { padding:36px 10px 60px; justify-content:flex-start; }
-}
+  /* ============================ CONTENTS ============================ */
+  .toc__head {
+    margin-bottom: 0.4in;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--ink);
+  }
+  .toc__eyebrow {
+    font-family: var(--font-sans-text);
+    font-weight: 700;
+    font-size: 10pt;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--bronze);
+    margin-bottom: 14px;
+  }
+  .toc__title {
+    font-family: var(--font-serif-display);
+    font-weight: 500;
+    font-size: 32pt;
+    line-height: 1.0;
+    color: var(--ink);
+    margin: 0 0 12px;
+  }
+  .toc__title em { font-style: italic; color: var(--bronze); }
+  .toc__intro {
+    font-family: var(--font-serif-text);
+    font-size: 11.5pt;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 5.5in;
+    margin: 0;
+  }
 
-@media(max-width:430px){
-  .pi         { padding:22px 16px 20px; }
-  .pi-title   { font-size:27px; }
-  .pi-desc    { font-size:16px; }
-  .pi-num     { font-size:34px; }
-  .hdr__title { font-size:38px; }
-  .hdr        { margin-bottom:24px; }
-}
+  .toc__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: sicha;
+  }
+  .toc__item {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 20px;
+    align-items: baseline;
+    padding: 18px 0 18px;
+    border-bottom: 1px solid var(--rule);
+    text-decoration: none;
+    color: inherit;
+    counter-increment: sicha;
+  }
+  .toc__item:last-child { border-bottom: none; }
+  .toc__num {
+    font-family: var(--font-serif-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 22pt;
+    color: var(--champagne);
+    line-height: 1;
+    padding-top: 4px;
+  }
+  .toc__body {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .toc__name {
+    font-family: var(--font-serif-display);
+    font-weight: 500;
+    font-size: 16pt;
+    line-height: 1.15;
+    color: var(--ink);
+    margin: 0;
+  }
+  .toc__name em { font-style: italic; color: var(--bronze); }
+  .toc__desc {
+    font-family: var(--font-serif-text);
+    font-style: italic;
+    font-size: 11pt;
+    line-height: 1.4;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .toc__date {
+    font-family: var(--font-sans-text);
+    font-weight: 500;
+    font-size: 9pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    text-align: right;
+    line-height: 1.4;
+  }
+  .toc__date strong {
+    display: block;
+    font-weight: 700;
+    color: var(--bronze);
+    margin-bottom: 2px;
+  }
+
+  .toc__foot {
+    margin-top: 0.4in;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: var(--font-sans-text);
+    font-size: 9pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .toc__foot em {
+    font-style: italic;
+    font-family: var(--font-serif-display);
+    font-size: 11pt;
+    color: var(--ink-soft);
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  /* ============================ PRINT ============================ */
+  @media print {
+    @page {
+      size: letter;
+      margin: 0.55in 0.55in 0.7in 0.55in;
+      @bottom-center {
+        content: counter(page, lower-roman);
+        font-family: "Founders Grotesk Text", "Helvetica Neue", Arial, sans-serif;
+        font-size: 9pt;
+        letter-spacing: 0.22em;
+        color: #524F4D;
+      }
+    }
+    @page :first {
+      @bottom-center { content: none; }
+    }
+    html, body { background: #FFFFFF !important; }
+    body {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page {
+      width: 100%;
+      min-height: 0;
+      margin: 0;
+      box-shadow: none;
+      padding: 0.25in 0.3in 0.3in;
+      page-break-after: always;
+      background: #FFFFFF;
+    }
+    .page:last-child { page-break-after: avoid; }
+    .page__num { display: none; }
+  }
 </style>
 </head>
 <body>
-<div class="scene">
 
-  <!-- ── HEADER ── -->
-  <header class="hdr">
-    <div class="hdr__eye">Likkutei Sichos &middot; Visual Study Series</div>
-    <h1 class="hdr__title">Shavuos <em>Sichos</em></h1>
-    <div class="hdr__heb">שבועות</div>
-  </header>
+  <!-- ============================ COVER PAGE ============================ -->
+  <div class="page cover">
+    <div class="cover__top">
+      <div class="cover__publisher">Likkutei Sichos · Infographic Series</div>
+      <div class="cover__rule"></div>
+      <div class="cover__series">A collection of seven studies</div>
+    </div>
 
-  <!-- ═══════════════════════════════════════════
-       CLOSED BOOK STAGE
-  ══════════════════════════════════════════════ -->
-  <div id="stage-closed">
-    <div class="book3-wrap">
-      <div class="book3" id="btn-open" role="button" tabindex="0" aria-label="Open the book">
-        <div class="book3__spine"></div>
-        <div class="book3__pages"></div>
-        <div class="book3__top"></div>
-        <div class="book3__front">
-          <div class="cover-content">
-            <div class="cc-heb">שבועות</div>
-            <div class="cc-caps">Shavuos</div>
-            <div class="cc-serif">A Visual<br>Likkutei Sichos</div>
-            <div class="cc-rule"></div>
-            <div class="cc-vol">Seven Sichos</div>
-          </div>
+    <div class="cover__middle">
+      <div class="cover__eyebrow">On the Festival of the Giving of the Torah</div>
+      <div class="cover__numeral">VII</div>
+      <h1 class="cover__title">Seven <em>Sichos</em><br>on Shavuos</h1>
+      <div class="cover__heb">שִׁבְעָה שִׂיחוֹת · בְּחַג הַשָּׁבוּעוֹת</div>
+      <p class="cover__sub">From the teachings of the Lubavitcher Rebbe — seven discourses, three decades, one festival.</p>
+      <div class="cover__double"></div>
+    </div>
+
+    <div class="cover__bottom">
+      <p class="cover__byline">Adapted as infographics from <em>Likkutei Sichos</em></p>
+    </div>
+  </div>
+
+  <!-- ============================ CONTENTS PAGE ============================ -->
+  <div class="page">
+    <div class="toc__head">
+      <div class="toc__eyebrow">A collection of seven infographics</div>
+      <h2 class="toc__title">Contents</h2>
+      <p class="toc__intro">Seven Shavuos sichos of the Rebbe, presented in chronological order. Each is a self-contained study — readable in any order, but together they trace three decades of one festival held to a steady, deepening question: <em>what did this day do?</em></p>
+    </div>
+
+    <ol class="toc__list">
+      <a class="toc__item" href="the-angels-claim.html">
+        <div class="toc__num">i.</div>
+        <div class="toc__body">
+          <h3 class="toc__name">The Angels' <em>Claim</em> to the Torah</h3>
+          <p class="toc__desc">The malachim's protest at Sinai read as a legal claim of <em>dina d'bar metzra</em> — and the Rebbe's full answer to it.</p>
         </div>
-      </div>
-    </div>
-    <p class="hint">Click to open</p>
-  </div>
+      </a>
 
-  <!-- ═══════════════════════════════════════════
-       OPEN BOOK STAGE
-  ══════════════════════════════════════════════ -->
-  <div id="stage-open">
-    <div class="bwrap" id="bwrap">
-      <button class="btn-close" id="btn-close" aria-label="Close">&times;</button>
-
-      <div class="book" id="book">
-
-        <!-- Static left: Intro / TOC -->
-        <div class="pg-left-static">
-          <div class="intro">
-            <div class="intro-orn">שבועות</div>
-            <div class="intro-eye">In These Pages</div>
-            <h2 class="intro-title">A Visual Likkutei Sichos<br>on Shavuos</h2>
-            <div class="intro-rule"></div>
-            <p class="intro-body">The Lubavitcher Rebbe&rsquo;s Likkutei Sichos contains some of the most penetrating analyses of Torah ever written. These infographics bring seven of his Shavuos sichos to life &mdash; mapping arguments, visualizing structures, surfacing ideas.</p>
-            <div class="intro-toc">
-              <div class="intro-toc-hd">Contents</div>
-              <div class="toc-row"><span class="toc-n">i.</span><span class="toc-t">The Three Events of Shavuos</span></div>
-              <div class="toc-row"><span class="toc-n">ii.</span><span class="toc-t">The Angels&rsquo; Claim to the Torah</span></div>
-              <div class="toc-row"><span class="toc-n">iii.</span><span class="toc-t">An Oneg Without Exception</span></div>
-              <div class="toc-row"><span class="toc-n">iv.</span><span class="toc-t">The Climb from Below</span></div>
-              <div class="toc-row"><span class="toc-n">v.</span><span class="toc-t">The Center</span></div>
-              <div class="toc-row"><span class="toc-n">vi.</span><span class="toc-t">A Kingdom of Priests</span></div>
-              <div class="toc-row"><span class="toc-n">vii.</span><span class="toc-t">How Many Yosefs in the Marketplace</span></div>
-            </div>
-          </div>
+      <a class="toc__item" href="the-center.html">
+        <div class="toc__num">ii.</div>
+        <div class="toc__body">
+          <h3 class="toc__name">The <em>Center</em></h3>
+          <p class="toc__desc">Why the deepest oneness sits in the third regel, not the first — two sichos pressing on a single wonder.</p>
         </div>
+      </a>
 
-        <!-- Static right: empty (no colophon) -->
-        <div class="pg-right-static"></div>
-
-        <!-- Spine shadow -->
-        <div class="spine-shadow"></div>
-
-        <!-- PAGE 4 (z=1): Sicha VII front | Series close back -->
-        <div class="pg" id="pg4" style="z-index:1">
-          <!-- Front: Sicha VII -->
-          <div class="pg__front">
-            <div class="pi">
-              <div class="pi-eye">Sicha VII.</div>
-              <div class="pi-num">vii</div>
-              <h2 class="pi-title">How Many <em>Yosefs</em> in the Marketplace</h2>
-              <div class="pi-rule"></div>
-              <p class="pi-desc">Rav Yosef lifts his cup every Shavuos and says one sentence. The Rebbe reads it six ways and finds a chiddush about Matan Torah: the day didn&rsquo;t only command &mdash; it changed what an <em>object</em> can become.</p>
-              <div class="pi-tags">
-                <span class="pi-tag pi-tag--cat">Shavuos</span>
-                <span class="pi-tag">Gavra &amp; Cheftza</span>
-                <span class="pi-tag">Matan Torah</span>
-                <span class="pi-tag">Cheftza shel Mitzvah</span>
-              </div>
-              <div class="pi-foot">
-                <a class="pi-read" href="how-many-yosefs.html">Read &rarr;</a>
-              </div>
-            </div>
-          </div>
-          <!-- Back: Series Close -->
-          <div class="pg__back">
-            <div class="series-close">
-              <div class="sc-eyebrow">Likkutei Sichos &middot; Shavuos</div>
-              <h2 class="sc-title">Seven Sichos on <em>Shavuos</em></h2>
-              <p class="sc-body">Seven infographics from the Lubavitcher Rebbe on the Festival of Giving &mdash; Matan Torah, the descent and the ascent, the marketplace and the miracle.</p>
-              <div class="sc-url">zmabraham.github.io/Sicha-Infograph/</div>
-            </div>
-          </div>
+      <a class="toc__item" href="the-climb-from-below.html">
+        <div class="toc__num">iii.</div>
+        <div class="toc__body">
+          <h3 class="toc__name">The Climb from <em>Below</em></h3>
+          <p class="toc__desc">The night Jews slept before Sinai, the day the Baal Shem Tov loved most — both reject the same shortcut.</p>
         </div>
+      </a>
 
-        <!-- PAGE 3 (z=2): Sicha V front | Sicha VI back -->
-        <div class="pg" id="pg3" style="z-index:2">
-          <!-- Front: Sicha V -->
-          <div class="pg__front">
-            <div class="pi">
-              <div class="pi-eye">Sicha V.</div>
-              <div class="pi-num">v</div>
-              <h2 class="pi-title">The <em>Center</em></h2>
-              <div class="pi-rule"></div>
-              <p class="pi-desc">Torah creates the deepest yichud with Hashem. So why the <em>third</em> month, not the first? Because real oneness must first encounter its opposite &mdash; and the third is the new thing that emerges when the high and the low finally meet.</p>
-              <div class="pi-tags">
-                <span class="pi-tag pi-tag--cat">Shavuos</span>
-                <span class="pi-tag">Oryan Tlisai</span>
-                <span class="pi-tag">Kav Ha-Emtzai</span>
-                <span class="pi-tag">Torah Lishmah</span>
-              </div>
-              <div class="pi-foot">
-                <a class="pi-read" href="the-center.html">Read &rarr;</a>
-              </div>
-            </div>
-          </div>
-          <!-- Back: Sicha VI -->
-          <div class="pg__back">
-            <div class="pi">
-              <div class="pi-eye">Sicha VI.</div>
-              <div class="pi-num">vi</div>
-              <h2 class="pi-title">A Kingdom of <em>Priests</em></h2>
-              <div class="pi-rule"></div>
-              <p class="pi-desc">Moshe, David, and the Baal Shem Tov — three first kings, each carrying <em>mamleches kohanim</em> into a deeper darkness than the one before. Inside every Jew&rsquo;s day: one crown, three keepers.</p>
-              <div class="pi-tags">
-                <span class="pi-tag pi-tag--cat">Shavuos</span>
-                <span class="pi-tag">Mamleches Kohanim</span>
-                <span class="pi-tag">Hisnasus</span>
-                <span class="pi-tag">Three Kings</span>
-              </div>
-              <div class="pi-foot">
-                <a class="pi-read" href="a-kingdom-of-priests.html">Read &rarr;</a>
-              </div>
-            </div>
-          </div>
+      <a class="toc__item" href="an-oneg-without-exception.html">
+        <div class="toc__num">iv.</div>
+        <div class="toc__body">
+          <h3 class="toc__name">An <em>Oneg</em> Without Exception</h3>
+          <p class="toc__desc">Why the most spiritual of festivals is the one festival on which the body is not allowed to fast.</p>
         </div>
+      </a>
 
-        <!-- PAGE 2 (z=3): Sicha III front | Sicha IV back -->
-        <div class="pg" id="pg2" style="z-index:3">
-          <div class="pg__front">
-            <div class="pi">
-              <div class="pi-eye">Sicha III.</div>
-              <div class="pi-num">iii</div>
-              <h2 class="pi-title">An <em>Oneg</em> Without Exception</h2>
-              <div class="pi-rule"></div>
-              <p class="pi-desc">Shavuos is the one Yom Tov where even a ta&rsquo;anis chalom is forbidden &mdash; yet it is the most spiritual of all. The answer: Matan Torah was Atzmus, not gilui. And Atzmus has no outside.</p>
-              <div class="pi-tags">
-                <span class="pi-tag pi-tag--cat">Shavuos</span>
-                <span class="pi-tag">Oneg Yom Tov</span>
-                <span class="pi-tag">Ta&rsquo;anis Chalom</span>
-                <span class="pi-tag">Atzmus</span>
-              </div>
-              <div class="pi-foot">
-                <a class="pi-read" href="an-oneg-without-exception.html">Read &rarr;</a>
-              </div>
-            </div>
-          </div>
-          <div class="pg__back">
-            <div class="pi">
-              <div class="pi-eye">Sicha IV.</div>
-              <div class="pi-num">iv</div>
-              <h2 class="pi-title">The Climb from <em>Below</em></h2>
-              <div class="pi-rule"></div>
-              <p class="pi-desc">Two paired sichos: why Bnei Yisrael&rsquo;s sleep before Sinai wasn&rsquo;t carelessness &mdash; and why the Baal Shem Tov chose Yom Tov Sheni. The body is the venue. The descent is the ascent.</p>
-              <div class="pi-tags">
-                <span class="pi-tag pi-tag--cat">Shavuos</span>
-                <span class="pi-tag">Yishuv Da&rsquo;at</span>
-                <span class="pi-tag">Guf v&rsquo;Neshamah</span>
-                <span class="pi-tag">Yom Tov Sheni</span>
-              </div>
-              <div class="pi-foot">
-                <a class="pi-read" href="the-climb-from-below.html">Read &rarr;</a>
-              </div>
-            </div>
-          </div>
+      <a class="toc__item" href="three-events.html">
+        <div class="toc__num">v.</div>
+        <div class="toc__body">
+          <h3 class="toc__name">The Three <em>Events</em> of Shavuos</h3>
+          <p class="toc__desc">Matan Torah, the passing of David HaMelech, and the histalkus of the Baal Shem Tov — read as one unfolding.</p>
         </div>
+      </a>
 
-        <!-- PAGE 1 (z=4, top of stack): Sicha I front | Sicha II back -->
-        <div class="pg" id="pg1" style="z-index:4">
-          <div class="pg__front">
-            <div class="pi">
-              <div class="pi-eye">Sicha I.</div>
-              <div class="pi-num">i</div>
-              <h2 class="pi-title">The Three Events of <em>Shavuos</em></h2>
-              <div class="pi-rule"></div>
-              <p class="pi-desc">Three events fall on the same day every year: Matan Torah, the histalkus of Dovid HaMelech, and the histalkus of the Baal Shem Tov. Each enacts the same cosmic exchange &mdash; the higher descends, the lower ascends.</p>
-              <div class="pi-tags">
-                <span class="pi-tag pi-tag--cat">Shavuos</span>
-                <span class="pi-tag">Matan Torah</span>
-                <span class="pi-tag">Histalkus</span>
-                <span class="pi-tag">Dirah B&rsquo;Tachtonim</span>
-              </div>
-              <div class="pi-foot">
-                <a class="pi-read" href="three-events.html">Read &rarr;</a>
-              </div>
-            </div>
-          </div>
-          <div class="pg__back">
-            <div class="pi">
-              <div class="pi-eye">Sicha II.</div>
-              <div class="pi-num">ii</div>
-              <h2 class="pi-title">The Angels&rsquo; Claim to the <em>Torah</em></h2>
-              <div class="pi-rule"></div>
-              <p class="pi-desc">When Moshe ascended Sinai, the angels claimed the Torah under dina d&rsquo;bar metzra. The Rebbe examines five answers from the meforshim &mdash; finds each wanting &mdash; and arrives: yishuv adif, dirah b&rsquo;tachtonim.</p>
-              <div class="pi-tags">
-                <span class="pi-tag pi-tag--cat">Shavuos</span>
-                <span class="pi-tag">Bar Metzra</span>
-                <span class="pi-tag">Yishuv Adif</span>
-                <span class="pi-tag">Dirah B&rsquo;Tachtonim</span>
-              </div>
-              <div class="pi-foot">
-                <a class="pi-read" href="the-angels-claim.html">Read &rarr;</a>
-              </div>
-            </div>
-          </div>
+      <a class="toc__item" href="how-many-yosefs.html">
+        <div class="toc__num">vi.</div>
+        <div class="toc__body">
+          <h3 class="toc__name">How Many <em>Yosefs</em> in the Marketplace</h3>
+          <p class="toc__desc">Six questions on one line of Rav Yosef — and the chiddush hiding in every word about what Matan Torah did to the <em>cheftza</em>.</p>
         </div>
+      </a>
 
-        <!-- Click zones (desktop) -->
-        <div class="click-zone click-zone--right" id="cz-right"></div>
-        <div class="click-zone click-zone--left"  id="cz-left" style="display:none"></div>
+      <a class="toc__item" href="a-kingdom-of-priests.html">
+        <div class="toc__num">vii.</div>
+        <div class="toc__body">
+          <h3 class="toc__name">A Kingdom of <em>Priests</em></h3>
+          <p class="toc__desc">Moshe, David, and the Baal Shem Tov — three first kings, three eras, three modes of every Jew's day.</p>
+        </div>
+      </a>
+    </ol>
 
-      </div><!-- /.book -->
-    </div><!-- /.bwrap -->
-
-    <!-- NAV BAR -->
-    <div class="nav-bar">
-      <button class="nav-btn" id="btn-prev" disabled>&#8592;</button>
-      <div class="nav-dots">
-        <div class="nav-dot on" data-s="0"></div>
-        <div class="nav-dot"    data-s="1"></div>
-        <div class="nav-dot"    data-s="2"></div>
-        <div class="nav-dot"    data-s="3"></div>
-        <div class="nav-dot"    data-s="4"></div>
-      </div>
-      <span class="mobile-counter" id="mobile-counter" style="display:none">1 / 7</span>
-      <button class="nav-btn" id="btn-next">&#8594;</button>
-    </div>
-    <p class="nav-hint">&#8592; &#8594; arrow keys &nbsp;&middot;&nbsp; click pages to turn</p>
-
-  </div><!-- /#stage-open -->
-
-</div><!-- /.scene -->
-
-<script>
-(function(){
-"use strict";
-
-var spread = 0;
-var isMobile = window.innerWidth <= 880;
-window.addEventListener("resize", function(){ isMobile = window.innerWidth <= 880; });
-function numSpreads(){ return isMobile ? mobileFaces.length : 5; }
-
-/* DOM */
-var sClosed = document.getElementById("stage-closed");
-var sOpen   = document.getElementById("stage-open");
-var bwrap   = document.getElementById("bwrap");
-var pg1     = document.getElementById("pg1");
-var pg2     = document.getElementById("pg2");
-var pg3     = document.getElementById("pg3");
-var pg4     = document.getElementById("pg4");
-var btnOpen  = document.getElementById("btn-open");
-var btnClose = document.getElementById("btn-close");
-var btnPrev  = document.getElementById("btn-prev");
-var btnNext  = document.getElementById("btn-next");
-var dots     = document.querySelectorAll(".nav-dot");
-var czRight  = document.getElementById("cz-right");
-var czLeft   = document.getElementById("cz-left");
-
-/* Mobile: show all 7 sichos in linear order */
-
-/* Open */
-function openBook(){
-  sClosed.classList.add("hiding");
-  setTimeout(function(){
-    sClosed.style.display = "none";
-    sOpen.style.display   = "flex";
-    if(isMobile){
-      initMobile();
-      document.getElementById("mobile-counter").style.display = "inline";
-    }
-    requestAnimationFrame(function(){ bwrap.classList.add("visible"); });
-    syncNav();
-  }, 420);
-}
-
-/* Close */
-function closeBook(){
-  bwrap.classList.remove("visible");
-  setTimeout(function(){
-    sOpen.style.display   = "none";
-    sClosed.style.display = "flex";
-    sClosed.classList.remove("hiding");
-    spread = 0;
-    pg1.classList.remove("turned"); pg1.style.zIndex = 4;
-    pg2.classList.remove("turned"); pg2.style.zIndex = 3;
-    pg3.classList.remove("turned"); pg3.style.zIndex = 2;
-    pg4.classList.remove("turned"); pg4.style.zIndex = 1;
-    if(isMobile){
-      resetMobile();
-      document.getElementById("mobile-counter").style.display = "none";
-    }
-    syncNav();
-  }, 520);
-}
-
-/* Navigate */
-function goTo(n){
-  if(n < 0 || n >= numSpreads()) return;
-  var prev = spread; spread = n;
-
-  if(isMobile){ mobileShow(n); syncNav(); return; }
-
-  // Forward
-  if(n > prev){
-    if(prev === 0 && n >= 1){ pg1.style.zIndex=4; pg1.classList.add("turned"); }
-    if(prev <= 1 && n >= 2){ pg2.style.zIndex=5; pg2.classList.add("turned"); }
-    if(prev <= 2 && n >= 3){ pg3.style.zIndex=6; pg3.classList.add("turned"); }
-    if(prev <= 3 && n === 4){ pg4.style.zIndex=7; pg4.classList.add("turned"); }
-  } else {
-    // Back
-    if(prev === 4 && n <= 3){ pg4.style.zIndex=1; pg4.classList.remove("turned"); }
-    if(prev >= 3 && n <= 2){ pg3.style.zIndex=2; pg3.classList.remove("turned"); }
-    if(prev >= 2 && n <= 1){ pg2.style.zIndex=3; pg2.classList.remove("turned"); }
-    if(prev >= 1 && n === 0){ pg1.style.zIndex=4; pg1.classList.remove("turned"); }
-  }
-
-  czRight.style.display = (spread < numSpreads()-1) ? "block" : "none";
-  czLeft.style.display  = (spread > 0)              ? "block" : "none";
-  syncNav();
-}
-
-function syncNav(){
-  var NS = numSpreads();
-  btnPrev.disabled = (spread === 0);
-  btnNext.disabled = (spread === NS-1);
-  dots.forEach(function(d){ d.classList.toggle("on", +d.dataset.s === spread); });
-  var mc = document.getElementById("mobile-counter");
-  if(mc) mc.textContent = (spread+1) + " / " + NS;
-}
-
-/* Mobile — all 7 sichos in reading order */
-var mobileFaces = [
-  {el: pg1, side: "front"},   // Sicha I
-  {el: pg1, side: "back"},    // Sicha II
-  {el: pg2, side: "front"},   // Sicha III
-  {el: pg2, side: "back"},    // Sicha IV
-  {el: pg3, side: "front"},   // Sicha V
-  {el: pg3, side: "back"},    // Sicha VI
-  {el: pg4, side: "front"},   // Sicha VII
-];
-function initMobile(){
-  [pg1,pg2,pg3,pg4].forEach(function(p){ p.classList.remove("mobile-show"); });
-  [].forEach.call(document.querySelectorAll(".pg__front,.pg__back"), function(f){
-    f.style.display="none"; f.classList.remove("mobile-show");
-  });
-  mobileShow(0);
-}
-function resetMobile(){
-  [pg1,pg2,pg3,pg4].forEach(function(p){ p.classList.remove("mobile-show"); });
-  [].forEach.call(document.querySelectorAll(".pg__front,.pg__back"), function(f){
-    f.style.display=""; f.classList.remove("mobile-show");
-  });
-}
-function mobileShow(n){
-  [pg1,pg2,pg3,pg4].forEach(function(p){ p.classList.remove("mobile-show"); });
-  [].forEach.call(document.querySelectorAll(".pg__front,.pg__back"), function(f){
-    f.style.display="none"; f.classList.remove("mobile-show");
-  });
-  var m = mobileFaces[n] || mobileFaces[0];
-  m.el.classList.add("mobile-show");
-  var face = m.el.querySelector(".pg__" + m.side);
-  if(face){ face.classList.add("mobile-show"); face.style.display="block"; }
-}
-
-/* Listeners */
-btnOpen.addEventListener("click", openBook);
-btnOpen.addEventListener("keydown", function(e){ if(e.key==="Enter"||e.key===" ") openBook(); });
-btnClose.addEventListener("click", closeBook);
-btnNext.addEventListener("click", function(){ goTo(spread+1); });
-btnPrev.addEventListener("click", function(){ goTo(spread-1); });
-// Click anywhere in the open book area to turn pages — but let links through
-document.getElementById("stage-open").addEventListener("click", function(e){
-  if(e.target.closest("a")) return;          // real link — let browser handle it
-  if(e.target.closest(".btn-nav")) return;   // nav buttons — handled separately
-  var bkEl = document.getElementById("book");
-  if(!bkEl) return;
-  var rect = bkEl.getBoundingClientRect();
-  if(e.clientX < rect.left || e.clientX > rect.right) return;
-  if(e.clientY < rect.top  || e.clientY > rect.bottom) return;
-  var x = e.clientX - rect.left;
-  if(x > rect.width / 2 && spread < numSpreads()-1) goTo(spread+1);
-  else if(x <= rect.width / 2 && spread > 0)        goTo(spread-1);
-});
-dots.forEach(function(d){ d.addEventListener("click", function(){ goTo(+d.dataset.s); }); });
-document.addEventListener("keydown", function(e){
-  if(sOpen.style.display !== "flex") return;
-  if(e.key==="ArrowRight") goTo(spread+1);  // goTo clamps to numSpreads()
-  if(e.key==="ArrowLeft")  goTo(spread-1);
-  if(e.key==="Escape")     closeBook();
-});
-
-})();
-</script>
-<!-- PRINT-ONLY VIEW (hidden on screen, shown by print.css) -->
-<div id="print-view" style="display:none">
-  <div class="pv-masthead">
-    <div class="pv-eyebrow">Likkutei Sichos &middot; Visual Study Guides</div>
-    <h1 class="pv-title">Shavuos <em>Sichos</em></h1>
-    <p class="pv-sub">Seven sichos from the Lubavitcher Rebbe on the Festival of Shavuos, brought to life as visual infographics.</p>
-    <div class="pv-url">https://zmabraham.github.io/Sicha-Infograph/</div>
-    <div class="pv-url" style="margin-top:6pt">Cover &amp; Contents: <a href="cover.html" style="color:inherit">cover.html</a></div>
-  </div>
-  <div class="pv-toc-hd">Seven Sichos &mdash; Contents</div>
-
-  <div class="pv-sicha">
-    <div class="pv-num">i</div>
-    <div class="pv-body">
-      <h2 class="pv-sicha-title">The Three Events of <em>Shavuos</em></h2>
-      <div class="pv-sicha-src">Likkutei Sichos Vol.&thinsp;8</div>
-      <p class="pv-sicha-desc">Three events fall on the same day every year: Matan Torah, the histalkus of Dovid HaMelech, and the histalkus of the Baal Shem Tov. Each enacts the same cosmic exchange &mdash; the higher descends, the lower ascends.</p>
-      <div class="pv-sicha-url">zmabraham.github.io/Sicha-Infograph/three-events.html</div>
+    <div class="toc__foot">
+      <span>Seven Sichos · On Shavuos</span>
+      <em>From the teachings of the Lubavitcher Rebbe</em>
     </div>
   </div>
-
-  <div class="pv-sicha">
-    <div class="pv-num">ii</div>
-    <div class="pv-body">
-      <h2 class="pv-sicha-title">The Angels&rsquo; Claim to the <em>Torah</em></h2>
-      <div class="pv-sicha-src">Likkutei Sichos Vol.&thinsp;18</div>
-      <p class="pv-sicha-desc">When Moshe ascended Sinai, the angels claimed the Torah under dina d&rsquo;bar metzra. The Rebbe examines five answers from the meforshim &mdash; finds each wanting &mdash; and arrives at the real answer: yishuv adif, dirah b&rsquo;tachtonim.</p>
-      <div class="pv-sicha-url">zmabraham.github.io/Sicha-Infograph/the-angels-claim.html</div>
-    </div>
-  </div>
-
-  <div class="pv-sicha">
-    <div class="pv-num">iii</div>
-    <div class="pv-body">
-      <h2 class="pv-sicha-title">An <em>Oneg</em> Without Exception</h2>
-      <div class="pv-sicha-src">Likkutei Sichos Vol.&thinsp;28</div>
-      <p class="pv-sicha-desc">Shavuos is the one Yom Tov where even a ta&rsquo;anis chalom is forbidden &mdash; yet it is the most spiritual of all. The answer: Matan Torah was Atzmus, not gilui. And Atzmus has no outside.</p>
-      <div class="pv-sicha-url">zmabraham.github.io/Sicha-Infograph/an-oneg-without-exception.html</div>
-    </div>
-  </div>
-
-  <div class="pv-sicha">
-    <div class="pv-num">iv</div>
-    <div class="pv-body">
-      <h2 class="pv-sicha-title">The Climb from <em>Below</em></h2>
-      <div class="pv-sicha-src">Likkutei Sichos Vol.&thinsp;4</div>
-      <p class="pv-sicha-desc">Two paired sichos: why Bnei Yisrael&rsquo;s sleep before Sinai wasn&rsquo;t carelessness &mdash; and why the Baal Shem Tov chose Yom Tov Sheni. The body is the venue. The descent is the ascent.</p>
-      <div class="pv-sicha-url">zmabraham.github.io/Sicha-Infograph/the-climb-from-below.html</div>
-    </div>
-  </div>
-
-  <div class="pv-sicha">
-    <div class="pv-num">v</div>
-    <div class="pv-body">
-      <h2 class="pv-sicha-title">The <em>Center</em></h2>
-      <div class="pv-sicha-src">Likkutei Sichos Vol.&thinsp;6</div>
-      <p class="pv-sicha-desc">Torah creates the deepest yichud with Hashem. So why the third month, not the first? Because real oneness must first encounter its opposite &mdash; and the third is the new thing that emerges when the high and the low finally meet.</p>
-      <div class="pv-sicha-url">zmabraham.github.io/Sicha-Infograph/the-center.html</div>
-    </div>
-  </div>
-
-  <div class="pv-sicha">
-    <div class="pv-num">vi</div>
-    <div class="pv-body">
-      <h2 class="pv-sicha-title">A Kingdom of <em>Priests</em></h2>
-      <div class="pv-sicha-src">Likkutei Sichos</div>
-      <p class="pv-sicha-desc">Moshe, David, and the Baal Shem Tov &mdash; three first kings, each carrying mamleches kohanim into a deeper darkness than the one before. Inside every Jew&rsquo;s day: one crown, three keepers.</p>
-      <div class="pv-sicha-url">zmabraham.github.io/Sicha-Infograph/a-kingdom-of-priests.html</div>
-    </div>
-  </div>
-
-  <div class="pv-sicha">
-    <div class="pv-num">vii</div>
-    <div class="pv-body">
-      <h2 class="pv-sicha-title">How Many <em>Yosefs</em> in the Marketplace</h2>
-      <div class="pv-sicha-src">Likkutei Sichos Vol.&thinsp;16</div>
-      <p class="pv-sicha-desc">Rav Yosef lifts his cup every Shavuos and says one sentence. The Rebbe reads it six ways and finds a chiddush about Matan Torah: the day didn&rsquo;t only command &mdash; it changed what an object can become.</p>
-      <div class="pv-sicha-url">zmabraham.github.io/Sicha-Infograph/how-many-yosefs.html</div>
-    </div>
-  </div>
-
-  <div class="pv-footer">Likkutei Sichos &middot; Visual Study Guides &middot; zmabraham.github.io/Sicha-Infograph/</div>
-</div>
 
 </body>
 </html>
